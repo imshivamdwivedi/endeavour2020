@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>E-Summit’20</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Event -->
+	<link rel="stylesheet" type="text/css" href="./css/core-style.css">
+	<link rel="stylesheet" type="text/css" href="./css/event.css">
+	<!-- cardio -->
+	<link rel="stylesheet" type="text/css" href="./css/cardio.css">
+	<!-- main css-->
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap4/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/default-theme.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/main_styles.css">
+	<link rel="stylesheet" type="text/css" href="./css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="./css/slick.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<!-- font-awesome -->
+	<link rel="stylesheet" type="text/css" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+	<!-- font-family -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+<style>
+	html{
+		overflow-x:hidden;
+		overflow-y:scroll;
+		width:100%;
+	}
+</style>
+
+<body>
+	<div class="super_container">
+
+		<!-- Menu -->
+
+		<div class="menu trans_500">
+			<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+				<div class="menu_close_container">
+					<div class="menu_close"></div>
+				</div>
+				<div class="logo menu_logo">
+					<a href="#">
+						<div class="logo_container d-flex flex-row align-items-start justify-content-start">
+							<div class="logo_image">
+								<div><img src="images/logo.png" alt=""></div>
+							</div>
+							<div class="logo_content">
+								<div class="logo_text logo_text_not_ie">E-Summit’20</div>
+								<div class="logo_sub">Februry 29, 2020 - KIET</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<ul>
+					<li class="menu_item"><a href="/">Home</a></li>
+					<li class="menu_item"><a href="/speaker">Speakers</a></li>
+					<li class="menu_item"><a href="/sponsors">Sponsors</a></li>
+					<li class="menu_item"><a href="/Team">Team</a></li>
+					<% if(data.validate ===false) {%>
+					<li class="menu_item"><a href="/login">Login</a></li>
+					<li class="menu_item"><a href="/register">Register</a></li>
+					<%} else { %>
+						<li class="menu_item"><a href="/logout">Logout</a></li>
+					<%}%>
+				</ul>
+			</div>
+			<div class="menu_social">
+				<div class="menu_social_title">Follow uf on Social Media</div>
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Home -->
+
+		<div class="home">
+			<!-- <div class="home_background" style="background-image: url(images/index.jpg)"></div> -->
+			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/index.jpg" data-speed="0.8"></div>
+
+			<!-- Header -->
+
+			<header class="header" id="header">
+				<div>
+					<div class="header_top">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+										<div>
+											<a href="#">
+												<div class="logo_container d-flex flex-row align-items-start justify-content-start">
+													<div class="logo_image">
+														<div><img src="images/logo.png" alt=""></div>
+													</div>
+													<div class="logo_content">
+														<div id="logo_text" class="logo_text logo_text_not_ie">E-Summit’20</div>
+														<div class="logo_sub">Februry 29, 2020 - KIET</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="header_social ml-auto">
+											<ul>
+												<li><a href="https://www.facebook.com/ecellkiet/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+												<li><a href="https://www.instagram.com/endeavour__2020/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+												<li><a href="https://www.linkedin.com/in/e-cell-kiet/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+											</ul>
+										</div>
+										<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="header_nav" id="header_nav_pin">
+						<div class="header_nav_inner">
+							<div class="header_nav_container">
+								<div class="container">
+									<div class="row">
+										<div class="col">
+											<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+												<nav class="main_nav">
+													<ul>
+														<li class="active"><a href="/">Home</a></li>
+														<li><a href="/speaker">Speakers</a></li>
+														<li><a href="/sponsors">Sponsors</a></li>
+														<li><a href="/Team">Team</a></li>
+													</ul>
+												</nav>
+												<div class="header_extra ml-auto"></div>
+													<!-- <div class="header_search"><i class="fa fa-search" aria-hidden="true"></i></div> -->
+													<% if(data.validate === false) {%>
+													<div class="button header_button"><a href="/login">Login</a></div>
+													<% } else {%>
+													<i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+													   <div class="button header_button"><a href="/logout">Logout</a></div>
+													<% } %>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="search_container"> -->
+							<!-- <div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="search_content d-flex flex-row align-items-center justify-content-end">
+											<form action="#" id="search_container_form" class="search_container_form">
+												<input type="text" class="search_container_input" placeholder="Search" required="required">
+												<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div> -->
+							<!-- </div> -->
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="home_content_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="home_content">
+								<div class="home_date">Februry 29, 2020</div>
+								<div class="home_title">E-summit 2020</div>
+								<div class="home_location">KIET Group of Institutions</div>
+								<!-- <div class="home_text">Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</div> -->
+								<div class="home_buttons">
+									<% if(data.validate === false){ %>
+									<div class="button home_button"><a href="/register">Register</a></div>
+									<%}%>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<main role="main">
+		<!-- Start Speakers -->
+		<section id="mu-speakers">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mu-speakers-area">
+							<div class="mu-title-area">
+								<h2 class="mu-title">Our Speakers</h2>
+							</div>
+							<!-- Start Speakers Content -->
+							<div class="mu-speakers-content">
+								<div class="mu-speakers-slider">
+
+									<!-- Start single speaker -->
+									<div class="mu-single-speakers">
+										<img src="" alt="speaker img">
+										<div class="mu-single-speakers-info">
+											<h3>Karl Groves</h3>
+											<p>Digital Artist</p>
+											<ul class="mu-single-speakers-social">
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- End single speaker -->
+
+									<!-- Start single speaker -->
+									<div class="mu-single-speakers">
+										<img src="" alt="speaker img">
+										<div class="mu-single-speakers-info">
+											<h3>Sarah Dransner</h3>
+											<p>Business Consultant</p>
+											<ul class="mu-single-speakers-social">
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- End single speaker -->
+
+
+									<!-- Start single speaker -->
+									<div class="mu-single-speakers">
+										<img src="" alt="speaker img">
+										<div class="mu-single-speakers-info">
+											<h3>Ned Stark</h3>
+											<p>UI/UX Specialist</p>
+											<ul class="mu-single-speakers-social">
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- End single speaker -->
+
+
+									<!-- Start single speaker -->
+									<div class="mu-single-speakers">
+										<img src="" alt="speaker img">
+										<div class="mu-single-speakers-info">
+											<h3>Michaela Lehr </h3>
+											<p>Digital Marketer</p>
+											<ul class="mu-single-speakers-social">
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- End single speaker -->
+
+									<!-- Start single speaker -->
+									<div class="mu-single-speakers">
+										<img src="" alt="speaker img">
+										<div class="mu-single-speakers-info">
+											<h3>Karl Groves</h3>
+											<p>Digital Artist</p>
+											<ul class="mu-single-speakers-social">
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- End single speaker -->
+
+									<!-- Start single speaker -->
+									<div class="mu-single-speakers">
+										<img src="assets/images/speaker-2.jpg" alt="speaker img">
+										<div class="mu-single-speakers-info">
+											<h3>Sarah Dransner</h3>
+											<p>Business Consultant</p>
+											<ul class="mu-single-speakers-social">
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- End single speaker -->
+
+
+									<!-- Start single speaker -->
+									<div class="mu-single-speakers">
+										<img src="assets/images/speaker-3.jpg" alt="speaker img">
+										<div class="mu-single-speakers-info">
+											<h3>Ned Stark</h3>
+											<p>UI/UX Specialist</p>
+											<ul class="mu-single-speakers-social">
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- End single speaker -->
+
+
+									<!-- Start single speaker -->
+									<div class="mu-single-speakers">
+										<img src="assets/images/speaker-4.jpg" alt="speaker img">
+										<div class="mu-single-speakers-info">
+											<h3>Michaela Lehr </h3>
+											<p>Digital Marketer</p>
+											<ul class="mu-single-speakers-social">
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- End single speaker -->
+								</div>
+							</div>
+							<!-- End Speakers Content -->
+							<div class="mu-title-area">
+								<button type="submit" class="mu-send-msg-btn"><span>More</span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Speakers -->
+		<!-- Event -->
+		<section id="section3" class="cd-section">
+			<div class="cutter1"></div>
+			<h2 class="text-center">
+				Our Event
+			</h2>
+			<div class="container">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<div class="row karl-new-arrivals">
+						<div class="col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+							<div class="product-img service">
+								<a href="#" class="card credentialing">
+									<div class="icon-holder">
+										<div class="overlay"></div>
+										<div class="circle">
+											<img src="images1/Icons1/Networking.png" style="z-index:100;width:50px" class="iconwwh">
+										</div>
+									</div>
+									<h4 class="heading sifonn light-blue" style="text-align: center;">Start-up</h4>
+									<p class="description light-blue" style="text-align: justify;">Bringing you the most
+										awaited Networking Events of E-Summit 2018. Every, investor, mentor,
+										entrepreneur, student and professional is invited to connect with the best in the
+										country.</p>
+
+								</a>
+							</div>
+
+							<div class="button header_button" data-toggle="modal" data-target="#startup" style="margin-left:0;"><a href="# ">Learn
+									More</a></div>
+
+						</div>
+						<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+							<div class="product-img service">
+								<a href="#" class="card credentialing">
+
+									<div class="icon-holder">
+										<div class="overlay"></div>
+										<div class="circle">
+											<img src="images1/Icons1/TTMM.png" style="z-index:100;width:50px" class="iconwwh">
+										</div>
+									</div>
+									<h4 class="heading sifonn light-blue" style="text-align: center;">B-Plan</h4>
+									<p class="description light-blue" style="text-align: justify;">Let's face it – Getting
+										financial backing is difficult. For most, it's not a pleasant experience. We are
+										trying to revolutionize this by exposing you to panelists who might back you with
+										INR 1.6 Million in just 10 Minutes!</p>
+
+								</a>
+							</div>
+							<div class="button header_button" data-toggle="modal" data-target="#b-plan" style="margin-left:0;"><a href="# ">Learn
+									More</a></div>
+
+
+						</div>
+						<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+							<div class="product-img service">
+								<a href="#" class="card credentialing">
+									<div class="icon-holder">
+										<div class="overlay"></div>
+										<div class="circle">
+											<img src="images1/Icons1/Workshops.png" style="z-index:100;width:50px" class="iconwwh">
+										</div>
+									</div>
+									<h4 class="heading sifonn light-blue" style="text-align: center;">B-Noesis</h4>
+									<p class="description light-blue" style="text-align: justify;">Discover, learn, develop
+										skills that every entrepreneur requires in his journey. A Chance to learn from the
+										best experts of the country.</p>
+
+								</a>
+							</div>
+							<div class="button header_button" data-toggle="modal" data-target="#b-noesis" style="margin-left:0;"><a href="#">Learn
+									More</a></div>
+
+						</div>
+						<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+							<div class="product-img service">
+								<a href="#" class="card credentialing">
+									<div class="icon-holder">
+										<div class="overlay"></div>
+										<div class="circle">
+											<img src="images1/Icons1/Inno Conclave.png" style="z-index:100;width:50px" class="iconwwh">
+										</div>
+									</div>
+									<h4 class="heading sifonn light-blue" style="text-align: center;">Bid-IT</h4>
+									<p class="description light-blue" style="text-align: justify;">This Entrepreneurship
+										Summit brings together the nation’s nonpareil speakers on innovation and leading
+										Indian innovators.</p>
+
+								</a>
+							</div>
+							<div class="button header_button" data-toggle="modal" data-target="#bid" style="margin-left:0;"><a href="#">Learn
+									More</a></div>
+
+						</div>
+						<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+							<div class="product-img service">
+								<a href="#" class="card credentialing">
+									<div class="icon-holder">
+										<div class="overlay"></div>
+										<div class="circle">
+											<img src="images1/Icons1/Business Conclave.png" style="z-index:100;width:50px" class="iconwwh">
+										</div>
+									</div>
+									<h4 class="heading sifonn light-blue" style="text-align: center;">Maestro</h4>
+									<p class="description light-blue" style="text-align: justify;">An initiaitve targeted
+										for professionals to give them updates about their specific industry by experts and
+										also a platform to promote intra-networking.</p>
+
+								</a>
+							</div>
+							<div class="button header_button" data-toggle="modal" data-target="#Maestro" style="margin-left:0;"><a href="#">Learn
+									More</a></div>
+
+						</div>
+
+						<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+							<div class="product-img service">
+								<a href="#" class="card credentialing">
+
+									<div class="icon-holder">
+										<div class="overlay"></div>
+										<div class="circle">
+											<img src="images1/Icons1/Hackathon.png" style="z-index:100;width:50px" class="iconwwh">
+										</div>
+									</div>
+									<h4 class="heading sifonn light-blue" style="text-align: center;">Your-strory</h4>
+									<p class="description light-blue" style="text-align: justify;">Registrations open for
+										I_Hack 2019 till 17th January. Come and join like minded people to hack for winning
+										prize worth INR 2,50,000, get free Texas Instruments components worth $60. </p>
+								</a>
+							</div>
+							<div class="button header_button" data-toggle="modal" data-target="#Your-strory" style="margin-left:0;"><a href="#">Learn
+									More</a></div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+		</section>
+		<!-- End Event -->
+		<!-- Start Venue -->
+		<section id="mu-venue">
+			<div class="mu-venue-area">
+				<div class="row">
+
+					<div class="col-md-6">
+						<div class="mu-venue-map">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13991.581307913611!2d77.4988165!3d28.752542!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf5c6d6eefa89a5df!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1578933464162!5m2!1sen!2sin" width="900" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="mu-venue-address">
+							<h2>VENUE <i class="fa fa-chevron-right" aria-hidden="true"></i></h2>
+							<h3>KIET Group of Institutions</h3>
+							<!-- <h4>9800 International Dr, Orlando, FL 32819, USA</h4> -->
+							<!-- <p></p> -->
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- End Venue -->
+
+		<!-- Start FAQ -->
+		<section id="mu-faq">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="mu-faq-area">
+
+							<div class="mu-title-area">
+								<h2 class="mu-title">FAQ</h2>
+								<!-- <p></p> -->
+							</div>
+
+							<div class="mu-faq-content">
+
+								<div class="panel-group" id="accordion">
+
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">
+													<span class="fa fa-angle-down"></span> When we can register for the events of E-Summit’19?
+												</a>
+											</h4>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in">
+											<div class="panel-body">
+												The registration panel are activated ,you can go through events and and there you can register yourself for
+												the events.
+											</div>
+										</div>
+									</div>
+
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+													<span class="fa fa-angle-up"></span> Is there any other mode of registration else than the website?
+												</a>
+											</h4>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse">
+											<div class="panel-body">
+												Yes, you can register through the app as well, the app will be released soon on the play store.
+											</div>
+										</div>
+									</div>
+
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+													<span class="fa fa-angle-up"></span>What are the available payment modes?
+												</a>
+											</h4>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse">
+											<div class="panel-body">
+												You can pay both online as well as offline, the procedure for online payment can be found at this link
+											</div>
+										</div>
+									</div>
+
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+													<span class="fa fa-angle-up"></span>What is the number of events we can register for?
+												</a>
+											</h4>
+										</div>
+										<div id="collapseFour" class="panel-collapse collapse">
+											<div class="panel-body">
+												There is no limit. You can register for as many events as you want.
+											</div>
+										</div>
+									</div>
+
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+													<span class="fa fa-angle-up"></span>Is accommodation available for the students who want to stay?
+												</a>
+											</h4>
+										</div>
+										<div id="collapseFive" class="panel-collapse collapse">
+											<div class="panel-body">
+												Yes, accommodation would be available for the students.
+											</div>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="mu-contact-area">
+
+							<div class="mu-title-area">
+								<h2 class="mu-heading-title">Contact Us</h2>
+								<!-- <p></p> -->
+							</div>
+
+							<!-- Start Contact Content -->
+							<div class="mu-contact-content">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="mu-contact-form-area">
+											<div id="form-messages"></div>
+											<form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
+												<div class="form-group">
+													<input type="text" class="form-control" placeholder="Name" id="name" name="name" required>
+												</div>
+												<div class="form-group">
+													<input type="email" class="form-control" placeholder="Enter Email" id="email" name="email" required>
+												</div>
+												<div class="form-group">
+													<textarea class="form-control" placeholder="Message" id="message" name="message" required></textarea>
+												</div>
+												<button type="submit" class="mu-send-msg-btn"><span>SUBMIT</span></button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Contact Content -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End FAQ -->
+	</main>
+	<!-- model startup -->
+	<div id="startup" class="modal" role="dialog">
+		<div class="modal-dialog modal-lg modal-xl">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Start-Up Challenge</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body" style="text-align: left; color:black;">
+					<div role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active">
+								<a href="#RulesTab_startup_challenge" aria-controls="stRulesTab" role="tab" data-toggle="tab">Rules</a>
+							</li>
+							<li role="presentation" class="change">
+								<a href="#Register_startup_challenge" aria-controls="stRegistrationTab" role="tab" data-toggle="tab" class="btn btn-info">Register
+									Here</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="RulesTab_startup_challenge">
+								<strong>DESCRIPTION</strong>
+								<p>
+									On the off chance that you have a fantasy to set up a new business or a product then this is for you. In this
+									event, you
+									will encounter live startup challenges.
+								</p>
+								<strong>BENEFITS:</strong>
+								<ul style="list-style-type:circle;">
+									<li>To promote entrepreneurship among future startup enthusiast.</li>
+								</ul>
+								<strong>STRUCTURE:</strong>
+								<ul style="list-style-type:circle;">
+									<li>Team size – maximum 3 members</li>
+									<li>The event consists of two rounds</li>
+								</ul>
+								<strong>ROUND ONE</strong>
+								<ul style="list-style-type:circle">
+									<li>Theme will be decided by lucky draw method. For an instance, if participants
+										get the theme Green energy, then they will have to plan a startup related
+										to this field.
+									</li>
+									<li>Startup challenge is divided into some tasks.</li>
+								</ul>
+								<strong>POSTER PRESENTATION OF PLAN:</strong>
+								<p>It must include :</p>
+								<ul style="list-style-type:circle">
+									<li>Problem Statement </li>
+									<li>Solution </li>
+									<li>Structured Plan </li>
+								</ul>
+								<p>Design a logo along with the company name on an A4 size sheet.</p>
+								<p>Make an advertisement video of minimum 30 seconds.( The video will be submitted on
+									the same day of event)</p>
+								<strong>ROUND TWO </strong>
+								<p>Each team will present the plan in front of the judges. The presentation will be
+									of 5-10 minutes and 2-5 minutes will be for cross-questioning session.</p>
+								<strong>RULES</strong>
+								<ul style="list-style-type:circle">
+									<li>There will be no changes in the theme after the lucky draw.</li>
+									<li>Number of the team members is mentioned in the description. Please make sure
+										that you have the right number of members before reaching the venue.</li>
+								</ul>
+								<strong>FAQ’S :</strong>
+								<ul style="list-style-type:circle">
+									<li>
+										<p>Will there be any need of stationery?</p>
+										<p>No, we will provide stationery.</p>
+									</li>
+									<li>
+										<p>Is there any need of video editing ?</p>
+										<p> It is up to the participants need.
+										</p>
+									</li>
+									<li>
+										<p>What will be the size of logo?</p>
+										<p>Whatever fits in the A4 size sheet with the name.</p>
+									</li>
+									<li>
+										<p>The video can be edited on any software?</p>
+										<p>Yes, but we need a simple video to get an idea of your startup.</p>
+									</li>
+								</ul>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="Register_startup_challenge">
+
+								<div clas="form-group">
+									<p class="status" style='color:red;font-weight: bold;'></p>
+
+									<big>
+										<label for="exampleInputEmail1">Second Member E-Summit Id:</label>
+									</big>
+
+									<div>
+										<input type="text" class="form-control mbr" id="m1id" value="">
+										<p class="stats" style='color:red;font-weight: bold;'></p>
+									</div>
+									<big>
+										<label for="exampleInputEmail1">Third Member E-Summit Id:</label>
+									</big>
+									<div>
+										<input type="text" class="form-control mbr" id="m2id" value="">
+										<p class="stats" style='color:red;font-weight: bold;'></p>
+									</div>
+									<big>
+										<label for="exampleInputEmail1">Campus Ambassador Id:</label>
+									</big>
+									<input type="text" class="form-control" id="caid" value="">
+									<big class="form-text text-muted">Not Mandatory.</big>
+									<hr>
+									<button class="btn btn-primary cnfrm_event" event="7">Register</button>
+
+									<a class="btn btn-primary">Register</a>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger ref" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--startup modal ends-->
+	<!--B-plan modal starts-->
+	<div id="b-plan" class="modal" role="dialog">
+		<div class="modal-dialog modal-lg modal-xl">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">B-Plan</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body" style="text-align: left; color:black;">
+					<div role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active">
+								<a href="#Rules_bplan" aria-controls="bpRulesTab" role="tab" data-toggle="tab">Rules</a>
+							</li>
+							<li role="presentation" class="change" class="mod">
+								<a href="#Register_bplan" aria-controls="RegistrationTab" role="tab" data-toggle="tab" class="bt btn-info">Register
+									Here</a>
+							</li>
+
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane" id="Upload_bplan">
+								<button class="btn btn-primary">Submit</button>
+
+
+								<p style="color:red;">Note:: Rename your file as b_plan_esummit_id.pdf</p>
+								<p>Kindly Upload only .pdf files.</br>Use this Url to convert your .doc,.docx,.txt to pdf:: </br><a href="https://www.2pdfconverter.com/"
+									 target="_blank">Convert to Pdf</a></p>
+
+								<p>If you have a prototype (App, Webapplication, Software, Designs etc) , Do upload them on google drive and
+									provide the link in attached pdf. </p>
+
+
+							</div>
+							<div role="tabpanel" class="tab-pane active" id="Rules_bplan">
+								<strong>DESCRIPTION</strong>
+								<p>
+									Ideas are abounded when you have the conviction to bring about a change around you. The flagship event, B
+									PLAN, lets you
+									promulgate your ground breaking ideas. Showcase your business skills and let
+									the world see your entrepreneurial side. Gear up buddies. Prepare an abstract,
+									show it and be a winner.
+								</p>
+								<strong>BENEFITS:</strong>
+								<ul style="list-style-type:circle;">
+									<li>We will call investors for the development of the idea.</li>
+								</ul>
+								<strong>STRUCTURE:</strong>
+								<ul style="list-style-type:circle;">
+									<li>Team size – maximum 3 members</li>
+									<li>The event consists of 2 rounds</li>
+								</ul>
+								<strong>ROUND ONE-ONLINE SUBMISSION- PRELIMINARY ROUND:</strong>
+								<ul style="list-style-type:circle">
+									<li>Participants will have to submit the abstract in the form of pdf.</li>
+									<li>Abstract must include the summary of your B plan.</li>
+									<li>There is no need to mention all the details in the abstract.</li>
+								</ul>
+								<strong>ROUND TWO- PRESENTATION</strong>
+								<p>In this, participants will come with a PPT to present their idea. There will be 5-10
+									minutes of presentation and 2-5 minutes of questionnaire round.
+
+									<br>
+									<br>The following points must be included in the presentation:</p>
+								<ul style="list-style-type:circle">
+									<li> Topic of your plan</li>
+									<li>Description of your company, including your products and/or services</li>
+									<li>Mission statement</li>
+									<li>Market analysis</li>
+									<li>Sales and marketing model</li>
+									<li>Revenue model</li>
+									<li>Conclusion</li>
+								</ul>
+								<!-- <strong>ROUND THREE- PRESENTATION</strong>
+                                        <ul style="list-style-type:circle">
+                                        <li>In this round, participants will come with their idea that they have presented before. There will be 5-10 minutes presentation and 2-5 minutes questionnaire round.</li>
+                                            </ul> -->
+								<strong>RULES :</strong>
+								<ul style="list-style-type:circle">
+									<li>Business idea must be unique and feasible.</li>
+									<li>The basic elements of the B plan must be included in the presentation.</li>
+									<li>There is no need of laptops for presentation.</li>
+								</ul>
+								<strong>FAQ'S :</strong>
+								<ul style="list-style-type:circle">
+									<li>
+										<p>Are intercollege members allowed to form a single team?</p>
+										<p>Yes</p>
+									</li>
+									<li>
+										<p>What points must be kept in mind while forming abstract?</p>
+										<p>Since abstract is a shorthand representation of your business idea, therefore,
+											it must contain a brief introduction to the main points.</p>
+									</li>
+									<li>
+										<p>What modes can we use for our presentation?</p>
+										<p>The presentation on the final round will be a .ppt. There is no need to make
+											any file or a hard copy of your business plan.</p>
+									</li>
+									<li>
+										<p>Can we extend the time limit allotted to us?</p>
+										<p>Extention of the time limit is strictly prohibited, this can lead to negative
+											marking. Your ppt presentation must be finished within the allotted time
+											frame or else your business idea won’t be considered as complete.</p>
+										</li1>
+									<li>
+										<p>Is there any criteria regarding team size?</p>
+										<p>The maximum size of the team is 3 members, even a single member can also
+											present the idea but more than 3 members are not allowed.</p>
+									</li>
+								</ul>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="Register_bplan">
+
+								<div clas="form-group">
+									<p class="status" style='color:red;font-weight: bold;'></p>
+
+									<big>
+										<label for="exampleInputEmail1">Second Member E-Summit Id:</label>
+									</big>
+
+									<div>
+										<input type="text" class="form-control mbr" id="m1id" value="">
+										<p class="stats" style='color:red;font-weight: bold;'></p>
+									</div>
+									<big>
+										<label for="exampleInputEmail1">Third Member E-Summit Id:</label>
+									</big>
+									<div>
+										<input type="text" class="form-control mbr" id="m2id" value="">
+										<p class="stats" style='color:red;font-weight: bold;'></p>
+									</div>
+									<big>
+										<label for="exampleInputEmail1">Campus Ambassador Id:</label>
+									</big>
+									<input type="text" class="form-control" id="caid" value="">
+									<big class="form-text text-muted">Not Mandatory.</big>
+									<hr>
+
+									<button class="btn btn-primary cnfrm_event" event="2">Register</button>
+
+									<a class="btn btn-primary " href="#">Register</a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-danger ref" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--B-plan modal ends-->
+	<!--B-Noesis modal starts-->
+	<div id="b-noesis" class="modal" role="dialog">
+		<div class="modal-dialog modal-lg modal-xl">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">B-Noesis</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body" style="text-align: left; color:black;">
+					<div role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active">
+								<a href="#Rules_bnoesis" aria-controls="RulesTab" role="tab" data-toggle="tab">Rules</a>
+
+							</li>
+							<li role="presentation" class="change">
+								<a href="#Register_bnoesis" aria-controls="RegistrationTab" role="tab" data-toggle="tab" class="btn btn-info">Register
+									Here</a>
+
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="Rules_bnoesis">
+								<strong>DESCRIPTION</strong>
+								<p>
+									Which company's mobile phones are marketed with the slogan- Big Inside, Small Outside? Battle it out with the
+									sharpest minds
+									in the form of mind-boggling questions and answers.</p>
+								<strong>BENEFITS:</strong>
+								<ul style="list-style-type:circle;">
+									<li>To enhance the knowledge of the participants in various business/corporate domains.</li>
+								</ul>
+								<strong>STRUCTURE:</strong>
+								<ul style="list-style-type:circle;">
+									<li>Team size – maximum 2 members</li>
+									<li>The event consists of two rounds</li>
+								</ul>
+								<strong>ROUND ONE- ONLINE QUIZ (DURATION-30 MINUTES)</strong>
+								<ul style="list-style-type:circle;">
+									<li>An online quiz will be conducted.</li>
+									<li>There will be 30 question in this round.</li>
+									<li>Hints will be provided for some questions.</li>
+									<li>Username and password will be provided on the day of the quiz.</li>
+								</ul>
+								<strong>ROUND TWO- GOOGLE QUIZ (DURATION-60 MINUTES)</strong>
+								<ul style="list-style-type:circle;">
+									<li>In this round participants will be allowed to use Google search.</li>
+									<li>There will be 60 minutes for 20 questions.</li>
+								</ul>
+								<strong>RULES :</strong>
+								<ul style="list-style-type:circle;">
+									<li>Participant with the highest score will win the game.</li>
+									<li>In case of any tie, there will be a tie breaker question.</li>
+									<li>If participants use hints then marks will be reduced accordingly.</li>
+									<li>Every team will be provided with a P.C.</li>
+								</ul>
+								<strong>FAQ'S :</strong>
+								<ul style="list-style-type:circle;">
+									<li>
+										<p>Are intercollege members allowed to form a single team?</p>
+										<p>Yes, intercollege members are allowed to form a single team.</p>
+									</li>
+									<li>
+										<p>Is there any criteria regarding team size?</p>
+										<p>The maximum size of the team is 2 members, even one member can also participate
+											but more than 2 members are not allowed. </p>
+									</li>
+									<li>
+										<p>Can we participate in the online round from anywhere using internet connection?</p>
+										<p>No, the online round will be conducted at the venue. Login id and password
+											will be provided at the venue only.</p>
+									</li>
+									<li>
+										<p>Is use of internet allowed?</p>
+										<p>Use of the Internet is allowed only in the second round.</p>
+									</li>
+									<li>
+										<p>How we will be informed about our results?</p>
+										<p>The result of rounds will be informed via mail or phone call to the team
+											leader.
+										</p>
+									</li>
+								</ul>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="Register_bnoesis">
+								<div clas="form-group">
+									<p class="status" style='color:red;font-weight: bold;'></p>
+
+									<big>
+										<label for="exampleInputEmail1">Second Member E-Summit Id:</label>
+									</big>
+
+									<div>
+										<input type="text" class="form-control mbr" id="m1id" value="">
+										<p class="stats" style='color:red;font-weight: bold;'></p>
+									</div>
+									<big>
+										<label for="exampleInputEmail1">Campus Ambassador Id:</label>
+									</big>
+									<input type="text" class="form-control" id="caid" value="">
+									<big class="form-text text-muted">Not Mandatory.</big>
+									<hr>
+
+									<button class="btn btn-primary cnfrm_event" event="3">Register</button>
+
+									<a class="btn btn-primary " href="">Register</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-danger ref" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--B-Noesis Modal Ends-->
+	<!--Bid It Modal starts-->
+	<div id="bid" class="modal" role="dialog">
+		<div class="modal-dialog modal-lg modal-xl">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">BID IT!</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body" style="text-align: left; color:black;">
+					<div role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active">
+								<a href="#Rules_bidit" aria-controls="RulesTab" role="tab" data-toggle="tab">Rules</a>
+
+							</li>
+							<li role="presentation" class="change">
+								<a href="#Register_bidit" aria-controls="RegistrationTab" role="tab" data-toggle="tab" class="btn btn-info">Register
+									Here</a>
+
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="Rules_bidit">
+								<strong>DESCRIPTION</strong>
+								<p>
+									The event is based on IPL auction where you will have to make a team of 11 players. Every team will be
+									provided with points
+									according to which an auction will be organized.
+								</p>
+								<strong>BENEFITS:</strong>
+								<ul style="list-style-type:circle;">
+									<li>To enhance the knowledge of finance among participants.</li>
+									<li>To increase the instant decision making skill of the participants.</li>
+								</ul>
+								<strong>STRUCTURE:</strong>
+								<ul style="list-style-type:circle;">
+									<li>Team size- maximum 2 members</li>
+									<li>The event consists of two rounds.</li>
+								</ul>
+								<strong>ROUND ONE- ONLINE QUIZ (DURATION-30 MINUTES)</strong>
+								<ul style="list-style-type:circle">
+									<li>An online quiz will be conducted.</li>
+									<li>There will be 30 questions in this round.</li>
+									<li>Username and password will be provided on the day of the event.</li>
+								</ul>
+								<strong>ROUND TWO- AUCTION ROUND</strong>
+								<ul style="list-style-type:circle">
+									<li>Participants who will qualify round 1 will participate in the auction.
+									</li>
+									<li>Every team will be given 100 points.</li>
+									<li>Teams will have to make a 11 member team in the auction.</li>
+									<li>Teams will have to make a team of 11 members in the auction.</li>
+									<li>Every team will get two Match cards. They can use the match cards in the auction.</li>
+									<li>Match card gives the team a right to buy the player at minimum cost.
+									</li>
+								</ul>
+								<strong>RULES :</strong>
+								<ul style="list-style-type:circle">
+									<li>Final decision of auction will be decided by an auctioneer.</li>
+									<li>No member will be allowed to leave the venue at the time of auction.
+									</li>
+									<li>Only one player will be allowed to do auction at a time</li>
+									<li>Only round 1 qualifiers will participate in the auction round.</li>
+								</ul>
+								<strong>FAQ’s</strong>
+								<ul style="list-style-type:circle">
+									<li>
+										<p>Is there any need for materials regarding players?</p>
+										<p>No, everything will be provided at the venue</p>
+									</li>
+									<li>
+										<p>Can more than one team participate from the same college?</p>
+										<p>Yes ,more than one team can participate</p>
+									</li>
+									<li>
+										<p>If two people bid at the same time, who will be counted?</p>
+										<p>This will be decided by the coordinator responsible for biding and his decision
+											will be final</p>
+									</li>
+									<li>
+										<p>What will be the domain of the quiz?</p>
+										<p>IPL</p>
+									</li>
+									<li>
+										<p>Will extra Points be given for not using the match cards?</p>
+										<p>No.</p>
+									</li>
+								</ul>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="Register_bidit">
+								<div clas="form-group">
+									<p class="status" style='color:red;font-weight: bold;'></p>
+
+									<big>
+										<label for="exampleInputEmail1">Second Member E-Summit Id:</label>
+									</big>
+
+									<div>
+										<input type="text" class="form-control mbr" id="m1id" value="">
+										<p class="stats" style='color:red;font-weight: bold;'></p>
+									</div>
+									<big>
+										<label for="exampleInputEmail1">Campus Ambassador Id:</label>
+									</big>
+									<input type="text" class="form-control" id="caid" value="">
+									<big class="form-text text-muted">Not Mandatory.</big>
+									<hr>
+
+									<button class="btn btn-primary cnfrm_event" event="5">Register</button>
+
+									<a class="btn btn-primary " href="#">Register</a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+
+
+						<button type="button" class="btn btn-danger ref" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Maestro Modal starts-->
+		<div id="Maestro" class="modal" role="dialog">
+			<div class="modal-dialog modal-lg modal-xl">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">BID IT!</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body" style="text-align: left; color:black;">
+						<div role="tabpanel">
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active">
+									<a href="#Rules_bidit" aria-controls="RulesTab" role="tab" data-toggle="tab">Rules</a>
+
+								</li>
+								<li role="presentation" class="change">
+									<a href="#Register_bidit" aria-controls="RegistrationTab" role="tab" data-toggle="tab" class="btn btn-info">Register
+										Here</a>
+
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="Rules_bidit">
+									<strong>DESCRIPTION</strong>
+									<p>
+										The event is based on IPL auction where you will have to make a team of 11 players. Every team will be
+										provided with points
+										according to which an auction will be organized.
+									</p>
+									<strong>BENEFITS:</strong>
+									<ul style="list-style-type:circle;">
+										<li>To enhance the knowledge of finance among participants.</li>
+										<li>To increase the instant decision making skill of the participants.</li>
+									</ul>
+									<strong>STRUCTURE:</strong>
+									<ul style="list-style-type:circle;">
+										<li>Team size- maximum 2 members</li>
+										<li>The event consists of two rounds.</li>
+									</ul>
+									<strong>ROUND ONE- ONLINE QUIZ (DURATION-30 MINUTES)</strong>
+									<ul style="list-style-type:circle">
+										<li>An online quiz will be conducted.</li>
+										<li>There will be 30 questions in this round.</li>
+										<li>Username and password will be provided on the day of the event.</li>
+									</ul>
+									<strong>ROUND TWO- AUCTION ROUND</strong>
+									<ul style="list-style-type:circle">
+										<li>Participants who will qualify round 1 will participate in the auction.
+										</li>
+										<li>Every team will be given 100 points.</li>
+										<li>Teams will have to make a 11 member team in the auction.</li>
+										<li>Teams will have to make a team of 11 members in the auction.</li>
+										<li>Every team will get two Match cards. They can use the match cards in the auction.</li>
+										<li>Match card gives the team a right to buy the player at minimum cost.
+										</li>
+									</ul>
+									<strong>RULES :</strong>
+									<ul style="list-style-type:circle">
+										<li>Final decision of auction will be decided by an auctioneer.</li>
+										<li>No member will be allowed to leave the venue at the time of auction.
+										</li>
+										<li>Only one player will be allowed to do auction at a time</li>
+										<li>Only round 1 qualifiers will participate in the auction round.</li>
+									</ul>
+									<strong>FAQ’s</strong>
+									<ul style="list-style-type:circle">
+										<li>
+											<p>Is there any need for materials regarding players?</p>
+											<p>No, everything will be provided at the venue</p>
+										</li>
+										<li>
+											<p>Can more than one team participate from the same college?</p>
+											<p>Yes ,more than one team can participate</p>
+										</li>
+										<li>
+											<p>If two people bid at the same time, who will be counted?</p>
+											<p>This will be decided by the coordinator responsible for biding and his decision
+												will be final</p>
+										</li>
+										<li>
+											<p>What will be the domain of the quiz?</p>
+											<p>IPL</p>
+										</li>
+										<li>
+											<p>Will extra Points be given for not using the match cards?</p>
+											<p>No.</p>
+										</li>
+									</ul>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="Register_bidit">
+									<div clas="form-group">
+										<p class="status" style='color:red;font-weight: bold;'></p>
+
+										<big>
+											<label for="exampleInputEmail1">Second Member E-Summit Id:</label>
+										</big>
+
+										<div>
+											<input type="text" class="form-control mbr" id="m1id" value="">
+											<p class="stats" style='color:red;font-weight: bold;'></p>
+										</div>
+										<big>
+											<label for="exampleInputEmail1">Campus Ambassador Id:</label>
+										</big>
+										<input type="text" class="form-control" id="caid" value="">
+										<big class="form-text text-muted">Not Mandatory.</big>
+										<hr>
+
+										<button class="btn btn-primary cnfrm_event" event="5">Register</button>
+
+										<a class="btn btn-primary " href="#">Register</a>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+
+
+							<button type="button" class="btn btn-danger ref" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Your Story Modal starts-->
+			<div id="Your-strory" class="modal" role="dialog">
+				<div class="modal-dialog modal-lg modal-xl">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title"> YOUR STORY</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body" style="text-align: left; color:black;">
+							<div role="tabpanel">
+								<ul class="nav nav-tabs" role="tablist">
+									<li role="presentation" class="active">
+										<a href="#Rules_your_story" aria-controls="RulesTab" role="tab" data-toggle="tab">Rules</a>
+
+									</li>
+									<li role="presentation" class="change">
+										<a href="#Register_your_story" aria-controls="RegistrationTab" role="tab" data-toggle="tab">Register Here</a>
+
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane active" id="Rules_your_story">
+										<strong>DESCRIPTION</strong>
+										<p>
+											Are you a writer, photographer or a keen observer, observe E-summit and send your views on it.
+
+										</p>
+										<strong>BENEFITS: </strong>
+										<ul style="list-style-type:circle;">
+											<li>To enhance the capability of making strategies.
+											</li>
+											<li>To increase the instant decision making skill of the participants.
+											</li>
+										</ul>
+										<strong>STRUCTURE:</strong>
+										<ul style="list-style-type:circle;">
+											<li>Team size- maximum 2 members
+											</li>
+											<li>There are two independent rounds in this event.
+											</li>
+										</ul>
+										<strong>EVENT NO-1 :</strong>
+										<ul style="list-style-type:circle;">
+											<li>Team will have to observe the area near venues and has to click the photographs.
+											</li>
+											<li>Team will have to give an article of 200-300 words regarding our e-summit
+												including photographs.
+											</li>
+											<li>There will be an online submission of articles with photographs. The last
+												date for submission is 3 days after the event.
+											</li>
+										</ul>
+										<strong>EVENT NO-2 :</strong>
+										<ul style="list-style-type:circle;">
+											<li>If you are good in videography then submit a short video of minimum 1.5 minutes.
+												The last date for submission is 3 days after the event.
+											</li>
+											<li>There will be an online submission of the video via a mail.
+											</li>
+										</ul>
+										<strong>RULES</strong>
+										<ul style="list-style-type:circle;">
+											<li>Only the area where the E Summit events are taking place should be covered.</li>
+											<li>All the other college region is restricted.</li>
+											<li>Anyone found roaming or breaking the rules will be then and there disqualified.</li>
+											<li>Pictures and videos can be taken from both mobile and camera.
+											</li>
+											<li>The article should be within the defined word limit.
+											</li>
+											<li>Any other person roaming or helping them may cause disqualification of the
+												team.
+											</li>
+											<li>Objectionable content will not be entertained.
+											</li>
+										</ul>
+										<strong>FAQ'S</strong>
+										<ul style="list-style-type:circle;">
+											<li>
+												<p>Is It compulsary to take part in both events?
+												</p>
+												<p>NO </p>
+											</li>
+											<li>
+												<p>How many pictures can be added in the articles?
+												</p>
+												<p>There is no limit.</p>
+											</li>
+											<li>
+												<p>When will be the submission of articles begin?
+												</p>
+												<p>17th march’18, 12:00 PM.</p>
+											</li>
+											<li>
+												<p> Will there be separate registration for both the events?
+												</p>
+												<p>Yes</p>
+											</li>
+											<li>
+												<p>Will there be separate prizes for both the events?
+												</p>
+												<p>Yes</p>
+											</li>
+											<li>
+												<p>Do we have to feature ourselves in the aftermovie?
+												</p>
+												<p>No compulsion.</p>
+											</li>
+											<li>
+												<p>Will the whole campus be open for this event?
+												</p>
+												<p> No, Only the area where e-summit events are going on.
+												</p>
+											</li>
+										</ul>
+									</div>
+									<div role="tabpanel" class="tab-pane" id="Register_your_story">
+
+										<div clas="form-group">
+											<p class="status" style='color:red;font-weight: bold;'></p>
+
+											<big>
+												<label for="exampleInputEmail1">Second Member Id:</label>
+											</big>
+											<div>
+												<input type="text" class="form-control mbr" id="m1id" value="">
+												<p class="stats" style='color:red;font-weight: bold;'></p>
+											</div>
+											<big>
+												<label for="exampleInputEmail1">Campus Ambassador Id:</label>
+											</big>
+											<input type="text" class="form-control" id="caid" value="">
+											<big class="form-text text-muted">Not Mandatory.</big>
+											<hr>
+
+											<button class="btn btn-primary cnfrm_event" event="8">Register(For Video)</button>
+											<button class="btn btn-primary cnfrm_event" event="9">Register(For Photo)</button>
+
+											<a class="btn btn-primary " href="#Register</a>
+
+                                                <?php }?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="
+											 modal-footer">
+
+												<button type="button" class="btn btn-danger ref" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+							<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+							 crossorigin="anonymous"></script>
+							<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+							 crossorigin="anonymous"></script>
+							<script type="text/javascript" src="./js/parallax.min.js"></script>
+							<script type="text/javascript" src="./js/slick.min.js"></script>
+							<script type="text/javascript" src="./js/jquery.countdown.min.js"></script>
+							<script type="text/javascript" src="./js/app.js"></script>
+							<script type="text/javascript" src="./js/speaker.js"></script>
+							<script type="text/javascript" src="./js/custom.js"></script>
+</body>
+
+</html>

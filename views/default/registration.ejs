@@ -1,0 +1,200 @@
+<%var col,rol;%><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Conference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css-->
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap4/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/responsive.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" type="text/css" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- font-family -->
+    <link rel="stylesheet" type="text/css" href="./css/form.css">
+</head>
+
+<body>
+
+    <div class="super_container">
+
+        <!-- Menu -->
+
+        <div class="menu trans_500">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+                <div class="menu_close_container">
+                    <div class="menu_close"></div>
+                </div>
+                <div class="logo menu_logo">
+                    <a href="#">
+                        <div class="logo_container d-flex flex-row align-items-start justify-content-start">
+                            <div class="logo_image">
+                                <div><img src="images/logo.png" alt=""></div>
+                            </div>
+                            <div class="logo_content">
+                                <div class="logo_text logo_text_not_ie">E-Summit’19</div>
+                                <div class="logo_sub">March 3, 2019 - KIET</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <ul>
+                    <li class="menu_item"><a href="/">Home</a></li>
+                    <li class="menu_item"><a href="/speaker">Speakers</a></li>
+                    <li class="menu_item"><a href="/event">Events</a></li>
+                    <li class="menu_item"><a href="/login">Login</a></li>
+                    <li class="menu_item"><a href="/register">Register</a></li>
+                </ul>
+            </div>
+            <div class="menu_social">
+                <div class="menu_social_title">Follow uf on Social Media</div>
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Home -->
+
+        <div class="home" style="height:220px;">
+            <!-- <div class="home_background" style="background-image: url(images/index.jpg)"></div> -->
+            <!-- <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/index.jpg" data-speed="0.8"></div> -->
+
+            <!-- Header -->
+
+            <header class="header" id="header">
+                <div>
+                    <div class="header_top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+                                        <div>
+                                            <a href="#">
+                                                <div class="logo_container d-flex flex-row align-items-start justify-content-start">
+                                                    <div class="logo_image">
+                                                        <div><img src="images/logo.png" alt=""></div>
+                                                    </div>
+                                                    <div class="logo_content">
+                                                        <div id="logo_text" class="logo_text logo_text_not_ie">E-Summit’19</div>
+                                                        <div class="logo_sub">March 23, 2019 - KIET</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="header_social ml-auto">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_nav" id="header_nav_pin">
+                        <div class="header_nav_inner">
+                            <div class="header_nav_container">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+                                                <nav class="main_nav">
+                                                    <ul>
+                                                        <li class="active"><a href="/">Home</a></li>
+                                                        <li><a href="/speaker">Speakers</a></li>
+                                                        <li><a href="/event">Events</a></li>
+                                                        <!-- <li><a href="news.html">News</a></li> -->
+                                                        <!-- <li><a href="contact.html">Contact</a></li> -->
+                                                    </ul>
+                                                </nav>
+                                                <div class="header_extra ml-auto">
+                                                    <!-- <div class="header_search"><i class="fa fa-search" aria-hidden="true"></i></div> -->
+                                                    <div class="button header_button"><a href="/login">Login</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+    
+    <% if(col===true) {%>  
+        <div class="alert alert-danger alert-dismissible">
+            <strong>Holy Mail</strong> is Alreday Registered ! <strong> Drop me mail at shivamdwivediwork@gmail.com</strong>.
+          </div>
+    <%}%>
+    <% if(rol===true) {%>  
+        <div class="alert alert-danger alert-dismissible">
+            <strong>Holy Phone no.</strong> is Alreday Registered ! <strong> Drop me mail at shivamdwivediwork@gmail.com</strong>.
+          </div>
+    <%}%>
+    <div class="container">
+        <div class="wrap-login" style="margin:auto; padding-bottom: 20px;">
+            <span class="login-form-title" style="padding:5px 0 5px 0;">
+                Register Here
+            </span>
+            <span class="login-form-avatar">
+                <img src="./images/logo.png" alt="AVATAR">
+            </span>
+            <form action="/adduser" method="POST" class="login-form validate-form">
+                <div class="wrap-input" style="margin:85px 0 35px 0; " data-validate="Enter username">
+                    <input class="input" type="email" name="email">
+                    <span class="focus-input" data-placeholder="Email"></span>
+                </div>
+
+                <div class="wrap-input" style="margin-bottom:50px;" data-validate="Enter password">
+                    <input class="input" type="password" name="pass">
+                    <span class="focus-input" data-placeholder="Password"></span>
+                </div>
+                <div class="wrap-input" style="margin-bottom:50px;" data-validate="Enter password">
+                    <input class="input" type="text" name="name">
+                    <span class="focus-input" data-placeholder="Name"></span>
+                </div>
+                <div class="wrap-input" style="margin-bottom:50px;" data-validate="Enter password">
+                    <input class="input" type="text" name="mobilenumber">
+                    <span class="focus-input" data-placeholder="mobile number"></span>
+                </div>
+                <div class="wrap-input" style="margin-bottom:50px;" data-validate="Enter password">
+                    <input class="input" type="text" name="collage">
+                    <span class="focus-input" data-placeholder="Collage"></span>
+                </div>
+                <div class="wrap-input" style="margin-bottom:50px;" data-validate="Enter password">
+                    <input class="input" type="text" name="year">
+                    <span class="focus-input" data-placeholder="Year"></span>
+                </div>
+                <div class="wrap-input" style="margin-bottom:50px;" data-validate="Enter password">
+                    <input class="input" type="text" name="branch">
+                    <span class="focus-input" data-placeholder="branch"></span>
+                </div>
+                <div class="wrap-input" style="margin-bottom:50px;" data-validate="Enter password">
+                    <input class="input" type="text" name="universityno">
+                    <span class="focus-input" data-placeholder="University No"></span>
+                </div>
+                <div class="wrap-input" style="margin-bottom:50px;" data-validate="Enter password">
+                    <input class="input" type="text" name="campuseId ">
+                    <span class="focus-input" data-placeholder="Campuse Ambassador Id"></span>
+                </div>
+
+                <div class="container-login-form-btn" style="padding-bottom: 5px;">
+                    <input type="submit" class="login-form-btn" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/custom.js"></script>
+    <script src="./js/form.js"></script>
+</body>
+
+</html>

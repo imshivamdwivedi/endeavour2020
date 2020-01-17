@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>The Conference</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- main css -->
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap4/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/default-theme.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/main_styles.css">
+	<link rel="stylesheet" type="text/css" href="./css/responsive.css">
+	<!-- font-awesome -->
+	<link rel="stylesheet" type="text/css" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+	<!-- speaker css -->
+	<link rel="stylesheet" type="text/css" href="./css/speaker.css">
+	<style>
+		@media (max-width:765px) {
+		#speaker-modal-1 {
+			padding-top: 220px;
+			margin-left:-20px; 
+		}
+	}
+@media (min-width:765px) {
+#speaker-modal-1 {
+padding-top: 120px;
+margin-left:-20px;
+}}
+</style>
+</head>
+
+<body>
+
+	<div class="super_container">
+		<!-- Menu -->
+		<div class="menu trans_500">
+			<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+				<div class="menu_close_container">
+					<div class="menu_close"></div>
+				</div>
+				<div class="logo menu_logo">
+					<a href="#">
+						<div class="logo_container d-flex flex-row align-items-start justify-content-start">
+							<div class="logo_image">
+								<div><img src="images/logo.png" alt=""></div>
+							</div>
+							<div class="logo_content">
+								<div class="logo_text logo_text_not_ie">E-Summit’20</div>
+								<div class="logo_sub">Februry 29, 2020 - KIET</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<ul>
+					<li class="menu_item"><a href="/">Home</a></li>
+					<li class="menu_item"><a href="/speaker">Speakers</a></li>
+					<li class="menu_item"><a href="/sponsors">Sponsors</a></li>
+					<li class="menu_item"><a href="/team">Team</a></li>	
+					<% if(data.validate === false)  {%>				
+					<li class="menu_item"><a href="/login">Login</a></li>
+					<li class="menu_item"><a href="/register">Register</a></li>	
+					<%}%>			
+				</ul>
+			</div>
+			<div class="menu_social">
+				<div class="menu_social_title">Follow uf on Social Media</div>
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Home -->
+
+		<div class="home">
+			<!-- <div class="home_background" style="background-image: url(images/index.jpg)"></div> -->
+			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/index.jpg" data-speed="0.8"></div>
+			<!-- Header -->
+			<header class="header" id="header">
+				<div>
+					<div class="header_top">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+										<div>
+											<a href="#">
+												<div class="logo_container d-flex flex-row align-items-start justify-content-start">
+													<div class="logo_image">
+														<div><img src="images/logo.png" alt=""></div>
+													</div>
+													<div class="logo_content">
+														<div id="logo_text" class="logo_text logo_text_not_ie">E-Summit’20</div>
+														<div class="logo_sub">Februry , 2020 - KIET</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="header_social ml-auto">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+											</ul>
+										</div>
+										<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="header_nav" id="header_nav_pin">
+						<div class="header_nav_inner">
+							<div class="header_nav_container">
+								<div class="container">
+									<div class="row">
+										<div class="col">
+											<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+												<nav class="main_nav">
+													<ul>
+														<li><a href="/">Home</a></li>
+														<li class="active"><a href="/speaker">Speakers</a></li>
+														<li><a href="/sponsors">Sponsors</a></li>
+														<li><a href="/Team">Team</a></li>
+													</ul>
+												</nav>
+												<div class="header_extra ml-auto">
+													<!-- <div class="header_search"><i class="fa fa-search" aria-hidden="true"></i></div> -->
+													<% if(data.validate === false) {%>
+													<div class="button header_button"><a href="/login">Login</a></div>
+													<% } %>
+													<% if(data.validate === true) {%>
+													<i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+													<div class="button header_button"><a href="/logout">Logout</a></div>
+													<% } %>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="home_content_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="home_content">
+								<div class="home_date">Februry 29, 2020</div>
+								<div class="home_title">Esummit 2020</div>
+								<div class="home_location">KIET Group of Institutions</div>
+								<!-- <div class="home_text">Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</div> -->
+								<div class="home_buttons">
+									<% if(data.validate === false){ %>
+									<div class="button home_button"><a href="/register">Register</a></div>
+									<%}%>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="speakers" class="section">
+		<!-- container -->
+		<div class="section-title">
+			<h3 class="title"><span class="appear">Our</span> <span style="color:#8000B7" class="appear">Speakers</span></h3>
+		</div>
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- section title -->
+				<!-- section title -->
+
+				<!-- speaker -->
+				<div class="col-md-4 col-sm-6">
+					<div class="speaker" data-toggle="modal" data-target="#speaker-modal-1">
+						<div class="speaker-img">
+							<img src="./images/speaker/speaker01.jpg" alt="">
+						</div>
+						<div class="speaker-body">
+							<div class="speaker-social">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-instagram"></i></a>
+								<a href="#"><i class="fa fa fa-linkedin"></i></a>
+							</div>
+							<div class="speaker-content">
+								<h2>John Doe</h2>
+								<span>Manager, CEO</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /speaker -->
+
+				<!-- speaker -->
+				<div class="col-md-4 col-sm-6">
+					<div class="speaker" data-toggle="modal" data-target="#speaker-modal-1">
+						<div class="speaker-img">
+							<img src="./images/speaker/speaker02.jpg" alt="">
+						</div>
+						<div class="speaker-body">
+							<div class="speaker-social">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-instagram"></i></a>
+								<a href="#"><i class="fa fa fa-linkedin"></i></a>
+							</div>
+							<div class="speaker-content">
+								<h2>John Doe</h2>
+								<span>Manager, CEO</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /speaker -->
+
+				<!-- speaker -->
+				<div class="col-md-4 col-sm-6">
+					<div class="speaker" data-toggle="modal" data-target="#speaker-modal-1">
+						<div class="speaker-img">
+							<img src="./images/speaker/speaker03.jpg" alt="">
+						</div>
+						<div class="speaker-body">
+							<div class="speaker-social">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-instagram"></i></a>
+								<a href="#"><i class="fa fa fa-linkedin"></i></a>
+							</div>
+							<div class="speaker-content">
+								<h2>John Doe</h2>
+								<span>Manager, CEO</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /speaker -->
+				<div class="col-md-4 col-sm-6">
+					<div class="speaker" data-toggle="modal" data-target="#speaker-modal-1">
+						<div class="speaker-img">
+							<img src="./images/speaker/speaker01.jpg" alt="">
+						</div>
+						<div class="speaker-body">
+							<div class="speaker-social">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-instagram"></i></a>
+								<a href="#"><i class="fa fa fa-linkedin"></i></a>
+							</div>
+							<div class="speaker-content">
+								<h2>John Doe</h2>
+								<span>Manager, CEO</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /speaker -->
+
+				<!-- speaker -->
+				<div class="col-md-4 col-sm-6">
+					<div class="speaker" data-toggle="modal" data-target="#speaker-modal-1">
+						<div class="speaker-img">
+							<img src="./images/speaker/speaker02.jpg" alt="">
+						</div>
+						<div class="speaker-body">
+							<div class="speaker-social">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-instagram"></i></a>
+								<a href="#"><i class="fa fa fa-linkedin"></i></a>
+							</div>
+							<div class="speaker-content">
+								<h2>John Doe</h2>
+								<span>Manager, CEO</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /speaker -->
+
+				<!-- speaker -->
+				<div class="col-md-4 col-sm-6">
+					<div class="speaker" data-toggle="modal" data-target="#speaker-modal-1">
+						<div class="speaker-img">
+							<img src="./images/speaker/speaker03.jpg" alt="">
+						</div>
+						<div class="speaker-body">
+							<div class="speaker-social">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-instagram"></i></a>
+								<a href="#"><i class="fa fa fa-linkedin"></i></a>
+							</div>
+							<div class="speaker-content">
+								<h2>John Doe</h2>
+								<span>Manager, CEO</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /speaker -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- speaker modal -->
+	<div id="speaker-modal-1" class="speaker-modal modal fade" style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<button type="button" class="speaker-modal-close" data-dismiss="modal"></button>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="speaker-modal-img">
+								<img src="./images/speaker/speaker-info.jpg" alt="">
+							</div>
+						</div>
+						<div class="col-md-7">
+							<div class="speaker-modal-content">
+								<h2 class="speaker-name">John Doe</h2>
+								<span class="speaker-job">- Manager, CEO</span>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+									veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+									commodo consequat. Duis aute
+									irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+									fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+									sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+								<div class="speaker-website">
+									<h4>Website</h4>
+									<a href="#">www.johndoe.com</a>
+								</div>
+
+								<div class="speaker-social">
+									<h4>Social Profile</h4>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+									<a href="#"><i class="fa fa fa-linkedin"></i></a>
+								</div>
+
+								<div class="speaker-events">
+									<h4>Sessions</h4>
+									<div class="speaker-event">
+										<span><strong>Day 1 -</strong> February 20, 2018 8 : 00 AM - 11 :
+											00 AM</span>
+										<p>His id altera fabellas facilisis. Has eros assueverit cu</p>
+									</div>
+
+									<div class="speaker-event">
+										<span><strong>Day 2 -</strong> February 20, 2018 8 : 00 AM - 11 :
+											00 AM</span>
+										<p>At mucius deserunt delicatissimi eam, labitur detraxit ut sit</p>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /speaker modal -->
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./css/bootstrap4/popper.js"></script>
+	<script type="text/javascript" src="./css/bootstrap4/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/parallax.min.js"></script>
+	<script type="text/javascript" src="./js/custom.js"></script>
+</body>
+
+</html>

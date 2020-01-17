@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css" />
+  <!--external css-->
+  <link rel="stylesheet" type="text/css" href="../lib/font-awesome/css/font-awesome.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/zabuto_calendar.css">
+  <link rel="stylesheet" type="text/css" href="../lib/gritter/css/jquery.gritter.css" />
+  <link rel="stylesheet" type="text/css" href="../lib/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="../lib/advanced-datatable/css/demo_page.css" />
+  <link rel="stylesheet" type="text/css" href="../lib/advanced-datatable/css/demo_table.css" />
+  <link rel="stylesheet" type="text/css" href="../lib/advanced-datatable/css/DT_bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="../css/admin.css" />
+  <link rel="stylesheet" type="text/css" href="../css/style-responsive.css">
+  <script src="../lib/chart-master/Chart.js"></script>
+  
+  <title>Admin Task</title>
+</head>
+
+<body>
+  <section id="container">
+    <header class="header black-bg">
+        <div class="sidebar-toggle-box">
+            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        </div>
+        <a href="index.html" class="logo"><b>Dash<span>Ecell</span></b></a>
+        <div class="nav notify-row" id="top_menu">
+        </div>
+        <div class="top-menu">
+            <ul class="nav pull-right top-menu">
+                <li><a class="logout" href="/admin/logout">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <aside>
+        <div id="sidebar" class="nav-collapse ">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li class="mt">
+                    <a class="active" href="/admin">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-desktop"></i>
+                        <span>Admin</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="/admin/participation">Participent List</a></li>
+                        <li><a href="/admin/query">Query Desk</a></li>
+                        <li><a href="/admin/task">Admin Task</a></li>
+                        <li><a href="/admin/contact">Contact Generation</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-desktop"></i>
+                        <span>Event</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="/admin/eventcreation">Event Creation</a></li>
+                        <li><a href="/admin/quizaddition">Quiz Addition</a></li>
+                        <li><a href="/admin/quizmanage">Quiz Manage</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-cogs"></i>
+                        <span>Quiz</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="/admin/addquestion">Add Question</a></li>
+                        <li><a href="/admin/questionlist">Question List</a></li>
+                        <li><a href="/admin/result">Result</a></li>
+                        <li><a href="/participant/quiz">quiz</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </aside>
+  <section id="main-content">
+    <section class="wrapper site-min-height">
+      <h4><i class="fa fa-angle-right"></i> Admin Task</h4>
+      <div class="row mt">
+        <div class="col-lg-7">
+          <div class="form-panel">
+            <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
+              <div class="form-group ">
+                <label for="firstname" class="control-label col-lg-2">Phone No or ESummit ID</label>
+                <div class="col-lg-10">
+                  <input class=" form-control" id="phoneno" name="phoneno" type="text">
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="lastname" class="control-label col-lg-2">Password_Hash</label>
+                <div class="col-lg-10">
+                  <input class=" form-control" id="passwordhash" name="passwordhash" type="text" disabled>
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="username" class="control-label col-lg-2">E-Summit ID</label>
+                <div class="col-lg-10">
+                  <input class="form-control " id="esummitid" name="esummitid" type="text" disabled>
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="password" class="control-label col-lg-2">Email</label>
+                <div class="col-lg-10">
+                  <input class="form-control " id="email" name="email" type="email">
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="confirm_password" class="control-label col-lg-2">Fullname
+                </label>
+                <div class="col-lg-10">
+                  <input class="form-control " id="fullname" name="fullname" type="text">
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="confirm_password" class="control-label col-lg-2">College
+                </label>
+                <div class="col-lg-10">
+                  <input class="form-control " id="college" name="college" type="text">
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="email" class="control-label col-lg-2">Univ Roll</label>
+                <div class="col-lg-10">
+                  <input class="form-control " id="univroll" name="univroll" type="text">
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="email" class="control-label col-lg-2">Year</label>
+                <div class="col-lg-10">
+                  <input class="form-control " id="year" name="year" type="text">
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="email" class="control-label col-lg-2">Branch</label>
+                <div class="col-lg-10">
+                  <input class="form-control " id="branch" name="branch" type="text">
+                </div>
+              </div>
+              <div class="form-group ">
+                <label for="email" class="control-label col-lg-2">caid</label>
+                <div class="col-lg-10">
+                  <input class="form-control " id="caid" name="caid" type="text">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-offset-5 col-lg-10">
+                  <button class="btn btn-theme04" type="reset">Reset</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="form-panel">
+            <table id="table" border="1" class="table table-striped">
+              <tr>
+                <th>EVENTS</th>
+                <th>REG</th>
+                <th>PAY</th>
+                <th>Team</th>
+                <th>Certi</th>
+              </tr>
+              <tr>
+                <% for(var i=0; i<docs.length; i++){%>
+                <td>
+                  <%=docs[i].eventName%>
+                </td>
+                <td><input type="checkbox" disabled name="hackathon" id="hackathon" value="<%=docs[i]._id%>"></input></td>
+                <td><input type="checkbox" disabled name="hackathon_pay" id="hackathon_pay" value="<%=docs[i]._id%>"></input></td>
+                <td><input type="button" data-toggle="modal" class="team btn btn-theme04" data-target="#team" event_id="<%=docs[i]._id%>"
+                    value="<%=docs[i].category%>"></input></td>
+              </tr>
+              <%}%>
+            </table>
+          </div>
+        </div>
+        <!-- /col-lg-12 -->
+      </div>
+    </section>
+  </section>
+  <div id="team" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Team Details</h4>
+          <p class="stat_team" style="color:red;"></p>
+        </div>
+        <div class="modal-body">
+          <div class="form-horizontal" action="" method="">
+            <div class="form-group col-lg-12">
+              <input type="text" id="event" name="event" class="form-control" readonly />
+            </div>
+            <div class="form-group col-lg-12">
+              <input type="text" name="mem1" id="mmb1" class="form-control" readonly placeholder="Your Esummit-Id" />
+            </div>
+            <div class="form-group col-lg-12">
+              <input type="text" name="mem2" id="mmb2" class="form-control" placeholder="Member One Esummit-Id" />
+            </div>
+            <div class="form-group col-lg-12">
+              <input type="text" name="mem3" id="mmb3" class="form-control" placeholder="Member Two Esummit-Id" />
+            </div>
+            <div class="form-group col-lg-12">
+              <input type="text" name="mem4" id="mmb4" class="form-control" placeholder="Member There Esummit-Id" />
+            </div>
+            <br>
+            <button type="button" id="event_submit" class="btn btn-theme04" name="Submit">Only Reg</button>
+            <button type="button" id="event_pay_team" class="btn btn-theme04" name="Submit">Pay Submit</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="text-center">
+      <p>
+        &copy; Copyrights <strong>Ecell KIET</strong>. All Rights Reserved
+      </p>
+      <a href="index.html#" class="go-top">
+        <i class="fa fa-angle-up"></i>
+      </a>
+    </div>
+  </footer>
+  </section>
+  
+  <script>
+    var phoneNo = document.querySelector('#phoneno');
+    phoneNo.addEventListener('keydown', (env) => {
+      if (env.keyCode === 9 || env.keyCode === 229) {
+        var no = phoneNo.value;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText)[0];
+            if (data) {
+              document.querySelector('#phoneno').value = data['phone_number'];
+              document.querySelector('#passwordhash').value = data['password_hash'];
+              document.querySelector('#esummitid').value = data['unique_user_id'];
+              document.querySelector('#email').value = data['email'];
+              document.querySelector('#fullname').value = data['full_name'];
+              document.querySelector('#college').value = data['college'];
+              document.querySelector('#univroll').value = data['univ_roll'];
+              document.querySelector('#year').value = data['year'];
+              document.querySelector('#branch').value = data['branch'];
+              document.querySelector('#caid').value = data['caid'];
+            } else {
+              alert("Participant Not Found !");
+            }
+            phoneNo.focus();
+          }
+        };
+        xhttp.open("POST", "/admin/getdata/" + no, true);
+        xhttp.send();
+      }
+    });
+    $(".reset").click(function () {
+      $("input").removeAttr("checked");
+    })
+    $(".team").click(function () {
+      var event_id = $(this).attr('event_id');
+      $("#event").val(event_id);
+      $("#mmb1").val($("#esummitid").val());
+      $("#mmb2").val("");
+      $("#mmb3").val("");
+      $("#mmb4").val("");
+      $(".stat_team").text("");
+
+      $.getJSON("team.php?esummit_id=" + $("#esummitid").val() + '&event_id=' + event_id,
+        function (data) {
+          $.each(data, function (i, item) {
+            if (item.value != null) {
+              item.field = "#" + item.field;
+              console.log(item);
+              $(item.field).val(item.value);
+            } else {
+              console.log(item.field);
+            }
+          });
+        });
+    });
+    $("#event_submit").click(function () {
+      $(".stat_team").text("Wait");
+      var event_id = $("#team").val();
+      var head_id = $('#esummitid').val();
+      events = ['', 'hackathon', 'b_plan', 'b_noesis', 'maestro', 'bid_it', 'dropout', 'startup_challenge',
+        'your_story_video', 'your_story_photo', 'art_of_conquest'
+      ];
+      $.getJSON('event_team_reg.php?event_id=' + event_id + '&mmb1=' + $("#mmb1").val() + '&mmb2=' + $("#mmb2").val() +
+        '&mmb3=' + $("#mmb3").val() + '&head_id=' + head_id,
+        function (data) {
+          console.log(data);
+          if (data.value == 'true') {
+            $(".stat_team").text("Team Reg Done");
+            $("#" + events[event_id]).attr("checked", "checked");
+
+          } else {
+            $(".stat_team").text("Failed, write it down");
+          }
+        });
+    });
+    $("#event_pay_team").click(function () {
+      $(".stat_team").text("Wait");
+      var event_id = $("#event").val();
+      var head_id = $('#unique_user_id').val();
+      events = ['', 'hackathon', 'b_plan', 'b_noesis', 'maestro', 'bid_it', 'dropout', 'startup_challenge',
+        'your_story_video', 'your_story_photo', 'art_of_conquest'
+      ];
+      $.getJSON('team_pay.php?event_id=' + event_id + '&mmb1=' + $("#mmb1").val() + '&mmb2=' + $("#mmb2").val() +
+        '&mmb3=' + $("#mmb3").val() + '&head_id=' + head_id,
+        function (data) {
+          console.log(data);
+          if (data.value == 'true') {
+            $(".stat_team").text("Team Payment Done");
+            $("#" + events[event_id]).attr("checked", "checked");
+            $("#" + events[event_id] + "_pay").attr("checked", "checked");
+
+          } else {
+            $(".stat_team").text("Payment Failed, write it down");
+          }
+        });
+    });
+  </script>
+  <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" class="include" src="../lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script type="text/javascript" src="../lib/jquery.scrollTo.min.js"></script>
+  <script type="text/javascript" src="../lib/jquery.nicescroll.js"></script>
+  <script type="text/javascript" src="../lib/jquery.sparkline.js"></script>
+  <!--common script for all pages-->
+  <script type="text/javascript" src="../lib/common-scripts.js"></script>
+  <script type="text/javascript" src="../lib/gritter/js/jquery.gritter.js"></script>
+  <script type="text/javascript" src="../lib/gritter-conf.js"></script>
+  <!--script for this page-->
+  <script type="text/javascript" src="../lib/sparkline-chart.js"></script>
+  <script type="text/javascript" src="../lib/zabuto_calendar.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="../lib/advanced-datatable/js/jquery.dataTables.js"></script>
+  <!--common script for all pages-->
+  <!-- for tabel -->
+  
+</body>
+
+</html>

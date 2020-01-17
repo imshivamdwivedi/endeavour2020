@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>The Conference</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- main css-->
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap4/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/main_styles.css">
+	<link rel="stylesheet" type="text/css" href="./css/responsive.css">
+	<!-- font-awesome -->
+	<link rel="stylesheet" type="text/css" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+	<!-- font-family -->
+	<link rel="stylesheet" type="text/css" href="./css/form.css">
+</head>
+
+<body>
+
+	<div class="super_container">
+		<!-- Menu -->
+		<div class="menu trans_500">
+			<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+				<div class="menu_close_container">
+					<div class="menu_close"></div>
+				</div>
+				<div class="logo menu_logo">
+					<a href="#">
+						<div class="logo_container d-flex flex-row align-items-start justify-content-start">
+							<div class="logo_image">
+								<div><img src="images/logo.png" alt=""></div>
+							</div>
+							<div class="logo_content">
+								<div class="logo_text logo_text_not_ie">E-Summit’19</div>
+								<div class="logo_sub">Februry 29, 2020 - KIET</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<ul>
+					<li class="menu_item"><a href="/">Home</a></li>
+					<li class="menu_item"><a href="/speaker">Speakers</a></li>
+					<li class="menu_item"><a href="/sponsors">Sponsors</a></li>
+					<li class="menu_item"><a href="/team">Team</a></li>
+					<li class="menu_item"><a href="/login">Login</a></li>
+					<li class="menu_item"><a href="/register">Register</a></li>
+				</ul>
+			</div>
+			<div class="menu_social">
+				<div class="menu_social_title">Follow uf on Social Media</div>
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Home -->
+
+		<div class="home" style="height:220px;">
+			<!-- Header -->
+			<header class="header" id="header">
+				<div>
+					<div class="header_top">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+										<div>
+											<a href="#">
+												<div class="logo_container d-flex flex-row align-items-start justify-content-start">
+													<div class="logo_image">
+														<div><img src="images/logo.png" alt=""></div>
+													</div>
+													<div class="logo_content">
+														<div id="logo_text" class="logo_text logo_text_not_ie">E-Summit’19</div>
+														<div class="logo_sub">March 23, 2019 - KIET</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="header_social ml-auto">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+											</ul>
+										</div>
+										<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="header_nav" id="header_nav_pin">
+						<div class="header_nav_inner">
+							<div class="header_nav_container">
+								<div class="container">
+									<div class="row">
+										<div class="col">
+											<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+												<nav class="main_nav">
+													<ul>
+														<li class="active"><a href="/">Home</a></li>
+														<li><a href="/speaker">Speakers</a></li>
+														<li><a href="/sponsors">Sponsors</a></li>
+														<li><a href="/team">Team</a></li>
+													</ul>
+												</nav>
+												<div class="header_extra ml-auto">
+													<div class="button header_button"><a href="/register">Register</a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		</div>
+	</div>
+	<div class="main-container">
+		<div class="container-login">
+			<div class="wrap-login">
+				<form action="/checkLogin" method="POST" class="login-form validate-form">
+					<span class="login-form-title">
+						Welcome
+					</span>
+					<span class="login-form-avatar">
+						<img src="./images/logo.png" alt="AVATAR">
+					</span>
+
+					<div class="wrap-input" style="margin:85px 0 35px 0; " data-validate="Enter username">
+						<input class="input" type="text" name="username">
+						<span class="focus-input" data-placeholder="Username"></span>
+					</div>
+
+					<div class="wrap-input" style="margin-bottom:50px;" data-validate="Enter password">
+						<input class="input" type="password" name="pass">
+						<span class="focus-input" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login-form-btn">
+						<input type="submit" value="Login" class="login-form-btn">
+					</div>
+
+					<ul class="login-more" style="padding-top:10px;">
+						<li>
+							<span class="low-light">
+								Forgot
+							</span>
+
+							<a href="" class="high-light">
+								Username / Password?
+							</a>
+						</li>
+
+						<li>
+							<span class="low-light">
+								Don’t have an account?
+							</span>
+
+							<a href="/register" class="high-light">
+								Sign up
+							</a>
+						</li>
+					</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./js/custom.js"></script>
+	<script src="./js/form.js"></script>
+</body>
+
+</html>

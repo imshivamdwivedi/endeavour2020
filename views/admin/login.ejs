@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>The Conference</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap4/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/form.css">
+</head>
+
+<body>
+	<div class="main-container">
+		<div class="container-login">
+			<div class="wrap-login">
+				<form class="login-form validate-form" action="/admin/checkLogin" method="POST">
+					<span class="login-form-avatar">
+						<img src="./images/logo.png" alt="AVATAR">
+					</span>
+
+					<div class="wrap-input" style="margin:85px 0 35px 0; " data-validate="Enter username">
+						<input class="input" type="text" name="username">
+						<span class="focus-input" data-placeholder="Username"></span>
+					</div>
+
+					<div class="wrap-input" style="margin-bottom:50px;" data-validate="Enter password">
+						<input class="input" type="password" name="pass">
+						<span class="focus-input" data-placeholder="Password"></span>
+					</div>			
+					<% if (data.validate === false){%>		
+						<p class="error">Username or Password Wrong</p>
+						<%}%>
+					<div class="container-login-form-btn">
+						<button class="login-form-btn">
+							Login
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+	window.onload = ()=>{
+		if (window.location.href.split('?')[1].split("=")[0] === 0) {
+			document.querySelector('.error').innerHTML = "Username or Password Wrong"
+		}
+	}
+	</script>
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<script src="./js/form.js"></script>
+</body>
+
+</html>
