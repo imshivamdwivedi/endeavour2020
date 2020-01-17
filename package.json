@@ -8,6 +8,7 @@
     "body-parser": "^1.18.3",
     "connect-mongodb-session": "^2.2.0",
     "connect-mongostore": "^0.1.4",
+    "cookie-parser": "^1.4.4",
     "ejs": "^2.7.4",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
@@ -18,7 +19,7 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "start": "forever ./server/server.js",
+    "start": "node ./server/server.js",
     "test": "mocha"
   },
   "repository": {

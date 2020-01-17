@@ -55,11 +55,7 @@ margin-left:-20px;
 					<li class="menu_item"><a href="/">Home</a></li>
 					<li class="menu_item"><a href="/speaker">Speakers</a></li>
 					<li class="menu_item"><a href="/sponsors">Sponsors</a></li>
-					<li class="menu_item"><a href="/team">Team</a></li>	
-					<% if(data.validate === false)  {%>				
-					<li class="menu_item"><a href="/login">Login</a></li>
-					<li class="menu_item"><a href="/register">Register</a></li>	
-					<%}%>			
+					<li class="menu_item"><a href="/team">Team</a></li>			
 				</ul>
 			</div>
 			<div class="menu_social">
@@ -126,16 +122,6 @@ margin-left:-20px;
 														<li><a href="/Team">Team</a></li>
 													</ul>
 												</nav>
-												<div class="header_extra ml-auto">
-													<!-- <div class="header_search"><i class="fa fa-search" aria-hidden="true"></i></div> -->
-													<% if(data.validate === false) {%>
-													<div class="button header_button"><a href="/login">Login</a></div>
-													<% } %>
-													<% if(data.validate === true) {%>
-													<i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
-													<div class="button header_button"><a href="/logout">Logout</a></div>
-													<% } %>
-												</div>
 											</div>
 										</div>
 									</div>
@@ -156,9 +142,6 @@ margin-left:-20px;
 								<div class="home_location">KIET Group of Institutions</div>
 								<!-- <div class="home_text">Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</div> -->
 								<div class="home_buttons">
-									<% if(data.validate === false){ %>
-									<div class="button home_button"><a href="/register">Register</a></div>
-									<%}%>
 								</div>
 							</div>
 						</div>

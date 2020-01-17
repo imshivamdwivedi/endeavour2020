@@ -19,13 +19,21 @@ const path = require('path');
 var Event = require('./modles/event');
 var User = require('./modles/user');
 var session = require('express-session');
-var MongoDBStore = require('connect-mongodb-session')(session);
+const MongoDBStore = require('connect-mongodb-session')(session);
+const cookieParser = require('cookie-parser')
 //route in use
 const admin = require('../routes/admin');
 const quiz = require('../routes/quiz');
 const event = require('../routes/event');
 const main = require('../routes/default');
 const participant = require('../routes/participant');
+
+
+const store = new MongoDBStore({
+  url: uri,
+  ttl: 3*60*1000,
+  collection: "session"
+});
 
 // app created
 var app = express();
@@ -36,26 +44,30 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+app.use(cookieParser());
+//app.use(cookieSession());
 app.use( 
     session ({
      secret: "53cr3t50m3th1ng",
      resave: false,
-     saveUninitialized: true,
+     saveUninitialized: false,
+     store: store,
      cookie: {
-        maxAge: 1000 *3*60 // 1 week
-      },
-     store: new MongoDBStore({
-       url: uri
-     })
+        maxAge: 3*60*1000
+     }
    })
 );
+app.use(function(req, res, next) {
+    res.locals.userid=req.session.userid;
+    next();
+  })
 app.use('/', main);
 app.use('/admin', admin);
 app.use('/admin', quiz);
 app.use('/admin', event);
 app.use('/participant', participant);
 
-const port = process.env.PORT ||80;
+const port = process.env.PORT ||3000;
 app.listen(port, () => {
     console.log('Server connected with port : ' + port);
 });

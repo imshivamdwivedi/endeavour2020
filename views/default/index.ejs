@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 
 <head>
+
 	<title>E-Summit’20</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Event -->
@@ -21,16 +22,16 @@
 	<link rel="stylesheet" type="text/css" href="./font-awesome-4.7.0/css/font-awesome.min.css">
 	<!-- font-family -->
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800">
+	
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<style>
+		html{
+			overflow-x:hidden;
+			overflow-y:scroll;
+			width:100%;
+		}
+	</style>
 </head>
-<style>
-	html{
-		overflow-x:hidden;
-		overflow-y:scroll;
-		width:100%;
-	}
-</style>
-
 <body>
 	<div class="super_container">
 
@@ -59,11 +60,13 @@
 					<li class="menu_item"><a href="/speaker">Speakers</a></li>
 					<li class="menu_item"><a href="/sponsors">Sponsors</a></li>
 					<li class="menu_item"><a href="/Team">Team</a></li>
-					<% if(data.validate ===false) {%>
+					<% if(x) {%>
+
+						<li class="menu_item"><a href="/logout">Logout</a></li>
+					
+					<%} else { %>
 					<li class="menu_item"><a href="/login">Login</a></li>
 					<li class="menu_item"><a href="/register">Register</a></li>
-					<%} else { %>
-						<li class="menu_item"><a href="/logout">Logout</a></li>
 					<%}%>
 				</ul>
 			</div>
@@ -135,11 +138,12 @@
 												</nav>
 												<div class="header_extra ml-auto"></div>
 													<!-- <div class="header_search"><i class="fa fa-search" aria-hidden="true"></i></div> -->
-													<% if(data.validate === false) {%>
-													<div class="button header_button"><a href="/login">Login</a></div>
+													<% if(x) {%>
+														<p><%=xs%></p>
+														<div class="button header_button"><a href="/logout">Logout</a></div>		
+													
 													<% } else {%>
-													<i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
-													   <div class="button header_button"><a href="/logout">Logout</a></div>
+														<div class="button header_button"><a href="/login">Login</a></div>
 													<% } %>
 												</div>
 											</div>
@@ -176,7 +180,7 @@
 								<div class="home_location">KIET Group of Institutions</div>
 								<!-- <div class="home_text">Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</div> -->
 								<div class="home_buttons">
-									<% if(data.validate === false){ %>
+									<% if(!x){ %>
 									<div class="button home_button"><a href="/register">Register</a></div>
 									<%}%>
 								</div>

@@ -2,18 +2,17 @@ const express = require('express');
 const route = express.Router();
 const nodemailer = require('nodemailer');
 var User = require('../server/modles/user');
-var data = {
-    validate: false
-};
 
 
-route.get('/', (req, res) => {
-    res.render('default/index', {
-        data
-    });
+
+route.get('/',(req, res) => {
+    res.render('default/index',{
+    x:req.session.userid});
 });
 route.get('/login', async (req, res) => {
-    res.render('default/login');
+    res.render('default/login',{
+      x:req.session.userid
+    });
 });
 route.get('/sponsors', async (req, res) => {
     res.render('default/sponsors');
@@ -24,6 +23,7 @@ route.get('/team', async (req, res) => {
 route.get('/register', (req, res) => {
     res.render('default/registration');
 });
+
 route.post('/checkLogin', async (req, res) => {
     try {
         detail = await User.find({
@@ -33,15 +33,13 @@ route.post('/checkLogin', async (req, res) => {
         if (detail.length > 0) {
             req.session.status = detail[0].status;
             req.session.userid = detail[0].unique_user_id;
-            req.session.validate = true;
-            data.validate = req.session.validate;
-            res.render('default/index', {
-                data
+            res.render('default/index',{
+                x:req.session.userid
             });
-        } else {
-            req.session.validate = false;
-            data.validate = req.session.validate;
-            res.redirect('/login');
+
+        }
+        else{
+            res.render('default/login');
         }
     } catch (e) {
         console.log('Error :- ', e);
@@ -49,9 +47,7 @@ route.post('/checkLogin', async (req, res) => {
 });
 
 route.get('/speaker', (req, res) => {
-    res.render('default/speaker',{
-        data
-    });
+    res.render('default/speaker');
 });
 route.post('/adduser',async (req, res) => {
 
@@ -82,9 +78,9 @@ route.post('/adduser',async (req, res) => {
     var user = await User(data);
     // if(user.save()){
         await user.save();
-    var data = {
-        validate: true
-    };
+        req.session.userid="ENDVR20"+req.body['mobilenumber'];
+        
+         // req.app.locals.userid = "ENDVR20"+req.body['mobilenumber']
    try{ 
     var emailMessage = 'Hi' +req.body['name']+' thank you for Registration. Your Endeavour id is '+ "ENDVR20"+req.body['mobilenumber'];
 
@@ -106,9 +102,7 @@ route.post('/adduser',async (req, res) => {
         if (err) {
           console.log(err);
         } else {
-            res.render('default/index', {
-                data
-            });
+            res.render('default/index',{x:req.session.userid});
         }
       });
     }  catch(e){
@@ -120,9 +114,16 @@ route.post('/adduser',async (req, res) => {
 
 
 route.get('/logout', (req, res) => {
-    req.session.validate = false;
-    data.validate = req.session.validate;
-    res.redirect('/login');
+    delete req.session.id;
+     req.session.userid=null;
+    req.session.destroy((err) => {
+        if(err) {
+            return console.log(err);
+        }
+        res.render('default/index',{
+            x:null
+        });
+    });
 });
 
 module.exports = route;
