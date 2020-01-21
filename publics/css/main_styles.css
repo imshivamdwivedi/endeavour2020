@@ -255,8 +255,9 @@ section
 	position: relative;
 	line-height: 52px;
 	font-size: 14px;
-	opacity: 0.8;
+/*	opacity: 0.8;
 	background-color: #701f48;
+	*/
 	font-weight: 500;
 	color: #FFFFFF;
 	z-index: 1;
