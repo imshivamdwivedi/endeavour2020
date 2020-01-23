@@ -51,7 +51,8 @@ var user = mongoose.Schema({
     },
     year: {
         type: Number,
-        max: 5,
+        min:1,
+        max: 8,
         required: true
     },
     branch: {

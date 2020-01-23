@@ -12,14 +12,16 @@
     "ejs": "^2.7.4",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
+    "forever": "^2.0.0",
     "mongoose": "^5.8.7",
-    "nodemailer": "^6.4.2"
+    "nodemailer": "^6.4.2",
+    "nodemon": "^2.0.2"
   },
   "devDependencies": {
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "start": "node ./server/server.js",
+    "start": "forever ./server/server.js",
     "test": "mocha"
   },
   "repository": {
