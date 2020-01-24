@@ -2,7 +2,7 @@ const express = require('express');
 const route = express.Router();
 const nodemailer = require('nodemailer');
 var User = require('../server/modles/user');
-
+const bcrypt = require('bcrypt');
 
 
 route.get('/',(req, res) => {
@@ -23,7 +23,9 @@ route.get('/team', async (req, res) => {
 route.get('/register', (req, res) => {
     res.render('default/registration');
 });
-
+route.get('/checkLogin', (req, res) => {
+    res.render('default/index');
+});
 route.post('/checkLogin', async (req, res) => {
     try {
         detail = await User.find({
@@ -65,7 +67,7 @@ route.post('/adduser',async (req, res) => {
         "unique_user_id": "ENDVR20" + req.body['mobilenumber'],
         "username": req.body['email'],
         "auth_key": "C10wH9RV1IIh96t9a3Z_110lb9DEzhLS",
-        "password_hash": req.body['pass'],
+        "password_hash":req.body['pass'],
         "email": req.body['email'],
         "full_name": req.body['name'],
         "phone_number": req.body['mobilenumber'],
@@ -82,22 +84,21 @@ route.post('/adduser',async (req, res) => {
         
          // req.app.locals.userid = "ENDVR20"+req.body['mobilenumber']
    try{ 
-    var emailMessage = 'Hi' +req.body['name']+' thank you for Registration. Your Endeavour id is '+ "ENDVR20"+req.body['mobilenumber'];
-
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-          user: 'shivam.1721it1085@kiet.edu',
-          pass: 'Shivam123Dwivedi'
+          user: 'ecell@kiet.edu',
+          pass: 'wecando_it'
         }
       });
 
       var emailOptions = {
-        from: 'Shivam Dwivedi <shivam.1721it1085@kiet.edu>',
+        from: 'Endeavour-20 <ecell@kiet.edu>',
         to: req.body['email'],
         subject: 'Registeration',
-        text: emailMessage
-      };
+        html: '<b>Greetings for the day!</b>'+ req.body['name'] +'<p>Congratulations for successfully registering with the Endeavour-20 and now you are requested to pen down the generated Endeavour id -' +' ENDVR20'+req.body['mobilenumber']+' as it will act as your Identity number on the day of the event. We have brought to you with a variety of events and you may choose according to your interests.<br><br>As you know we team e-Cell is preparing for the most-awaited and astonishing annual fest Endeavour-20 which is to be organised on 29th and 1st March 2020 and we wish you to kindly coordinate with the registration process and for any query contact :<br>Harsh Mishra( 86016 13337)<br>Shivam Dwivedi( 90589 33387)<br>Regards,<br>Team e-Cell </p>'
+
+       };
       transporter.sendMail(emailOptions, (err, info) => {
         if (err) {
           console.log(err);
