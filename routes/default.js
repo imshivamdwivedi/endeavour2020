@@ -24,7 +24,9 @@ route.get('/register', (req, res) => {
     res.render('default/registration');
 });
 route.get('/checkLogin', (req, res) => {
-    res.render('default/index');
+    res.render('default/index',{
+        x:req.session.userid
+    });
 });
 route.post('/checkLogin', async (req, res) => {
     try {
@@ -36,7 +38,8 @@ route.post('/checkLogin', async (req, res) => {
             req.session.status = detail[0].status;
             req.session.userid = detail[0].unique_user_id;
             res.render('default/index',{
-                x:req.session.userid
+                x:req.session.userid,
+                y:detail[0].full_name
             });
 
         }
@@ -103,7 +106,7 @@ route.post('/adduser',async (req, res) => {
         if (err) {
           console.log(err);
         } else {
-            res.render('default/index',{x:req.session.userid});
+            res.render('default/index',{x:req.session.userid,y:req.body['name']});
         }
       });
     }  catch(e){
