@@ -12,6 +12,8 @@ body
 {
 	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
+	background: linear-gradient(90deg,#fff 20px, transparent 1%) center, linear-gradient(#fff 20px, transparent 1%) center, #349ae8;
+	background-size: 22px 22px;
 	font-weight: 400;
 	background: #FFFFFF;
 	color: #a5a5a5;

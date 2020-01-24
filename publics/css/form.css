@@ -207,7 +207,7 @@ button:hover {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  background: #8000B7;
+  background: #9c3a6b;
 }
 
 .focus-input::after {
@@ -322,7 +322,7 @@ button:hover {
   pointer-events: none;
 
   font-family: Poppins-Regular;
-  color: #8000B7;
+  color: #9c3a6b;
   font-size: 13px;
   line-height: 1.4;
   text-align: left;
@@ -340,7 +340,7 @@ button:hover {
   content: "\f06a";
   font-family: FontAwesome;
   font-size: 16px;
-  color: #8000B7;
+  color: #9c3a6b;
 
   display: block;
   position: absolute;

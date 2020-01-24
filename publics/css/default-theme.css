@@ -52,13 +52,13 @@
 
 .mu-social-media a:hover,
 .mu-social-media a:focus {
-	border: 1px solid #8000B7;
-	color: #8000B7;
+	border: 1px solid #9c3a6b;
+	color: #9c3a6b;
 }
 
 .mu-contact-form .form-control:focus,
 .mu-schedule-menu li a {
-	border: 1px solid #8000B7;    
+	border: 1px solid #9c3a6b;    
 } 
 
 .mu-send-msg-btn,
@@ -71,12 +71,12 @@
 }
 
 .mu-faq-content .panel-default > .panel-heading + .panel-collapse > .panel-body {
-	border-top-color: #8000B7;
+	border-top-color: #9c3a6b;
 
 }
 
 .mu-reg-submit-btn:hover,
 .mu-reg-submit-btn:focus {
-	background-color: #8000B7;
-	border: 2px solid #8000B7;
+	background-color: #9c3a6b;
+	border: 2px solid #9c3a6b;
 }
