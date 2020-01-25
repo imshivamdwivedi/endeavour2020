@@ -2,16 +2,19 @@ const express = require('express');
 const route = express.Router();
 const nodemailer = require('nodemailer');
 var User = require('../server/modles/user');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 
 
 route.get('/',(req, res) => {
     res.render('default/index',{
-    x:req.session.userid});
+        x:req.session.userid,
+y:req.session.name
+    });
 });
 route.get('/login', async (req, res) => {
     res.render('default/login',{
-      x:req.session.userid
+        x:req.session.userid,
+        y:req.session.full_name
     });
 });
 route.get('/sponsors', async (req, res) => {
@@ -25,7 +28,14 @@ route.get('/register', (req, res) => {
 });
 route.get('/checkLogin', (req, res) => {
     res.render('default/index',{
-        x:req.session.userid
+        x:req.session.userid,
+        y:req.session.name
+    });
+});
+route.get('/adduser', (req, res) => {
+    res.render('default/index',{
+        x:req.session.userid,
+        y:req.session.name
     });
 });
 route.post('/checkLogin', async (req, res) => {
@@ -37,9 +47,10 @@ route.post('/checkLogin', async (req, res) => {
         if (detail.length > 0) {
             req.session.status = detail[0].status;
             req.session.userid = detail[0].unique_user_id;
+            req.session.name = detail[0].full_name;
             res.render('default/index',{
                 x:req.session.userid,
-                y:detail[0].full_name
+                y:req.session.name
             });
 
         }
@@ -84,7 +95,7 @@ route.post('/adduser',async (req, res) => {
     // if(user.save()){
         await user.save();
         req.session.userid="ENDVR20"+req.body['mobilenumber'];
-        
+        req.session.name=req.body['name'];
          // req.app.locals.userid = "ENDVR20"+req.body['mobilenumber']
    try{ 
     var transporter = nodemailer.createTransport({
@@ -99,7 +110,7 @@ route.post('/adduser',async (req, res) => {
         from: 'Endeavour-20 <ecell@kiet.edu>',
         to: req.body['email'],
         subject: 'Registeration',
-        html: '<b>Greetings for the day!</b> '+ req.body['name'] +'<p>Congratulations for successfully registering with the Endeavour-20 and now you are requested to pen down the generated Endeavour id -' +'ENDVR20'+req.body['mobilenumber']+' as it will act as your identity number on the day of the event. We have brought to you with a variety of events and you may choose according to your interests.<br><br>As you know we team e-Cell is preparing for the most-awaited and astonishing annual fest Endeavour-20 which is to be organised on 29th and 1st March 2020 and we wish you to kindly coordinate with the registration process and for any query contact :<br><br>Harsh Mishra(8601613337)<br>Shivam Dwivedi(9058933387)<br><br>Regards,<br>Team e-Cell </p>'
+        html: '<b>Greetings for the day! '+ req.body['name'] +'</b><p>Congratulations for successfully registering with the Endeavour-20 and now you are requested to pen down the generated Endeavour id -<b>' +'ENDVR20'+req.body['mobilenumber']+'</b> as it will act as your identity number on the day of the event. We have brought to you with a variety of events and you may choose according to your interests.<br><br>As you know we team e-Cell is preparing for the most-awaited and astonishing annual fest Endeavour-20 which is to be organised on 29th and 1st March 2020 and we wish you to kindly coordinate with the registration process and for any query contact :<br><br>Harsh Mishra(8601613337)<br>Shivam Dwivedi(9058933387)<br><br>Regards,<br>Team e-Cell </p>'
 
        };
       transporter.sendMail(emailOptions, (err, info) => {
@@ -118,14 +129,17 @@ route.post('/adduser',async (req, res) => {
 
 
 route.get('/logout', (req, res) => {
-    delete req.session.id;
-     req.session.userid=null;
+    delete req.session.userid;
+delete req.session.name;
+req.session.userid=null;
+req.session.name=null;
     req.session.destroy((err) => {
         if(err) {
             return console.log(err);
         }
         res.render('default/index',{
-            x:null
+            x:null,
+            y:null
         });
     });
 });
