@@ -109,7 +109,7 @@ route.post('/adduser',async (req, res) => {
       var emailOptions = {
         from: 'Endeavour-20 <ecell@kiet.edu>',
         to: req.body['email'],
-        subject: 'Registeration',
+        subject: 'Registration',
         html: '<b>Greetings for the day! '+ req.body['name'] +'</b><p>Congratulations for successfully registering with the Endeavour-20 and now you are requested to pen down the generated Endeavour id -<b>' +'ENDVR20'+req.body['mobilenumber']+'</b> as it will act as your identity number on the day of the event. We have brought to you with a variety of events and you may choose according to your interests.<br><br>As you know we team e-Cell is preparing for the most-awaited and astonishing annual fest Endeavour-20 which is to be organised on 29th and 1st March 2020 and we wish you to kindly coordinate with the registration process and for any query contact :<br><br>Harsh Mishra(8601613337)<br>Shivam Dwivedi(9058933387)<br><br>Regards,<br>Team e-Cell </p>'
 
        };
