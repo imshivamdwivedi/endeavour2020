@@ -1,792 +1,938 @@
 
 <html>
 
-<head>
-
-	<title>E-Summit’20</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Event -->
-	<link rel="stylesheet" type="text/css" href="./css/core-style.css">
-	<link rel="stylesheet" type="text/css" href="./css/event.css">
-	<!-- cardio -->
-	<link rel="stylesheet" type="text/css" href="./css/cardio.css">
-	<!-- main css-->
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap4/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/default-theme.css">
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/main_styles.css">
-	<link rel="stylesheet" type="text/css" href="./css/responsive.css">
-	<link rel="stylesheet" type="text/css" href="./css/slick.css">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
-	<!-- font-awesome -->
-	<link rel="stylesheet" type="text/css" href="./font-awesome-4.7.0/css/font-awesome.min.css">
-	<!-- font-family -->
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800">
+	<head>
 	
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
-	<style>
-		html{
-			overflow-x:hidden;
-			overflow-y:scroll;
-			width:100%;
-		}
-	</style>
-</head>
-<body>
-	<div class="super_container">
-
-		<!-- Menu -->
-
-		<div class="menu trans_500">
-			<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-				<div class="menu_close_container">
-					<div class="menu_close"></div>
-				</div>
-				<div class="logo menu_logo">
-					<a href="#">
-						<div class="logo_container d-flex flex-row align-items-start justify-content-start">
-							<div class="logo_image">
-								<div><img src="images/logo.png" alt=""></div>
-							</div>
-							<div class="logo_content">
-								<div class="logo_text logo_text_not_ie">E-Summit’20</div>
-								<div class="logo_sub">Breakthrough To Excellence</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<ul>
-					<li class="menu_item"><a href="/">Home</a></li>
-					<li class="menu_item"><a href="#">Speakers</a></li>
-					<li class="menu_item"><a href="#">Sponsors</a></li>
-					<li class="menu_item"><a href="/Team">Team</a></li>
-					<% if(x) {%>
-
-						<button data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user-circle fa-2x"></i></button>
-														
-														
-														 <!--Profile Modal--> 
-														<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-															<div class="modal-dialog" role="document">
-															  <div class="modal-content">
-																<div class="modal-header">
-																  <h5 class="modal-title" id="exampleModalLabel"><%=x%></h5>
-																  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-																	<span aria-hidden="true">&times;</span>
-																  </button>
-																</div>
-																<div class="modal-body">
-																  <p>Welcome! <%=y%></p>
-																</div>
-																<div class="modal-footer">
-															<a class="btn btn-primary" href="/logout" role="button">Logout</a>
-																  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-																</div>
-															  </div>
-															</div>
-														  </div>	
-					
-					<%} else { %>
-					<li class="menu_item"><a href="/login" style="background-color: #701f48;">Login</a></li>
-					<li class="menu_item"><a href="/register">Register</a></li>
-					<%}%>
-				</ul>
-			</div>
-			<div class="menu_social">
-				<div class="menu_social_title">Follow us on Social Media</div>
-				<ul>
-					<li><a href="https://www.facebook.com/endeavourkiet/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="https://www.instagram.com/endeavour__2020/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					<li><a href="https://twitter.com/ecellkiet"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/e-cell-kiet/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-				</ul>
-			</div>
-		</div>
-
-		<!-- Home -->
-
-		<div class="home">
-			<!-- <div class="home_background" style="background-image: url(images/index.jpg)"></div> -->
-			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/crowd.jpg" data-speed="0.8"></div>
-
-			<!-- Header -->
-
-			<header class="header" id="header">
-				<div>
-					<div class="header_top">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
-										<div>
-											<a href="#">
-												<div class="logo_container d-flex flex-row align-items-start justify-content-start">
-													<div class="logo_image">
-														<div><img src="images/logo.png" alt=""></div>
-													</div>
-													<div class="logo_content">
-														<div id="logo_text" class="logo_text logo_text_not_ie">E-Summit’20</div>
-														<div class="logo_sub">Breakthrough To Excellence</div>
-													</div>
-												</div>
-											</a>
-										</div>
-										<div class="header_social ml-auto">
-											<ul>
-												<li><a href="https://www.facebook.com/endeavourkiet/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-												<li><a href="https://www.instagram.com/endeavour__2020/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-												<li><a href="https://twitter.com/ecellkiet"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-												<li><a href="https://www.linkedin.com/in/e-cell-kiet/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-											</ul>
-										</div>
-										<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-									</div>
-								</div>
-							</div>
-						</div>
+		<title>E-Summit’20</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Event -->
+		<link rel="stylesheet" type="text/css" href="./css/core-style.css">
+		<link rel="stylesheet" type="text/css" href="./css/event.css">
+		<!-- cardio -->
+		<link rel="stylesheet" type="text/css" href="./css/cardio.css">
+		<!-- main css-->
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap4/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/default-theme.css">
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/main_styles.css">
+		<link rel="stylesheet" type="text/css" href="./css/responsive.css">
+		<link rel="stylesheet" type="text/css" href="./css/slick.css">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<!-- font-awesome -->
+		<link rel="stylesheet" type="text/css" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+		<!-- font-family -->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800">
+		
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
+		<style>
+			html{
+				overflow-x:hidden;
+				overflow-y:scroll;
+				width:100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="super_container">
+	
+			<!-- Menu -->
+	
+			<div class="menu trans_500">
+				<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+					<div class="menu_close_container">
+						<div class="menu_close"></div>
 					</div>
-					<div class="header_nav" id="header_nav_pin">
-						<div class="header_nav_inner">
-							<div class="header_nav_container">
-								<div class="container">
-									<div class="row">
-										<div class="col">
-											<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
-												<nav class="main_nav">
-													<ul>
-														<li class="active"><a href="/">Home</a></li>
-														<li><a href="#">Speakers</a></li>
-														<li><a href="#">Sponsors</a></li>
-														<li><a href="/Team">Team</a></li>
-													</ul>
-												</nav>
-												<div class="header_extra ml-auto"></div>
-													<!-- <div class="header_search"><i class="fa fa-search" aria-hidden="true"></i></div> -->
-													<% if(x) {%>
-													 <!-- Button trigger modal -->
-													 <!-- Button trigger modal -->
-<!-- Button trigger modal -->
-<button type="button" class="fa fa-user fa-2x" data-toggle="modal" data-target="#exampleModalCenter">
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-	  <div class="modal-content">
-		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalLongTitle"><%=x%></h5>
-		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-		<div class="modal-body">
-		  <p>Welcome! <%=y%></p>
-		</div>
-		<div class="modal-footer">
-			<a class="btn btn-success" href="/logout">Logout</a>
-		  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-		</div>
-	  </div>
-	</div>
-  </div>
-
-
-													
-													<% } else {%>
-														<div class="button header_button"><a href="/login">Login</a></div>
-													<% } %>
-												</div>
-											</div>
-										</div>
-									</div>
+					<div class="logo menu_logo">
+						<a href="#">
+							<div class="logo_container d-flex flex-row align-items-start justify-content-start">
+								<div class="logo_image">
+									<div><img src="images/logo.png" alt=""></div>
+								</div>
+								<div class="logo_content">
+									<div class="logo_text logo_text_not_ie">E-Summit’20</div>
+									<div class="logo_sub">Breakthrough To Excellence</div>
 								</div>
 							</div>
-							<!-- <div class="search_container"> -->
-							<!-- <div class="container">
+						</a>
+					</div>
+					<ul>
+						<li class="menu_item"><a href="/">Home</a></li>
+						<li class="menu_item"><a href="#">Speakers</a></li>
+						<li class="menu_item"><a href="#">Sponsors</a></li>
+						<li class="menu_item"><a href="/Team">Team</a></li>
+						<% if(x) {%>
+	
+							<button data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user-circle fa-2x"></i></button>
+															
+															
+															 <!--Profile Modal--> 
+															<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+																<div class="modal-dialog" role="document">
+																  <div class="modal-content">
+																	<div class="modal-header">
+																	  <h5 class="modal-title" id="exampleModalLabel"><%=x%></h5>
+																	  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																	  </button>
+																	</div>
+																	<div class="modal-body">
+																	  <p>Welcome! <%=y%></p>
+																	</div>
+																	<div class="modal-footer">
+																<a class="btn btn-primary" href="/logout" role="button">Logout</a>
+																	  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+																	</div>
+																  </div>
+																</div>
+															  </div>	
+						
+						<%} else { %>
+						<li class="menu_item"><a href="/login" style="background-color: #701f48;">Login</a></li>
+						<li class="menu_item"><a href="/register">Register</a></li>
+						<%}%>
+					</ul>
+				</div>
+				<div class="menu_social">
+					<div class="menu_social_title">Follow us on Social Media</div>
+					<ul>
+						<li><a href="https://www.facebook.com/endeavourkiet/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.instagram.com/endeavour__2020/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li><a href="https://twitter.com/ecellkiet"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/e-cell-kiet/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div>
+	
+			<!-- Home -->
+	
+			<div class="home">
+				<!-- <div class="home_background" style="background-image: url(images/index.jpg)"></div> -->
+				<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/crowd.jpg" data-speed="0.8"></div>
+	
+				<!-- Header -->
+	
+				<header class="header" id="header">
+					<div>
+						<div class="header_top">
+							<div class="container">
 								<div class="row">
 									<div class="col">
-										<div class="search_content d-flex flex-row align-items-center justify-content-end">
-											<form action="#" id="search_container_form" class="search_container_form">
-												<input type="text" class="search_container_input" placeholder="Search" required="required">
-												<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-											</form>
+										<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+											<div>
+												<a href="#">
+													<div class="logo_container d-flex flex-row align-items-start justify-content-start">
+														<div class="logo_image">
+															<div><img src="images/logo.png" alt=""></div>
+														</div>
+														<div class="logo_content">
+															<div id="logo_text" class="logo_text logo_text_not_ie">E-Summit’20</div>
+															<div class="logo_sub">Breakthrough To Excellence</div>
+														</div>
+													</div>
+												</a>
+											</div>
+											<div class="header_social ml-auto">
+												<ul>
+													<li><a href="https://www.facebook.com/endeavourkiet/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+													<li><a href="https://www.instagram.com/endeavour__2020/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+													<li><a href="https://twitter.com/ecellkiet"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+													<li><a href="https://www.linkedin.com/in/e-cell-kiet/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+												</ul>
+											</div>
+											<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 										</div>
 									</div>
 								</div>
-							</div> -->
-							<!-- </div> -->
+							</div>
+						</div>
+						<div class="header_nav" id="header_nav_pin">
+							<div class="header_nav_inner">
+								<div class="header_nav_container">
+									<div class="container">
+										<div class="row">
+											<div class="col">
+												<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+													<nav class="main_nav">
+														<ul>
+															<li class="active"><a href="/">Home</a></li>
+															<li><a href="#">Speakers</a></li>
+															<li><a href="#">Sponsors</a></li>
+															<li><a href="/Team">Team</a></li>
+														</ul>
+													</nav>
+													<div class="header_extra ml-auto"></div>
+														<!-- <div class="header_search"><i class="fa fa-search" aria-hidden="true"></i></div> -->
+														<% if(x) {%>
+														 <!-- Button trigger modal -->
+														 <!-- Button trigger modal -->
+	<!-- Button trigger modal -->
+	<button type="button" class="fa fa-user fa-2x" data-toggle="modal" data-target="#exampleModalCenter">
+	  </button>
+	  
+	  <!-- Modal -->
+	  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="exampleModalLongTitle"><%=x%></h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  <p>Welcome! <%=y%></p>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-success" href="/logout">Logout</a>
+			  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	
+	
+														
+														<% } else {%>
+															<div class="button header_button"><a href="/login">Login</a></div>
+														<% } %>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="search_container"> -->
+								<!-- <div class="container">
+									<div class="row">
+										<div class="col">
+											<div class="search_content d-flex flex-row align-items-center justify-content-end">
+												<form action="#" id="search_container_form" class="search_container_form">
+													<input type="text" class="search_container_input" placeholder="Search" required="required">
+													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div> -->
+								<!-- </div> -->
+							</div>
 						</div>
 					</div>
-				</div>
-			</header>
-
-			<div class="home_content_container">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="home_content">
-								<div class="home_date">Februrary 29, 2020</div>
-								<div class="home_title">E-summit 2020</div>
-								<div class="home_location">KIET Group of Institutions</div>
-								<!-- <div class="home_text">Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</div> -->
-								<div class="home_buttons">
-									<% if(!x){ %>
-									<div class="button home_button"><a href="/register">Register</a></div>
-									<%}%>
+				</header>
+	
+				<div class="home_content_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="home_content">
+									<div class="home_date">Februrary 29, 2020</div>
+									<div class="home_title">E-summit 2020</div>
+									<div class="home_location">KIET Group of Institutions</div>
+									<!-- <div class="home_text">Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</div> -->
+									<div class="home_buttons">
+										<% if(!x){ %>
+										<div class="button home_button"><a href="/register">Register</a></div>
+										<%}%>
+									</div>
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+	
+		</div>
+		<main role="main">
+			<!-- Start Speakers -->
+			<section id="mu-speakers">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="mu-speakers-area">
+								<div class="mu-title-area">
+									<h2 class="mu-title">Our Speakers</h2>
+								</div>
+								<!-- Start Speakers Content -->
+								<div class="mu-speakers-content">
+									<div class="mu-speakers-slider">
+	
+										<!-- Start single speaker -->
+										<div class="mu-single-speakers">
+											<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
+											<div class="mu-single-speakers-info">
+												<h3>Speaker One</h3>
+												
+												<ul class="mu-single-speakers-social">
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- End single speaker -->
+	
+										<!-- Start single speaker -->
+										<div class="mu-single-speakers">
+											<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
+											<div class="mu-single-speakers-info">
+												<h3>Speaker Two</h3>
+												
+												<ul class="mu-single-speakers-social">
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- End single speaker -->
+	
+	
+										<!-- Start single speaker -->
+										<div class="mu-single-speakers">
+											<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
+											<div class="mu-single-speakers-info">
+												<h3>Speaker Three</h3>
+												
+												<ul class="mu-single-speakers-social">
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- End single speaker -->
+	
+	
+										<!-- Start single speaker -->
+										<div class="mu-single-speakers">
+											<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
+											<div class="mu-single-speakers-info">
+												<h3>Speaker Four</h3>
+												
+												<ul class="mu-single-speakers-social">
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- End single speaker -->
+	
+										<!-- Start single speaker -->
+										<div class="mu-single-speakers">
+											<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
+											<div class="mu-single-speakers-info">
+												<h3>Speaker Five</h3>
+												
+												<ul class="mu-single-speakers-social">
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- End single speaker -->
+	
+										<!-- Start single speaker -->
+										<div class="mu-single-speakers">
+											<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
+											<div class="mu-single-speakers-info">
+												<h3>Speaker Six</h3>
+												
+												<ul class="mu-single-speakers-social">
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- End single speaker -->
+	
+	
+										<!-- Start single speaker -->
+										<div class="mu-single-speakers">
+											<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
+											<div class="mu-single-speakers-info">
+												<h3>Speaker Seven</h3>
+											
+												<ul class="mu-single-speakers-social">
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- End single speaker -->
+	
+	
+										<!-- Start single speaker -->
+										<div class="mu-single-speakers">
+											<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
+											<div class="mu-single-speakers-info">
+												<h3>Speaker Eight</h3>
+												
+												<ul class="mu-single-speakers-social">
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- End single speaker -->
+									</div>
+								</div>
+								<!-- End Speakers Content -->
+								<div class="mu-title-area">
+									<button type="submit" class="mu-send-msg-btn"><span>Coming Soon</span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Speakers -->
+				<!-- Event -->
+				<section id="section3" class="cd-section">
+					<div class="cutter1"></div>
+					<h2 class="text-center">
+						Our Events
+					</h2>
+					<div class="container">
+						<div class="col-md-1"></div>
+						<div class="col-md-10">
+							<div class="row karl-new-arrivals">
+								<div class="col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+									<div class="product-img service">
+										<a href="#" class="card credentialing">
+											<div class="icon-holder">
+												<div class="overlay"></div>
+												<div class="circle">
+													<img src="images/icons/bplan.png" style="z-index:100;width:50px" class="iconwwh">
+												</div>
+											</div>
+											<h4 class="heading sifonn light-blue" style="text-align: center;">B Plan</h4>
+											<p class="description light-blue" style="text-align: justify;">Engaging minds,empowering success</p>
+		
+										</a>
+									</div>
+		
+									<div class="button header_button" data-toggle="modal" data-target="#bplan" style="margin-left:0;"><a href="# ">Learn
+											More</a></div>
+		
+								</div>
+								<!--
+								<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+									<div class="product-img service">
+										<a href="#" class="card credentialing">
+		
+											<div class="icon-holder">
+												<div class="overlay"></div>
+												<div class="circle">
+													<img src="images/icons/hack.png" style="z-index:100;width:50px" class="iconwwh">
+												</div>
+											</div>
+											<h4 class="heading sifonn light-blue" style="text-align: center;">Hackathon</h4>
+											<p class="description light-blue" style="text-align: justify;">Where ideas and technology synergize</p>
+		
+										</a>
+									</div>
+									<div class="button header_button" data-toggle="modal" data-target="#hackathon" style="margin-left:0;"><a href="# ">Learn
+											More</a></div>
+		
+		
+								</div>
+								<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+									<div class="product-img service">
+										<a href="#" class="card credentialing">
+											<div class="icon-holder">
+												<div class="overlay"></div>
+												<div class="circle">
+													<img src="images/icons/chess.png" style="z-index:100;width:50px" class="iconwwh">
+												</div>
+											</div>
+											<h4 class="heading sifonn light-blue" style="text-align: center;">The Perfect Square</h4>
+											<p class="description light-blue" style="text-align: justify;">One bad move nullifies fourteen good ones</p>
+		
+										</a>
+									</div>
+									<div class="button header_button" data-toggle="modal" data-target="#cochess" style="margin-left:0;"><a href="#">Learn
+											More</a></div>
+		
+								</div>
+								<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+									<div class="product-img service">
+										<a href="#" class="card credentialing">
+											<div class="icon-holder">
+												<div class="overlay"></div>
+												<div class="circle">
+													<img src="images/icons/camera.png" style="z-index:100;width:50px" class="iconwwh">
+												</div>
+											</div>
+											<h4 class="heading sifonn light-blue" style="text-align: center;">Your Story</h4>
+											<p class="description light-blue" style="text-align: justify;">Victory is just a click away</p>
+		
+										</a>
+									</div>
+									<div class="button header_button" data-toggle="modal" data-target="#yourstory" style="margin-left:0;"><a href="#">Learn
+											More</a></div>
+		
+								</div>
+								<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+									<div class="product-img service">
+										<a href="#" class="card credentialing">
+											<div class="icon-holder">
+												<div class="overlay"></div>
+												<div class="circle">
+													<img src="images/icons/stock.png" style="z-index:100;width:50px" class="iconwwh">
+												</div>
+											</div>
+											<h4 class="heading sifonn light-blue" style="text-align: center;">Market Watch</h4>
+											<p class="description light-blue" style="text-align: justify;">The compass for the marketplace</p>
+		
+										</a>
+									</div>
+									<div class="button header_button" data-toggle="modal" data-target="#mwatch" style="margin-left:0;"><a href="#">Learn
+											More</a></div>
+		
+								</div>
+		
+								<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+									<div class="product-img service">
+										<a href="#" class="card credentialing">
+		
+											<div class="icon-holder">
+												<div class="overlay"></div>
+												<div class="circle">
+													<img src="images/icons/tresure hunt.png" style="z-index:100;width:50px" class="iconwwh">
+												</div>
+											</div>
+											<h4 class="heading sifonn light-blue" style="text-align: center;">Treasure Hunt</h4>
+											<p class="description light-blue" style="text-align: justify;">Brainstorming is a-Maze-ing!</p>
+										</a>
+									</div>
+									<div class="button header_button" data-toggle="modal" data-target="#" style="margin-left:0;"><a href="#">Learn
+											More</a></div>
+									
+								</div>
+							
+		
+		
+		
+								<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+									<div class="product-img service">
+										<a href="#" class="card credentialing">
+											<div class="icon-holder">
+												<div class="overlay"></div>
+												<div class="circle">
+													<img src="images/icons/bquiz.png" style="z-index:100;width:50px" class="iconwwh">
+												</div>
+											</div>
+											<h4 class="heading sifonn light-blue" style="text-align: center;">B-Quiz</h4>
+											<p class="description light-blue" style="text-align: justify;">Acknowledge knowledge at the speed of thought</p>
+		
+										</a>
+									</div>
+									<div class="button header_button" data-toggle="modal" data-target="#bquiz" style="margin-left:0;"><a href="#">Learn
+											More</a></div>
+									  </div>
+								 
+								<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+									<div class="product-img service">
+										<a href="#" class="card credentialing">
+											<div class="icon-holder">
+												<div class="overlay"></div>
+												<div class="circle">
+													<img src="images/icons/football.png" style="z-index:100;width:50px" class="iconwwh">
+												</div>
+											</div>
+											<h4 class="heading sifonn light-blue" style="text-align: center;">Fantasy Premier League</h4>
+											<p class="description light-blue" style="text-align: justify;">11 players, one heartbeat</p>
+		
+										</a>
+									</div>
+									<div class="button header_button" data-toggle="modal" data-target="#fpl" style="margin-left:0;"><a href="#">Learn
+											More</a></div>
+		
+								</div>
+									
+								<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+									<div class="product-img service">
+										<a href="#" class="card credentialing">
+											<div class="icon-holder">
+												<div class="overlay"></div>
+												<div class="circle">
+													<img src="images/icons/meme.jpg" style="z-index:100;width:50px" class="iconwwh">
+												</div>
+											</div>
+											<h4 class="heading sifonn light-blue" style="text-align: center;">Memethon</h4>
+											<p class="description light-blue" style="text-align: justify;">There is no such thing as too many memes</p>
+		
+										</a>
+									</div>
+									<div class="button header_button" data-toggle="modal" data-target="#meme" style="margin-left:0;"><a href="#">Learn
+											More</a></div>
+		
+								</div>
+							-->
+		
+		
+		
+							</div>
+							<div class="col-md-1"></div>
+						</div>
+				</section>
+			<!--	 End Event -->
+			<!-- Start Venue -->
+			<section id="mu-venue">
+				<div class="mu-venue-area">
+					<div class="row">
+	
+						<div class="col-md-6">
+							<div class="mu-venue-map">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13991.581307913611!2d77.4988165!3d28.752542!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf5c6d6eefa89a5df!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1578933464162!5m2!1sen!2sin" width="800" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+							</div>
+						</div>
+	
+						<div class="col-md-6">
+							<div class="mu-venue-address">
+								<h2>VENUE <i class="fa fa-chevron-right" aria-hidden="true"></i></h2>
+								<h3>KIET Group of Institutions</h3>
+								<!-- <h4>9800 International Dr, Orlando, FL 32819, USA</h4> -->
+								<!-- <p></p> -->
+							</div>
+						</div>
+	
+					</div>
+				</div>
+			</section>
+			<!-- End Venue -->
+	
+			<!-- Start FAQ -->
+			<section id="mu-faq">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="mu-faq-area">
+	
+								<div class="mu-title-area">
+									<h2 class="mu-title">FAQ</h2>
+									<!-- <p></p> -->
+								</div>
+	
+								<div class="mu-faq-content">
+	
+									<div class="panel-group" id="accordion">
+	
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">
+														<span class="fa fa-angle-down"></span> When we can register for the events of E-Summit’20?
+													</a>
+												</h4>
+											</div>
+											<div id="collapseOne" class="panel-collapse collapse in">
+												<div class="panel-body">
+													The registration will open soon ,now you can go through events and and there you can register yourself for
+													the events.
+												</div>
+											</div>
+										</div>
+	
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+														<span class="fa fa-angle-up"></span> Is there any other mode of registration else than the website?
+													</a>
+												</h4>
+											</div>
+											<div id="collapseTwo" class="panel-collapse collapse">
+												<div class="panel-body">
+													Yes, you can register through the app as well, the app will be released soon on the play store.
+												</div>
+											</div>
+										</div>
+	
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+														<span class="fa fa-angle-up"></span>What are the available payment modes?
+													</a>
+												</h4>
+											</div>
+											<div id="collapseThree" class="panel-collapse collapse">
+												<div class="panel-body">
+													You can pay both online as well as offline, the procedure for online payment can be found at this link
+												</div>
+											</div>
+										</div>
+	
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+														<span class="fa fa-angle-up"></span>What is the number of events we can register for?
+													</a>
+												</h4>
+											</div>
+											<div id="collapseFour" class="panel-collapse collapse">
+												<div class="panel-body">
+													There is no limit. You can register for as many events as you want.
+												</div>
+											</div>
+										</div>
+	
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+														<span class="fa fa-angle-up"></span>Is accommodation available for the students who want to stay?
+													</a>
+												</h4>
+											</div>
+											<div id="collapseFive" class="panel-collapse collapse">
+												<div class="panel-body">
+													Yes, accommodation would be available for the students.
+												</div>
+											</div>
+										</div>
+	
+	
+									</div>
+								</div>
+	
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="mu-contact-area">
+	
+								<div class="mu-title-area">
+									<h2 class="mu-heading-title">Contact Us</h2>
+									<!-- <p></p> -->
+								</div>
+	
+								<!-- Start Contact Content -->
+								<div class="mu-contact-content">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="mu-contact-form-area">
+												<div id="form-messages"></div>
+												<form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
+													<div class="form-group">
+														<input type="text" class="form-control" placeholder="Name" id="name" name="name" required>
+													</div>
+													<div class="form-group">
+														<input type="email" class="form-control" placeholder="Enter Email" id="email" name="email" required>
+													</div>
+													<div class="form-group">
+														<textarea class="form-control" placeholder="Message" id="message" name="message" required></textarea>
+													</div>
+													<button type="submit" class="mu-send-msg-btn"><span>SUBMIT</span></button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- End Contact Content -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End FAQ -->
+		</main>         
+	
+		
+		<!-- model bplan -->
+		<div id="bplan" class="modal" role="dialog">
+			<div class="modal-dialog modal-lg modal-xl">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">B Plan</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body" style="text-align: left; color:black;">
+						<div role="tabpanel">
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active">
+									<a href="#RulesTab_bplan" aria-controls="bplanRulesTab" role="tab" data-toggle="tab">Rules</a>
+								</li>
+								<li role="presentation" class="change">
+									<a href="#Register_bplan" aria-controls="bplanRegistrationTab" role="tab" data-toggle="tab" class="btn btn-info">Register
+										Here</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="RulesTab_bplan">
+									<strong>DESCRIPTION</strong>
+									<p>
+										Ideas are abounded when you have the conviction to bring about a change around you. The
+										flagship event, B-PLAN, lets you promulgate your ground-breaking ideas. Showcase your
+										business skills and let the world see your entrepreneurial side. Gear up buddies! Prepare an
+										abstract and showcase it to be a winner.
+									</p>
+									<strong>BENEFITS:</strong>
+									<ul style="list-style-type:circle;">
+										<li>To get the idea mentored by entrepreneur and investors.</li>
+										<li>A chance to get the idea funded</li>
+										<li>Developing the entrepreneurial skills</li>
+									</ul>
+									<strong>STRUCTURE:</strong>
+									<ul style="list-style-type:circle;">
+										<li>Team size – 1-3 members</li>
+										<li>The event consists of two rounds</li>
+									</ul>
+									<strong>1. Round One:- Abstract Submission</strong>
+									<ul style="list-style-type:circle">
+										<li>Participants will be given the portal on the website of Endeavour where they will have to fill up
+											the questionnaire round which will consist of several subjective questions based on the different
+											aspects of the Startup.
+											
+										</li>
+									</ul>
+									
+										<strong>3. Round Two:- Presentation</strong>
+										<p>This is the final round. Participants will pitch their idea that they have presented before. There
+											will be 5 minutes allotted for presentation and a 2 minute questionnaire round.
+											
+											</p>
+									<strong>RULES</strong>
+									<ul style="list-style-type:circle">
+										<li>The business idea must be unique and feasible.</li>
+										<li>The team without the proper format of the presentation will be disqualified.</li>
+										<li>There is no need for laptops for presentation.</li>
+										<li>Final decision of judges will not be questionable.</li>
+										<li>Participants should maintain decorum during the event.</li>
+									</ul>
+									<strong>FAQ’S :</strong>
+									<ul style="list-style-type:circle">
+										<li>
+											<p>Q- Are intercollege members allowed to form a single team?</p>
+											<p>A- Yes, intercollege members are allowed to form a single team.</p>
+										</li>
+										<li>
+											<p>Q- What points must be kept in mind while preparing for the presentation?</p>
+											<p>A- Since presentation is a shorthand representation of your business idea, therefore, it must
+												contain a brief introduction to all related points.
+											</p>
+										</li>
+										<li>
+											<p>Q- What modes can we use for our presentation?</p>
+											<p>A- The presentation on the final round will be a .ppt. There is no need to make any file or a hard
+												copy of your business plan.</p>
+										</li>
+										<li>
+											<p>Q- How should we bring our presentation?</p>
+											<p>A- The presentation should be brought in a pen-drive.
+												</p>
+										</li>
+										<li>
+											<p>Q- Can we extend the time limit allotted to us?</p>
+											<p>A- Extension of the time is not allowed.
+												</p>
+										</li>
+										<li>
+											<p>Q- Is there any criteria regarding team size?</p>
+											<p>A- The maximum size of the team is 3 members, and even a single person can also represent his
+												idea but more than 3 members are not allowed.
+												</p>
+										</li>
+									</ul>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="Register_bplan">
+	
+									<div clas="form-group">
+										<p class="status" style='color:red;font-weight: bold;'></p>
+	
+										<big>
+											<label for="exampleInputEmail1">Second Member E-Summit Id:</label>
+										</big>
+	
+										<div>
+											<input type="text" class="form-control mbr" id="m1id" value="">
+											<p class="stats" style='color:red;font-weight: bold;'></p>
+										</div>
+										<big>
+											<label for="exampleInputEmail1">Third Member E-Summit Id:</label>
+										</big>
+										<div>
+											<input type="text" class="form-control mbr" id="m2id" value="">
+											<p class="stats" style='color:red;font-weight: bold;'></p>
+										</div>
+										<big>
+											<label for="exampleInputEmail1">Campus Ambassador Id:</label>
+										</big>
+										<input type="text" class="form-control" id="caid" value="">
+										<big class="form-text text-muted">Not Mandatory.</big>
+										<hr>
+										<button class="btn btn-primary cnfrm_event" event="7">Registration Coming Soon</button>
+										<!--
+										<a class="btn btn-primary">Payment</a>
+										-->
+	
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger ref" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>
 		</div>
-
-	</div>
-	<main role="main">
-		<!-- Start Speakers -->
-		<section id="mu-speakers">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="mu-speakers-area">
-							<div class="mu-title-area">
-								<h2 class="mu-title">Our Speakers</h2>
-							</div>
-							<!-- Start Speakers Content -->
-							<div class="mu-speakers-content">
-								<div class="mu-speakers-slider">
-
-									<!-- Start single speaker -->
-									<div class="mu-single-speakers">
-										<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
-										<div class="mu-single-speakers-info">
-											<h3>Speaker One</h3>
-											
-											<ul class="mu-single-speakers-social">
-												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-									<!-- End single speaker -->
-
-									<!-- Start single speaker -->
-									<div class="mu-single-speakers">
-										<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
-										<div class="mu-single-speakers-info">
-											<h3>Speaker Two</h3>
-											
-											<ul class="mu-single-speakers-social">
-												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-									<!-- End single speaker -->
-
-
-									<!-- Start single speaker -->
-									<div class="mu-single-speakers">
-										<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
-										<div class="mu-single-speakers-info">
-											<h3>Speaker Three</h3>
-											
-											<ul class="mu-single-speakers-social">
-												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-									<!-- End single speaker -->
-
-
-									<!-- Start single speaker -->
-									<div class="mu-single-speakers">
-										<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
-										<div class="mu-single-speakers-info">
-											<h3>Speaker Four</h3>
-											
-											<ul class="mu-single-speakers-social">
-												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-									<!-- End single speaker -->
-
-									<!-- Start single speaker -->
-									<div class="mu-single-speakers">
-										<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
-										<div class="mu-single-speakers-info">
-											<h3>Speaker Five</h3>
-											
-											<ul class="mu-single-speakers-social">
-												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-									<!-- End single speaker -->
-
-									<!-- Start single speaker -->
-									<div class="mu-single-speakers">
-										<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
-										<div class="mu-single-speakers-info">
-											<h3>Speaker Six</h3>
-											
-											<ul class="mu-single-speakers-social">
-												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-									<!-- End single speaker -->
-
-
-									<!-- Start single speaker -->
-									<div class="mu-single-speakers">
-										<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
-										<div class="mu-single-speakers-info">
-											<h3>Speaker Seven</h3>
+		<!--bplan modal ends-->
+	
+	
+							<div id="mydiv" name="hid" data-test=<%=x %>></div>
+							<script>
+						  //B-Plan Function
+						   $(document).ready(function(){	 
+									$('#b ').click(function(){
 										
-											<ul class="mu-single-speakers-social">
-												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-									<!-- End single speaker -->
-
-
-									<!-- Start single speaker -->
-									<div class="mu-single-speakers">
-										<img src="images/lock.png" alt="speaker img" height="250px" width="250px">
-										<div class="mu-single-speakers-info">
-											<h3>Speaker Eight</h3>
-											
-											<ul class="mu-single-speakers-social">
-												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-									<!-- End single speaker -->
-								</div>
-							</div>
-							<!-- End Speakers Content -->
-							<div class="mu-title-area">
-								<button type="submit" class="mu-send-msg-btn"><span>Coming Soon</span></button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Speakers -->
-			<!-- Event --
-			<section id="section3" class="cd-section">
-				<div class="cutter1"></div>
-				<h2 class="text-center">
-					Our Events
-				</h2>
-				<div class="container">
-					<div class="col-md-1"></div>
-					<div class="col-md-10">
-						<div class="row karl-new-arrivals">
-							<div class="col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
-								<div class="product-img service">
-									<a href="#" class="card credentialing">
-										<div class="icon-holder">
-											<div class="overlay"></div>
-											<div class="circle">
-												<img src="images/icons/bplan.png" style="z-index:100;width:50px" class="iconwwh">
-											</div>
-										</div>
-										<h4 class="heading sifonn light-blue" style="text-align: center;">B Plan</h4>
-										<p class="description light-blue" style="text-align: justify;">Engaging minds,empowering success</p>
-	
-									</a>
-								</div>
-	
-								<div class="button header_button" data-toggle="modal" data-target="#bplan" style="margin-left:0;"><a href="# ">Learn
-										More</a></div>
-	
-							</div>
-							<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
-								<div class="product-img service">
-									<a href="#" class="card credentialing">
-	
-										<div class="icon-holder">
-											<div class="overlay"></div>
-											<div class="circle">
-												<img src="images/icons/hack.png" style="z-index:100;width:50px" class="iconwwh">
-											</div>
-										</div>
-										<h4 class="heading sifonn light-blue" style="text-align: center;">Hackathon</h4>
-										<p class="description light-blue" style="text-align: justify;">Where ideas and technology synergize</p>
-	
-									</a>
-								</div>
-								<div class="button header_button" data-toggle="modal" data-target="#hackathon" style="margin-left:0;"><a href="# ">Learn
-										More</a></div>
-	
-	
-							</div>
-							<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
-								<div class="product-img service">
-									<a href="#" class="card credentialing">
-										<div class="icon-holder">
-											<div class="overlay"></div>
-											<div class="circle">
-												<img src="images/icons/chess.png" style="z-index:100;width:50px" class="iconwwh">
-											</div>
-										</div>
-										<h4 class="heading sifonn light-blue" style="text-align: center;">The Perfect Square</h4>
-										<p class="description light-blue" style="text-align: justify;">One bad move nullifies fourteen good ones</p>
-	
-									</a>
-								</div>
-								<div class="button header_button" data-toggle="modal" data-target="#cochess" style="margin-left:0;"><a href="#">Learn
-										More</a></div>
-	
-							</div>
-							<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
-								<div class="product-img service">
-									<a href="#" class="card credentialing">
-										<div class="icon-holder">
-											<div class="overlay"></div>
-											<div class="circle">
-												<img src="images/icons/camera.png" style="z-index:100;width:50px" class="iconwwh">
-											</div>
-										</div>
-										<h4 class="heading sifonn light-blue" style="text-align: center;">Your Story</h4>
-										<p class="description light-blue" style="text-align: justify;">Victory is just a click away</p>
-	
-									</a>
-								</div>
-								<div class="button header_button" data-toggle="modal" data-target="#yourstory" style="margin-left:0;"><a href="#">Learn
-										More</a></div>
-	
-							</div>
-							<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
-								<div class="product-img service">
-									<a href="#" class="card credentialing">
-										<div class="icon-holder">
-											<div class="overlay"></div>
-											<div class="circle">
-												<img src="images/icons/stock.png" style="z-index:100;width:50px" class="iconwwh">
-											</div>
-										</div>
-										<h4 class="heading sifonn light-blue" style="text-align: center;">Market Watch</h4>
-										<p class="description light-blue" style="text-align: justify;">The compass for the marketplace</p>
-	
-									</a>
-								</div>
-								<div class="button header_button" data-toggle="modal" data-target="#mwatch" style="margin-left:0;"><a href="#">Learn
-										More</a></div>
-	
-							</div>
-	
-							<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
-								<div class="product-img service">
-									<a href="#" class="card credentialing">
-	
-										<div class="icon-holder">
-											<div class="overlay"></div>
-											<div class="circle">
-												<img src="images/icons/tresure hunt.png" style="z-index:100;width:50px" class="iconwwh">
-											</div>
-										</div>
-										<h4 class="heading sifonn light-blue" style="text-align: center;">Treasure Hunt</h4>
-										<p class="description light-blue" style="text-align: justify;">Brainstorming is a-Maze-ing!</p>
-									</a>
-								</div>
-								<div class="button header_button" data-toggle="modal" data-target="#" style="margin-left:0;"><a href="#">Learn
-										More</a></div>
-								
-							</div>
-						
-	
-	
-	
-							<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
-								<div class="product-img service">
-									<a href="#" class="card credentialing">
-										<div class="icon-holder">
-											<div class="overlay"></div>
-											<div class="circle">
-												<img src="images/icons/bquiz.png" style="z-index:100;width:50px" class="iconwwh">
-											</div>
-										</div>
-										<h4 class="heading sifonn light-blue" style="text-align: center;">B-Quiz</h4>
-										<p class="description light-blue" style="text-align: justify;">Acknowledge knowledge at the speed of thought</p>
-	
-									</a>
-								</div>
-								<div class="button header_button" data-toggle="modal" data-target="#bquiz" style="margin-left:0;"><a href="#">Learn
-										More</a></div>
-								  </div>
-							 
-							<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
-								<div class="product-img service">
-									<a href="#" class="card credentialing">
-										<div class="icon-holder">
-											<div class="overlay"></div>
-											<div class="circle">
-												<img src="images/icons/football.png" style="z-index:100;width:50px" class="iconwwh">
-											</div>
-										</div>
-										<h4 class="heading sifonn light-blue" style="text-align: center;">Fantasy Premier League</h4>
-										<p class="description light-blue" style="text-align: justify;">11 players, one heartbeat</p>
-	
-									</a>
-								</div>
-								<div class="button header_button" data-toggle="modal" data-target="#fpl" style="margin-left:0;"><a href="#">Learn
-										More</a></div>
-	
-							</div>
-								
-							<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
-								<div class="product-img service">
-									<a href="#" class="card credentialing">
-										<div class="icon-holder">
-											<div class="overlay"></div>
-											<div class="circle">
-												<img src="images/icons/meme.jpg" style="z-index:100;width:50px" class="iconwwh">
-											</div>
-										</div>
-										<h4 class="heading sifonn light-blue" style="text-align: center;">Memethon</h4>
-										<p class="description light-blue" style="text-align: justify;">There is no such thing as too many memes</p>
-	
-									</a>
-								</div>
-								<div class="button header_button" data-toggle="modal" data-target="#meme" style="margin-left:0;"><a href="#">Learn
-										More</a></div>
-	
-							</div>
-	
-	
-	
-	
-						</div>
-						<div class="col-md-1"></div>
-					</div>
-			</section>
-			 End Event -->
-		<!-- Start Venue -->
-		<section id="mu-venue">
-			<div class="mu-venue-area">
-				<div class="row">
-
-					<div class="col-md-6">
-						<div class="mu-venue-map">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13991.581307913611!2d77.4988165!3d28.752542!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf5c6d6eefa89a5df!2sKIET%20Group%20of%20Institutions!5e0!3m2!1sen!2sin!4v1578933464162!5m2!1sen!2sin" width="800" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="mu-venue-address">
-							<h2>VENUE <i class="fa fa-chevron-right" aria-hidden="true"></i></h2>
-							<h3>KIET Group of Institutions</h3>
-							<!-- <h4>9800 International Dr, Orlando, FL 32819, USA</h4> -->
-							<!-- <p></p> -->
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</section>
-		<!-- End Venue -->
-
-		<!-- Start FAQ -->
-		<section id="mu-faq">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="mu-faq-area">
-
-							<div class="mu-title-area">
-								<h2 class="mu-title">FAQ</h2>
-								<!-- <p></p> -->
-							</div>
-
-							<div class="mu-faq-content">
-
-								<div class="panel-group" id="accordion">
-
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">
-													<span class="fa fa-angle-down"></span> When we can register for the events of E-Summit’20?
-												</a>
-											</h4>
-										</div>
-										<div id="collapseOne" class="panel-collapse collapse in">
-											<div class="panel-body">
-												The registration will open soon ,now you can go through events and and there you can register yourself for
-												the events.
-											</div>
-										</div>
-									</div>
-
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-													<span class="fa fa-angle-up"></span> Is there any other mode of registration else than the website?
-												</a>
-											</h4>
-										</div>
-										<div id="collapseTwo" class="panel-collapse collapse">
-											<div class="panel-body">
-												Yes, you can register through the app as well, the app will be released soon on the play store.
-											</div>
-										</div>
-									</div>
-
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-													<span class="fa fa-angle-up"></span>What are the available payment modes?
-												</a>
-											</h4>
-										</div>
-										<div id="collapseThree" class="panel-collapse collapse">
-											<div class="panel-body">
-												You can pay both online as well as offline, the procedure for online payment can be found at this link
-											</div>
-										</div>
-									</div>
-
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-													<span class="fa fa-angle-up"></span>What is the number of events we can register for?
-												</a>
-											</h4>
-										</div>
-										<div id="collapseFour" class="panel-collapse collapse">
-											<div class="panel-body">
-												There is no limit. You can register for as many events as you want.
-											</div>
-										</div>
-									</div>
-
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-													<span class="fa fa-angle-up"></span>Is accommodation available for the students who want to stay?
-												</a>
-											</h4>
-										</div>
-										<div id="collapseFive" class="panel-collapse collapse">
-											<div class="panel-body">
-												Yes, accommodation would be available for the students.
-											</div>
-										</div>
-									</div>
-
-
-								</div>
-							</div>
-
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="mu-contact-area">
-
-							<div class="mu-title-area">
-								<h2 class="mu-heading-title">Contact Us</h2>
-								<!-- <p></p> -->
-							</div>
-
-							<!-- Start Contact Content -->
-							<div class="mu-contact-content">
-								<div class="row">
-									<div class="col-md-12">
-										<div class="mu-contact-form-area">
-											<div id="form-messages"></div>
-											<form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
-												<div class="form-group">
-													<input type="text" class="form-control" placeholder="Name" id="name" name="name" required>
-												</div>
-												<div class="form-group">
-													<input type="email" class="form-control" placeholder="Enter Email" id="email" name="email" required>
-												</div>
-												<div class="form-group">
-													<textarea class="form-control" placeholder="Message" id="message" name="message" required></textarea>
-												</div>
-												<button type="submit" class="mu-send-msg-btn"><span>SUBMIT</span></button>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- End Contact Content -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End FAQ -->
-	</main>
-
-						<div id="mydiv" name="hid" data-test=<%=x %>></div>
-						<script>
-                      //B-Plan Function
-                       $(document).ready(function(){	 
-								$('#b ').click(function(){
-									
-									
-								//	bhbhbd731407997b104fce87fd";
-									   var param = {};
-									   param.head_id=document.getElementById('mydiv').dataset.test;
-									   param.team_id = [ mild=document.querySelector('#m1id').value];
-									  // param.event_id = ;
-									$.ajax({
-									   type: 'POST',
-									   url: '/participant/addparticipant',
-									   contentType: 'application/json',
-									   data:JSON.stringify(param),
-										success: function(data) {
-										alert("Sucessfully Registerd ! Now you can pay !");
-									  }
+										
+									//	bhbhbd731407997b104fce87fd";
+										   var param = {};
+										   param.head_id=document.getElementById('mydiv').dataset.test;
+										   param.team_id = [ mild=document.querySelector('#m1id').value];
+										  // param.event_id = ;
+										$.ajax({
+										   type: 'POST',
+										   url: '/participant/addparticipant',
+										   contentType: 'application/json',
+										   data:JSON.stringify(param),
+											success: function(data) {
+											alert("Sucessfully Registerd ! Now you can pay !");
+										  }
+										});
+								  //   console.log(document.getElementById('mydiv').dataset.test); 
+									// console.log( team_id);
 									});
-							  //   console.log(document.getElementById('mydiv').dataset.test); 
-								// console.log( team_id);
-								});
-							});  
-						   
-					</script>
-
-
-							<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
-							<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-							 crossorigin="anonymous"></script>
-							<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-							 crossorigin="anonymous"></script>
-							<script type="text/javascript" src="./js/parallax.min.js"></script>
-							<script type="text/javascript" src="./js/slick.min.js"></script>
-							<script type="text/javascript" src="./js/jquery.countdown.min.js"></script>
-							<script type="text/javascript" src="./js/app.js"></script>
-							<script type="text/javascript" src="./js/speaker.js"></script>
-							<script type="text/javascript" src="./js/custom.js"></script>
-</body>
-
-</html>         
-
-
+								});  
+							   
+						</script>
+	
+	
+								<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+								<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+								 crossorigin="anonymous"></script>
+								<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+								 crossorigin="anonymous"></script>
+								<script type="text/javascript" src="./js/parallax.min.js"></script>
+								<script type="text/javascript" src="./js/slick.min.js"></script>
+								<script type="text/javascript" src="./js/jquery.countdown.min.js"></script>
+								<script type="text/javascript" src="./js/app.js"></script>
+								<script type="text/javascript" src="./js/speaker.js"></script>
+								<script type="text/javascript" src="./js/custom.js"></script>
+	</body>
+	
+	</html>         
+	
+	
+	
+										 
 
                                      
