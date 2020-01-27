@@ -30,57 +30,47 @@ eventSchema.statics.FindAllEvent = function () {
 };
 
 var Event = mongoose.model("Event", eventSchema);
-Event.create({
-    "eventName": "Hackathon",
-    "category": "team",
-    "maxMember": 4,
-    "maxRound":1
-}, {
-    "eventName": "B-Plan",
-    "category": "team",
-    "maxMember": 2,
-    "maxRound": 1
-}, {
-    "eventName": "B-Noesis",
-    "category": "team",
-    "maxMember": 2,
-    "maxRound": 3
-}, {
-    "eventName": "Maestro",
-    "category": "single",
-    "maxMember": 2,
-    "maxRound": 3
-}, {
-    "eventName": "Bid-It",
-    "category": "team",
-    "maxMember": 2,
-    "maxRound": 1
-}, {
-    "eventName": "Dropout",
-    "category": "team",
-    "maxMember": 2,
-    "maxRound": 2
-}, {
-    "eventName": "Start Up Challenge",
-    "category": "team",
-    "maxMember": 2,
-    "maxRound": 1
-}, {
-    "eventName": "Your Story_Video",
-    "category": "team",
-    "maxMember": 2,
-    "maxRound": 1
-}, {
-    "eventName": "Your Story_Photo",
-    "category": "team",
-    "maxMember": 2,
-    "maxRound": 1
-}, {
-    "eventName": "Art of Conquest",
-    "category": "team",
-    "maxMember": 2,
-    "maxRound": 1
-});
+//Event.create({
+ //   "eventName": "Hackathon",
+ //   "category": "team",
+ //   "maxMember": 4,
+ //   "maxRound":1
+//}, {
+ //   "eventName": "B-Plan",
+ //   "category": "team",
+ //   "maxMember": 3,
+ //   "maxRound": 1
+//}, {
+ //   "eventName": "B-Quiz",
+ //   "category": "team",
+ //   "maxMember": 2,
+ //   "maxRound": 3
+//}, {
+//   "eventName": "Co-Chess",
+//    "category": "team",
+//    "maxMember": 2,
+//    "maxRound": 3
+//}, {
+//    "eventName": "Market Watch",
+//    "category": "team",
+//    "maxMember": 2,
+//    "maxRound": 1
+//}, {
+ //   "eventName": "Memethon",
+ //   "category": "team",
+ ////   "maxMember": 2,
+ //   "maxRound": 2
+//},{
+//    "eventName": "Your Story_Video",
+//    "category": "team",
+//    "maxMember": 2,
+//    "maxRound": 1
+//}, {
+  //  "eventName": "Fantasy Premier League",
+ //   "category": "team",
+ //   "maxMember": 2,
+ //   "maxRound": 1
+//});
 
 module.exports = {
     Event

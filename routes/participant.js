@@ -47,6 +47,29 @@ route.get('/', (req, res) => {
      //    console.log('Error :- ', e);
     // }
  //});
+ route.post('/addparticipant',async(req,res)=>{
+  try { 
+    if(req.body.head_id){
+     var participant_data ={
+      'head_id': req.body.head_id,
+      'team_id':req.body.team_id,
+      'event_id':req.body.event_id
+    }
+    var participant = await Participant(participant_data);
+     // if(user.save()){
+         await participant.save();
+       
+         res.render('default/index',{
+           x:req.body.head_id,
+           y:req.body.head_id.full_name
+         });
+   } else {
+     console.log("REgisteration failed! Try Again"+req.body.head_id+" "+req.body.team_id+" "+req.body.event_id);
+   }
+ }catch(e){
+    console.log('Error:-',e);
+ }
+ });
 
 route.get('/quiz', auth, async (req, res) => {
     var par = await Participant.find({

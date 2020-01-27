@@ -31,9 +31,9 @@ var participantSchema = mongoose.Schema({
 });
 
 var Participant = mongoose.model('Participant', participantSchema);
-// Participant.create({
-//     head_id:"ENDVR189452505120" ,
-//     team_id: ["ENDVR189149042971","ENDVR187983041035"],
-//     event_id:"5c3601e75dbe616897f55ec0"
+ //Participant.create({
+ //    head_id:"ENDVR189452505120" ,
+ //    team_id: ["ENDVR189149042971","ENDVR187983041035"],
+ //    event_id:"5e2dec444955da1546954163"
 // });
 module.exports = Participant;
