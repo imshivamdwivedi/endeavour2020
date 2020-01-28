@@ -1,6 +1,8 @@
 <html>
-    <head>HEllo</head>
+    <head>HEllo
     <titile>HELLO</titile>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    </head>
     <body>
       
         <% if(x) {%>
@@ -8,6 +10,69 @@
             <% } else {%>
                <div class="button header_button"><a href="/login">Login</a></div>
             <% } %>
+            <div id="mydiv" name="hid" data-test=<%=y %>></div>
+            <div class="form-group">
+                <p class="status" style='color:red;font-weight: bold;'></p>
+
+                <big>
+                    <label for="exampleInputEmail1">Second Member E-Summit Id:</label>
+                </big>
+
+                <div>
+                    <input type="text" class="form-control mbr" id="m1id" value="">
+                    <p class="stats" style='color:red;font-weight: bold;'></p>
+                </div>
+                <big>
+                    <label for="exampleInputEmail1">Third Member E-Summit Id:</label>
+                </big>
+                <div>
+                    <input type="text" class="form-control mbr" id="m2id" value="">
+                    <p class="stats" style='color:red;font-weight: bold;'></p>
+                </div>
+                    <label for="exampleInputEmail1">Fourth Member E-Summit Id:</label>
+                </big>
+                <div>
+                    <input type="text" class="form-control mbr" id="m3id" value="">
+                    <p class="stats" style='color:red;font-weight: bold;'></p>
+                </div>
+                <big>
+                    <label for="exampleInputEmail1">Campus Ambassador Id:</label>
+                </big>
+                <input type="text" class="form-control" id="caid" value="">
+                <big class="form-text text-muted">Not Mandatory.</big>
+                <hr>
+
+                <button class="btn btn-primary" id="hackathon" >Register</button>
+                
+
+            </div>
+
+            <div id="mydiv" name="hid" data-test=<%=x %>></div>
+      <script>
+          $(document).ready(function(){
+    $('#hackathon').click(function(){
+          var param = {};
+          param.head_id=document.getElementById('mydiv').dataset.test;
+		  param.team_id = [m1id=document.querySelector('#m1id').value,m2id=document.querySelector('#m2id').value,m3id=document.querySelector('#m3id').value];
+			
+					    
+          param.event_id = "5e2dfdeef6a4be24209ce5fc";
+          $.ajax({
+                type: 'POST',
+                url: '/participant/addparticipant',
+                contentType: 'application/json',
+                data:JSON.stringify(param),
+                    success: function(data) {
+                        alert("Congratulations, You Sucessfully Registerd in Hackathon!");
+                      }
+          });
+		  console.log(document.querySelector('#m1id').value);
+	console.log(document.querySelector('#m2id').value);
+	console.log(document.querySelector('#m3id').value);
+	});
+	
+});
+      </script>      
          
     </body>
 </html>
