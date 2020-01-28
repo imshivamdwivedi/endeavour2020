@@ -3,18 +3,20 @@ const route = express.Router();
 const nodemailer = require('nodemailer');
 var User = require('../server/modles/user');
 //const bcrypt = require('bcrypt');
-
+var Event = require('../server/modles/event');
 
 route.get('/',(req, res) => {
     res.render('default/index',{
         x:req.session.userid,
-y:req.session.name
+        y:req.session.name,
+       // z:req.body.userid.event_id.eventName
     });
 });
 route.get('/login', async (req, res) => {
     res.render('default/login',{
         x:req.session.userid,
-        y:req.session.full_name
+        y:req.session.full_name,
+        //z:req.body.userid.event_id.eventName
     });
 });
 route.get('/sponsors', async (req, res) => {
@@ -35,7 +37,8 @@ route.get('/checkLogin', (req, res) => {
 route.get('/adduser', (req, res) => {
     res.render('default/index',{
         x:req.session.userid,
-        y:req.session.name
+        y:req.session.name,
+       // z:req.body.userid.event_id.eventName
     });
 });
 route.post('/checkLogin', async (req, res) => {
@@ -50,7 +53,8 @@ route.post('/checkLogin', async (req, res) => {
             req.session.name = detail[0].full_name;
             res.render('default/index',{
                 x:req.session.userid,
-                y:req.session.name
+                y:req.session.name,
+               // z:req.body.userid.event_id.eventName
             });
 
         }
@@ -96,6 +100,7 @@ route.post('/adduser',async (req, res) => {
         await user.save();
         req.session.userid="ENDVR20"+req.body['mobilenumber'];
         req.session.name=req.body['name'];
+        
          // req.app.locals.userid = "ENDVR20"+req.body['mobilenumber']
    try{ 
     var transporter = nodemailer.createTransport({
@@ -117,7 +122,9 @@ route.post('/adduser',async (req, res) => {
         if (err) {
           console.log(err);
         } else {
-            res.render('default/index',{x:req.session.userid,y:req.body['name']});
+            res.render('default/index',{x:req.session.userid,y:req.body['name'],
+         //   z:req.body.userid.event_id.eventName
+         });
         }
       });
     }  catch(e){

@@ -2,7 +2,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 var config = require('./config');
-
 mongoose.Promise = global.Promise;
 //let conn = 'mongodb://admin:Fuck~root1@ds125402.mlab.com:25402/endeavourkiet_19';
 const uri = config.mongoUrl;
@@ -44,6 +43,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+
 app.use(cookieParser());
 //app.use(cookieSession());
 app.use( 
@@ -57,6 +57,7 @@ app.use(
      }
    })
 );
+
 app.use(function(req, res, next) {
     res.locals.userid=req.session.userid;
     next();

@@ -1,4 +1,4 @@
-
+<%var pf;%>
 <html>
 
 	<head>
@@ -389,7 +389,7 @@
 		<div class="col-md-1"></div>
 		<div class="col-md-10">
 			<div class="row karl-new-arrivals">
-				<div class="col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+			<!---	<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
 					<div class="product-img service">
 						<a href="#" class="card credentialing">
 							<div class="icon-holder">
@@ -463,7 +463,7 @@
 					<div class="button header_button" data-toggle="modal" data-target="#Yourstory" style="margin-left:0;"><a href="#">Learn
 							More</a></div>
 
-				</div>
+				</div>-->
 				<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
 					<div class="product-img service">
 						<a href="#" class="card credentialing">
@@ -483,7 +483,7 @@
 
 				</div>
 
-				<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+				<!--<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
 					<div class="product-img service">
 						<a href="#" class="card credentialing">
 
@@ -500,7 +500,7 @@
 					<div class="button header_button" data-toggle="modal" data-target="#" style="margin-left:0;"><a href="#">Learn
 							More</a></div>
 					
-				</div>
+				</div>-->
 			
 
 
@@ -519,13 +519,13 @@
 
 					</a>
 				</div>
-				<div class="button header_button" data-toggle="modal" data-target="Bquiz" style="margin-left:0;"><a href="# ">Learn
+				<div class="button header_button" data-toggle="modal" data-target="#Bquiz" style="margin-left:0;"><a href="# ">Learn
 						More</a></div>
 
 
 			</div>
 
-				<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+				<!--<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
 					<div class="product-img service">
 						<a href="#" class="card credentialing">
 							<div class="icon-holder">
@@ -561,7 +561,7 @@
 					<div class="button header_button" data-toggle="modal" data-target="#Meme" style="margin-left:0;"><a href="#">Learn
 							More</a></div>
 
-				</div>
+				</div>-->
 
 
 
@@ -1479,7 +1479,7 @@
 					<big class="form-text text-muted">Not Mandatory.</big>
 					<hr>
 
-					<button  class="btn btn-primary" id="bquiz">Register</button>
+					<button  class="btn btn-primary" id="bquizz">Registeration start soon</button>
 				</div>
 			</div>
 		</div>
@@ -1877,7 +1877,7 @@ This event is based on investing in the stock market using virtual money.<br>
 						<big class="form-text text-muted">Not Mandatory.</big>
 						<hr>
 
-						<button id="mwatch" class="btn btn-primary">Register</button>
+						<button id="mwatchh" class="btn btn-primary">Registeration start soon</button>
 
 					</div>
 				</div>
@@ -1897,14 +1897,13 @@ This event is based on investing in the stock market using virtual money.<br>
 
 							<div id="mydiv" name="hid" data-test=<%=x %>></div>
 							<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>					  
+<script>
 //B-Plan Function
 $(document).ready(function(){
     $('#bplan').click(function(){
           var param = {};
           param.head_id=document.getElementById('mydiv').dataset.test;
 		  param.team_id = [ m1id=document.querySelector('#m1id').value,m2id=document.querySelector('#m2id').value];
-		                    
           param.event_id = "5e2dfdeef6a4be24209ce5fd";
           $.ajax({
                 type: 'POST',
@@ -1912,7 +1911,17 @@ $(document).ready(function(){
                 contentType: 'application/json',
                 data:JSON.stringify(param),
                     success: function(data) {
-                        alert("Congratulations, You Sucessfully Registerd in B-Plan !");
+						if(data.status==95){
+							alert("Already Registered");
+						} 
+						else if(data.status==96){
+							alert("Participant not Found");
+						} 
+						else if(data.status==405){
+							alert("Please login first");
+						} else{ 
+						alert("Congratulations!,You sucessfully registerd in B-Plan!");
+						}
                       }
           });
 	});
@@ -1924,8 +1933,6 @@ $(document).ready(function(){
           var param = {};
           param.head_id=document.getElementById('mydiv').dataset.test;
 		  param.team_id = [m1id=document.querySelector('#m3id').value,m2id=document.querySelector('#m4id').value,m3id=document.querySelector('#m5id').value];
-			
-					    
           param.event_id = "5e2dfdeef6a4be24209ce5fc";
           $.ajax({
                 type: 'POST',
@@ -1933,7 +1940,18 @@ $(document).ready(function(){
                 contentType: 'application/json',
                 data:JSON.stringify(param),
                     success: function(data) {
-                        alert("Congratulations, You Sucessfully Registerd in Hackathon!");
+						if(data.status == 200){
+							alert("Congratulations!,You sucessfully registerd in Hacakthon!");
+						  }
+						if(data.status==95){
+							alert("Already Registered");
+						} 
+						if(data.status==96){
+							alert("Participant not Found");
+						} 
+						if(data.status==405){
+							alert("Please login first");
+						} 
                       }
           });
 		  console.log(document.querySelector('#m4id').value);
@@ -1956,7 +1974,18 @@ $(document).ready(function(){
                 contentType: 'application/json',
                 data:JSON.stringify(param),
                     success: function(data) {
-                        alert("Congratulattions, You Sucessfully Registerd in Co-Chess !");
+                        if(data.status == 200){
+							alert("Congratulations!,You sucessfully registerd in The Perfect Square!");
+						  }
+						if(data.status==95){
+							alert("Already Registered");
+						} 
+						if(data.status==96){
+							alert("Participant not Found");
+						} 
+						if(data.status==405){
+							alert("Please login first");
+						} 
                       }
           });
 	});
@@ -1974,7 +2003,18 @@ $(document).ready(function(){
                 contentType: 'application/json',
                 data:JSON.stringify(param),
                     success: function(data) {
-                        alert("Congratulations,You Sucessfully Registerd in YourStory!");
+                        if(data.status == 200){
+							alert("Congratulations!,You sucessfully registerd in Your Story!");
+						  }
+						if(data.status==95){
+							alert("Already Registered");
+						} 
+						if(data.status==96){
+							alert("Participant not Found");
+						} 
+						if(data.status==405){
+							alert("Please login first");
+						} 
                       }
           });
 	});
@@ -1993,9 +2033,22 @@ $(document).ready(function(){
                 contentType: 'application/json',
                 data:JSON.stringify(param),
                     success: function(data) {
-                        alert("Congratulations !,You sucessfully registerd in Market Watch!");
+						if(data.status == 200){
+							alert("Congratulations!,You sucessfully registerd in Market Watch!");
+						  }
+						if(data.status==95){
+							alert("Already Registered");
+						} 
+						if(data.status==96){
+							alert("Participant not Found");
+						} 
+						if(data.status==405){
+							alert("Please login first");
+						} 
+                       
                       }
-          });
+		  });
+      console.log("Hi");		  
 	});
 });
 //B-Quiz 
@@ -2011,7 +2064,18 @@ $(document).ready(function(){
                        contentType: 'application/json',
                        data:JSON.stringify(param),
                         success: function(data) {
-                        alert("Congratylations, You Sucessfully Registerd in B-Quiz !");
+						if(data.status == 200){
+							alert("Congratulations!,You sucessfully registerd in B-Quiz!");
+						  }
+						if(data.status==95){
+							alert("Already Registered");
+						} 
+						if(data.status==96){
+							alert("Participant not Found");
+						} 
+						if(data.status==405){
+							alert("Please login first");
+						} 
                       }
                     });
                 });
@@ -2030,7 +2094,18 @@ $(document).ready(function(){
                 contentType: 'application/json',
                 data:JSON.stringify(param),
                     success: function(data) {
-                        alert("Congratulations, You Sucessfully Registerd in Fantasy Premier League !");
+                        if(data.status == 200){
+							alert("Congratulations!,You sucessfully registerd in Fantasy Premier League!");
+						  }
+						if(data.status==95){
+							alert("Already Registered");
+						} 
+						if(data.status==96){
+							alert("Participant not Found");
+						} 
+						if(data.status==405){
+							alert("Please login first");
+						} 
                       }
           });
 	});
@@ -2049,14 +2124,23 @@ $(document).ready(function(){
                 contentType: 'application/json',
                 data:JSON.stringify(param),
                     success: function(data) {
-                        alert("Congratulations , You Sucessfully Registerd in Memethon!");
+						if(data.status == 200){
+							alert("Congratulations!,You sucessfully registerd in Memethon!");
+						  }
+						if(data.status==95){
+							alert("Already Registered");
+						} 
+						if(data.status==96){
+							alert("Participant not Found");
+						} 
+						if(data.status==405){
+							alert("Please login first");
+						} 
                       }
           });
 	});
 });
 </script>
-	
-	
 								<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 								<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 								 crossorigin="anonymous"></script>
@@ -2069,11 +2153,5 @@ $(document).ready(function(){
 								<script type="text/javascript" src="./js/speaker.js"></script>
 								<script type="text/javascript" src="./js/custom.js"></script>
 	</body>
-	
-	</html>         
-	
-	
-	
-										 
 
-                                     
+	</html>

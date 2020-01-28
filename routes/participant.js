@@ -10,7 +10,6 @@ var {
 var Participant = require('../server/modles/participant');
 var EventQuiz = require('../server/modles/eventquiz');
 var User = require('../server/modles/user');
-var Question = require('../server/modles/questions');
 
 route.get('/', (req, res) => {
      res.render('participant/login');
@@ -49,26 +48,36 @@ route.get('/', (req, res) => {
  //});
  route.post('/addparticipant',async(req,res)=>{
   try { 
-    if(req.body.head_id){
-     var participant_data ={
-      'head_id': req.body.head_id,
-      'team_id':req.body.team_id,
-      'event_id':req.body.event_id
-    }
-    var participant = await Participant(participant_data);
-     // if(user.save()){
-         await participant.save();
-       
-         res.render('default/index',{
-           x:req.body.head_id,
-           y:req.body.head_id.full_name
-         });
-   } else {
-     console.log("REgisteration failed! Try Again"+req.body.head_id+" "+req.body.team_id+" "+req.body.event_id);
-   }
- }catch(e){
-    console.log('Error:-',e);
- }
+    global.window = {document: {createElementNS: () => {return {}} }};
+          if(req.body.head_id){
+               if((await Participant.findOne({'head_id':req.body.head_id}) || awaitParticipant.findOne({'team_id':req.body.team_id})) && (await Participant.findOne({'event_id':req.body.event_id}))){
+                return res.send({success : "Already registred", status : 95});
+               }
+               else if((await User.findOne({'unique_user_id':req.body.team_id[0]}) || await User.findOne({'unique_user_id':req.body.team_id[1]}))){
+                 return res.send({success : "Participant not found", status : 96});
+               }
+               else{
+                var participant_data ={
+                 'head_id': req.body.head_id,
+                 'team_id':req.body.team_id,
+                 'event_id':req.body.event_id
+                  }
+                 var participant = await Participant(participant_data);
+                 await participant.save();
+                  res.render('default/index',{
+                    x:req.body.head_id,
+                    y:req.body.head_id.full_name,
+                    z:req.body.event_id.eventName
+                  })
+               }
+                
+           }else{
+            return res.send({success:"First login",status:405});
+           } 
+
+        }catch(e){
+                console.log('Error:-',e);
+        }
  });
 
 route.get('/quiz', auth, async (req, res) => {
