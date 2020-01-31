@@ -50,34 +50,35 @@ route.get('/', (req, res) => {
   try { 
     global.window = {document: {createElementNS: () => {return {}} }};
           if(req.body.head_id){
-               if((await Participant.findOne({'head_id':req.body.head_id}) || awaitParticipant.findOne({'team_id':req.body.team_id})) && (await Participant.findOne({'event_id':req.body.event_id}))){
-                return res.send({success : "Already registred", status : 95});
-               }
-               else if((await User.findOne({'unique_user_id':req.body.team_id[0]}) || await User.findOne({'unique_user_id':req.body.team_id[1]}))){
-                 return res.send({success : "Participant not found", status : 96});
+            var data = await User.findOne({'unique_user_id':req.body.team_id});
+               if(data){
+                  if((await Participant.findOne({'head_id':req.body.head_id}) || await Participant.findOne({'team_id':req.body.team_id})) && (await Participant.findOne({'event_id':req.body.event_id}))){
+                          return res.send({success : "Already registred", status : 95});
+                  }
+                  else{
+                    var participant_data ={
+                      'head_id': req.body.head_id,
+                      'team_id':req.body.team_id,
+                      'event_id':req.body.event_id
+                      }
+                      var participant = await Participant(participant_data);
+                      await participant.save();
+
+
+                      return res.send({success : "", status : 200});
+                      
+                  }
                }
                else{
-                var participant_data ={
-                 'head_id': req.body.head_id,
-                 'team_id':req.body.team_id,
-                 'event_id':req.body.event_id
-                  }
-                 var participant = await Participant(participant_data);
-                 await participant.save();
-                  res.render('default/index',{
-                    x:req.body.head_id,
-                    y:req.body.head_id.full_name,
-                    z:req.body.event_id.eventName
-                  })
+                return res.send({success : "Participant not found", status : 96});
                }
-                
-           }else{
+               
+          }else{
             return res.send({success:"First login",status:405});
-           } 
-
-        }catch(e){
-                console.log('Error:-',e);
-        }
+          } 
+       }catch(e){
+            console.log('Error:-',e);
+       }
  });
 
 route.get('/quiz', auth, async (req, res) => {

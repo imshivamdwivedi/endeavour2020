@@ -1,4 +1,4 @@
-<%var pf;%>
+<%var eventnames;%>
 <html>
 
 	<head>
@@ -78,7 +78,7 @@
 																	</div>
 																	<div class="modal-body">
 																	  <p>Welcome! <%=y%></p>
-																	</div>
+                                                                    </div>
 																	<div class="modal-footer">
 																<a class="btn btn-primary" href="/logout" role="button">Logout</a>
 																	  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -165,29 +165,38 @@
 														<!-- <div class="header_search"><i class="fa fa-search" aria-hidden="true"></i></div> -->
 														<% if(x) {%>
 														 <!-- Button trigger modal -->
-														 <!-- Button trigger modal -->
-	<!-- Button trigger modal -->
-	<button type="button" class="fa fa-user fa-2x" data-toggle="modal" data-target="#exampleModalCenter">
-	  </button>
+	                                                     <button type="button" class="fa fa-user fa-2x" data-toggle="modal" data-target="#exampleModalCenter"></button>
 	  
-	  <!-- Modal -->
-	  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title" id="exampleModalLongTitle"><%=x%></h5>
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
-			</div>
-			<div class="modal-body">
-			  <p>Welcome! <%=y%></p>
-			</div>
-			<div class="modal-footer">
-				<a class="btn btn-success" href="/logout">Logout</a>
-			  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-			</div>
-		  </div>
+	                                                     <!-- Modal -->
+	                                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		                                                  <div class="modal-dialog modal-dialog-centered" role="document">
+		                                                    <div class="modal-content">
+			                                                  <div class="modal-header">
+			                                                    <h5 class="modal-title" id="exampleModalLongTitle"><%=x%></h5>
+			                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				                                                    <span aria-hidden="true">&times;</span>
+			                                                       </button>
+			                                                  </div>
+			                                                  <div class="modal-body">
+															  <p>Welcome! <%=y%></p>
+															   <div>
+																   <b>Events:</b>
+															   </div>
+															   <div>
+																<table>
+																	<% for(var i=0; i < eventnames.length; i++) { %>
+																	   <tr>
+																		 <td><%= eventnames[i]%></td>
+																	   </tr>
+																	<% } %>
+																	</table>
+															   </div>
+			                                                  </div>
+			                                               <div class="modal-footer">
+				                                           <a class="btn btn-success" href="/logout">Logout</a>
+			                                               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			                                              </div>
+		                                                </div>
 		</div>
 	  </div>
 	
@@ -924,19 +933,23 @@
 					So gear up buddies it’s time to brush up your coding skills and let your mind work faster than
 					your thoughts!
 				</p>
-			<!--
+			
 				<strong>BENEFITS:</strong>
 				<ul style="list-style-type:circle;">
 					<li>We will call investors for the development of the idea.</li>
 				</ul>
-			-->
+			
 				<strong>STRUCTURE:</strong>
 				<ul style="list-style-type:circle;">
-					<li>Team size: 2-4 members </li>
-					<li>Duration: 25hours</li>
+					<li>Team size: Maximum 4 participants per team. Minimum 2 Participants</li>
+					<li>Duration: 25hours (From 12:00hrs. on day 1 to 13:00 hrs. on day 2)</li>
+					<li>Team size: Maximum 4 participants per team. Minimum 2 Participants</li>
+					<li>Duration: 25hours (From 12:00hrs. on day 1 to 13:00 hrs. on day 2)</li>
+					<li>Presentation Duration: 5-7 minutes</li>
+					<li>Q&A duration: - 3-5 minutes</li>
 					<li>01:00hrs of the workshop will be created for the participants during the hackathon</li>
 				</ul>
-				<!--
+				
 				<strong>ROUND ONE-ONLINE SUBMISSION- PRELIMINARY ROUND:</strong>
 				<ul style="list-style-type:circle">
 					<li>Participants will have to submit the abstract in the form of pdf.</li>
@@ -962,7 +975,6 @@
 						<ul style="list-style-type:circle">
 						<li>In this round, participants will come with their idea that they have presented before. There will be 5-10 minutes presentation and 2-5 minutes questionnaire round.</li>
 							</ul> 
-						-->
 				<strong>RULES :</strong>
 				<ul style="list-style-type:circle">
 				<li>Participants should maintain civil decorum throughout the event.</li>
@@ -973,7 +985,7 @@
 				<li>At the end of the event, you must present/submit a working prototype/model.</li>
 				<li>In case of any dispute, the decision given by the judges will be final.</li>
 				</ul>
-				<!--
+				
 				<strong>FAQ'S :</strong>
 				<ul style="list-style-type:circle">
 					<li>
@@ -1002,7 +1014,7 @@
 							present the idea but more than 3 members are not allowed.</p>
 					</li>
 				</ul>
-			-->
+			
 			</div>
 			<div role="tabpanel" class="tab-pane" id="Register_hackathon">
 
@@ -1105,22 +1117,43 @@
 					the unique point which is related to entrepreneurship. They have to solve the problem statement
 					given to them in a given amount of time.
 					</p>
-				<strong>2. Round Two-</strong>
+				<strong>2. Round Two:- Co-Chess game</strong>
 				<ul style="list-style-type:circle;">
 				  <li>4 teams who will qualify round 1 will participate in the second round.</li>
 				  <li>Now two teams will play this game at a time.</li>
-		          <li>The participants have to move their pawns the same way they are moved in chess.</li>
-				  <li>The participants have to collect the products on the remaining blocks of the chess board.</li>
-				  <li>Each team will be provided with five pawns.</li>
+				  <li>1st team will play with the 4th team and 2nd team will play with the 3rd team.</li>l
+				  <li>This game is just like chess but it consists of following rules:-</li>
+				</ul>                                  <p>
+					❖ This game has 5X5 square block having a total of 25 small blocks.<br>
+					❖ There will be no king, queen, rook, bishop, knight. (Only Pawn)<br>
+					❖ Initially 5 pawns from both team stand opposite to each other as in chess.<br>
+					❖ Now the remaining 15 blocks are each assigned to the corporate products which they have to
+					buy.<br>
+					❖ Virtual money will be provided to perform the moves.<br>
+					❖ Every product will have its particular strength depending on its need in office.<br>
+					❖ The strength will be told to the participants at the end of the event only. The players have to
+					decide what to buy based on their intellect and experience.<br>
+					❖ Some cash will be given to both the teams as virtual money.<br>
+					❖ Players will have to pay some money to perform a move.<br>
+					❖ From the first team, if pawn moves then the second move will have to be performed by the
+					second team as in chess.<br>
+					❖ As in chess, pawn moves one square forward then it may be possible that the opposite team
+					pawn would diagonally present which have some products then the pawn has a chance to buy the
+					all products of the opposite by replacing the opponent diagonally as in chess.<br>
+					❖ In this move one condition is there that player will move if and only if he/she pays an extra
+					amount of money.<br>
+					❖ At last, the team which have more valuable products will win the game.<br>
+					❖ If once player moves then it will not allow moving backwards.<br>
+					❖ The first move will be decided by the rank of 1st round.<br></p>
 				<strong>3. Round Three:- Auction Round</strong>
 				<ul style="list-style-type: circle;">
 					<li>2 teams who will qualify round 2 will participate in the third round.</li>
 					<li>All the 15 products in the second round will be auctioned in the auction round.</li>
-					<li>Virtual money will be given to both the teams for theauction.</li>
+					<li> •	Virtual money will be given to both the teams for theauction.</li>
 				 </ul>
 				<strong>JUDGING CRITERIA</strong>
 			<p>Teams which have more valuable products will win the game.</p>
-			<!--
+			
 				<strong>FAQ'S :</strong>
 				<ul style="list-style-type:circle;">
 					<li>
@@ -1148,7 +1181,7 @@
 						</p>
 					</li>
 				</ul>
-			-->
+			
 			</div>
 			<div role="tabpanel" class="tab-pane" id="Register_cochess">
 				<div class="form-group">
@@ -1230,7 +1263,7 @@
 								<li>There are two independent rounds in this event.
 								</li>
 							</ul>
-							<strong>Category-1 :</strong>
+							<strong>Round-1 :</strong>
 							<ul style="list-style-type:circle;">
 								<li>Team will have to observe the area near venues and has to click the photographs.
 								</li>
@@ -1240,7 +1273,7 @@
 								<li>· It will be an offline submit with articles and photographs on a paper.
 								</li>
 							</ul>
-							<strong>Category-2 :</strong>
+							<strong>Round-2 :</strong>
 							<ul style="list-style-type:circle;">
 								<li>If you are good in videography then submit a short video of minimum 1.5 minutes.
 									The last
@@ -1249,7 +1282,6 @@
 							</ul>
 							<strong>RULES</strong>
 							<ul style="list-style-type:circle;">
-								<li>The participants must choose only one of the above categories</li>
 								<li>Only the area where the E Summit events are taking place should be covered.</li>
 								<li>All the other college region is restricted.</li>
 								<li>Anyone found roaming or breaking the rules will be then and there disqualified.</li>
@@ -1301,6 +1333,11 @@
 									<p> No, Only the area where e-summit events are going on.
 									</p>
 								</li>
+							</ul>
+							<ul>
+								<li>Registration Fee: 150 Rupees</li>
+								<li>Expected Participant:</li>
+								<li>Total Inflow:</li>
 							</ul>
 						</div>
 						<div role="tabpanel" class="tab-pane" id="Register_yourstory">
@@ -1385,9 +1422,9 @@
 				<p>In this round, questions will be related to corporate and entrepreneur knowledge.
 					Google will be provided to the team.
 					</p>
-				<strong>Round 2: Rapid Fire Round</strong>
-				<p>This round is to test your knowledge about the entrepreneur and business world. <br>It will be held between the teams qualified from round 1.
-					<br>The team with maximum correct answers wins the quiz.
+				<strong>Round 2-</strong>
+				<p>This round is to test your knowledge about the entrepreneur and business world. It will be held between the teams qualified from round 1.
+					The team with maximum correct answers wins the quiz.
 					</p>
 				<strong>RULES :</strong>
 				<ul style="list-style-type:circle;">
@@ -1396,14 +1433,8 @@
 					<li>The participant should answer in the given timelimit</li>
 					<li>No withdrawn after registration.</li>
 				</ul>
-				 <strong>JUDGEMENT CRITERIA:</strong> 
-				 <ul style="list-style-type:circle;">
-                   <li>Teams who gets maximum points will qualify from round 1.</li> 
-				<li>
-					The team the with maximum correct answers will win the second round.
-				</li></ul>
-			
-				<!--
+				
+				<strong>FAQ'S :</strong>
 				<ul style="list-style-type:circle;">
 					<li>
 						<p>Are intercollege members allowed to form a single team?</p>
@@ -1437,7 +1468,6 @@
 			<li>The team with maximum correct answers will win the secondround.
 </li>						
 			</ul>
-		-->
 			</div>
 			<div role="tabpanel" class="tab-pane" id="Register_bquiz">
 				<div clas="form-group">
@@ -1458,7 +1488,7 @@
 					<big class="form-text text-muted">Not Mandatory.</big>
 					<hr>
 
-					<button  class="btn btn-primary" id="bquizz">Registeration start soon</button>
+					<button  class="btn btn-primary" id="bquiz">Register</button>
 				</div>
 			</div>
 		</div>
@@ -1507,39 +1537,65 @@
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane active" id="Rules_meme">
 				<strong>DESCRIPTION</strong>
-				<p>The time has come to think outside the box. The event is based to depict the creative and advertising skills of the individual by promoting various brands through memes.
-				</p>
+				<p>
+					Which company's mobile phones are marketed with the slogan- Big Inside, Small Outside? Battle it out with the
+					sharpest minds
+					in the form of mind-boggling questions and answers.</p>
 				<strong>BENEFITS:</strong>
 				<ul style="list-style-type:circle;">
-					<li>To enhance creativity skills of the participants.</li>
-					<li>To enhance the advertising skills of theparticipants</li>
+					<li>To enhance the knowledge of the participants in various business/corporate domains.</li>
 				</ul>
 				<strong>STRUCTURE:</strong>
 				<ul style="list-style-type:circle;">
-					<li>Team size: 1-2 member</li>
-					<li>Rounds: 1 Round</li>
+					<li>Team size – maximum 2 members</li>
+					<li>The event consists of two rounds</li>
 				</ul>
-				<strong>ROUND 1: MEME BATTLE</strong>
+				<strong>ROUND ONE- ONLINE QUIZ (DURATION-30 MINUTES)</strong>
 				<ul style="list-style-type:circle;">
-					<li>The teams have to make the meme on the brand given to them and submit it before the deadline given to them.</li>
-					<li>At a time two memes will be posted on the E-cell page as story and meme battle will take place among them for a specific period oftime.</li>
-					<li>The memes will also be posted to Endeavour Android Application for a specific period of time and the voting process will take place between them.
-					</li>
-				
+					<li>An online quiz will be conducted.</li>
+					<li>There will be 30 question in this round.</li>
+					<li>Hints will be provided for some questions.</li>
+					<li>Username and password will be provided on the day of the quiz.</li>
 				</ul>
-			
+				<strong>ROUND TWO- GOOGLE QUIZ (DURATION-60 MINUTES)</strong>
+				<ul style="list-style-type:circle;">
+					<li>In this round participants will be allowed to use Google search.</li>
+					<li>There will be 60 minutes for 20 questions.</li>
+				</ul>
 				<strong>RULES :</strong>
 				<ul style="list-style-type:circle;">
-					<li>Only one entry per team is allowed.</li>
-					<li>Each team would be given templates and they have to design their promotional meme accordingly</li>
-					<li>Plagiarism is strictly prohibited.</li>
-					<li>Memes should be free from any kind of vulgar or offensive content otherwise it will leadto disqualification of theteam.</li>
-				<li>Memes should be free from names of team member and team’s name or any person.
-				</li></ul>
-			<strong>JUDGING CRITERIA:</strong>
-			<ul style="list-style-type:circle;">
-			<li>Judging criteria will be as follows:<br>
-				60% of voting through Instagram Story + 40% of voting through Android App </li></ul>
+					<li>Participant with the highest score will win the game.</li>
+					<li>In case of any tie, there will be a tie breaker question.</li>
+					<li>If participants use hints then marks will be reduced accordingly.</li>
+					<li>Every team will be provided with a P.C.</li>
+				</ul>
+				<strong>FAQ'S :</strong>
+				<ul style="list-style-type:circle;">
+					<li>
+						<p>Are intercollege members allowed to form a single team?</p>
+						<p>Yes, intercollege members are allowed to form a single team.</p>
+					</li>
+					<li>
+						<p>Is there any criteria regarding team size?</p>
+						<p>The maximum size of the team is 2 members, even one member can also participate
+							but more than 2 members are not allowed. </p>
+					</li>
+					<li>
+						<p>Can we participate in the online round from anywhere using internet connection?</p>
+						<p>No, the online round will be conducted at the venue. Login id and password
+							will be provided at the venue only.</p>
+					</li>
+					<li>
+						<p>Is use of internet allowed?</p>
+						<p>Use of the Internet is allowed only in the second round.</p>
+					</li>
+					<li>
+						<p>How we will be informed about our results?</p>
+						<p>The result of rounds will be informed via mail or phone call to the team
+							leader.
+						</p>
+					</li>
+				</ul>
 			</div>
 			<div role="tabpanel" class="tab-pane" id="Register_meme">
 				<div clas="form-group">
@@ -1614,47 +1670,62 @@
 				</p>
 				<strong>BENEFITS:</strong>
 				<ul style="list-style-type:circle;">
-					<li>To enhance the knowledge of finance among participants.</li>
-					<li> To increase the instant decision making skill of the participants.</li>
-					</ul>
+					<li>o To enhance the knowledge of finance among participants. o To increase the instant decision
+						making skill of the participants.</li>
+					
+				</ul>
 				<strong>STRUCTURE:</strong>
 				<ul style="list-style-type:circle;">
-					<li>No. of members: 2</li>
-					<li>No. of rounds: 2</li>
+					<li>Team size- maximum 2 members</li>
+					<li>The event consists of two rounds.</li>
 				</ul>
 				<strong>ROUND ONE- ONLINE QUIZ (DURATION-30 MINUTES)</strong>
 				<ul style="list-style-type:circle">
-					<li>Round 1 is a quiz round</li>
-					<li>It will consist of questions related to football.</li>
-					<li>Top 6 teams with maximum correct answers would qualify for the auction round.</li>
+					<li>An online quiz will be conducted.</li>
+					<li>There will be 30 questions in this round.</li>
+					<li>Username and password will be provided on the day of the event.</li>
 				</ul>
 				<strong>ROUND TWO- AUCTION ROUND</strong>
 				<ul style="list-style-type:circle">
-					<li>●	This is an auction round, where participants have to make a football team of 11 players. 
+					<li>Participants who will qualify round 1 will participate in the auction.
 					</li>
-					<li>Every player will have their respective strength</li>
-					<li>The team with overall maximum strength wins the game.</li>
+					<li>Every team will be given 100 points.</li>
+					<li>Teams will have to make a 11 member team in the auction.</li>
+					<li>Teams will have to make a team of 11 members in the auction.</li>
+					<li>Every team will get two Match cards. They can use the match cards in the auction.</li>
+					<li>Match card gives the team a right to buy the player at minimum cost.
+					</li>
 				</ul>
 				<strong>RULES :</strong>
 				<ul style="list-style-type:circle">
-					<li>Strength of each player is decided by the auctioneersonly.</li>
+					<li>Final decision of auction will be decided by an auctioneer.</li>
 					<li>No member will be allowed to leave the venue at the time of auction.
 					</li>
+					<li>Only one player will be allowed to do auction at a time</li>
 					<li>Only round 1 qualifiers will participate in the auction round.</li>
 				</ul>
 				<strong>FAQ’s</strong>
 				<ul style="list-style-type:circle">
 					<li>
-						<p>1. Are Intercollege teams allowed to form ateam? </p>
-						<p>Ans. Yes</p>
+						<p>Is there any need for materials regarding players?</p>
+						<p>No, everything will be provided at the venue</p>
 					</li>
 					<li>
-						<p>What happens if a team of 11 is not made? </p>
-						<p>Ans. You will be disqualified.</p>
+						<p>Can more than one team participate from the same college?</p>
+						<p>Yes ,more than one team can participate</p>
 					</li>
 					<li>
-						<p>2.	What type of questions will be there in 1stRound? </p>
-						<p>Ans. Questions related to football</p>
+						<p>If two people bid at the same time, who will be counted?</p>
+						<p>This will be decided by the coordinator responsible for biding and his decision
+							will be final</p>
+					</li>
+					<li>
+						<p>What will be the domain of the quiz?</p>
+						<p>IPL</p>
+					</li>
+					<li>
+						<p>Will extra Points be given for not using the match cards?</p>
+						<p>No.</p>
 					</li>
 				</ul>
 			</div>
@@ -1769,8 +1840,6 @@ This event is based on investing in the stock market using virtual money.<br>
 						  <li>The E-Cell team has the right to disqualify any participant at any point.</li>
 					</ul>
 					<strong>Judging Criteria</strong>
-					<ul style="list-style-type:circle">
-					<li>The team with the strongest portfolio at the end will be thewinner.					</li></ul>
 					<strong>FAQ’s</strong>
 					<ul style="list-style-type:circle">
 						<li>
@@ -1787,7 +1856,13 @@ This event is based on investing in the stock market using virtual money.<br>
 								market to easily understand about the working.</p>
 						</li>
 						<li>
-							<p>Q4. Is there any limit on buying or selling?</p>
+							<p>Q4. How will the price of share change?</p>
+							<p>Ans. We have analyzed the previous year price data of the companies and proportionally it will
+								change for one hour in the event.
+								</p>
+						</li>
+						<li>
+							<p>Q5. Is there any limit on buying or selling?</p>
 							<p>Ans. You can buy or sell shares any number of times in the event.</p>
 						</li>
 					</ul>
@@ -1811,7 +1886,7 @@ This event is based on investing in the stock market using virtual money.<br>
 						<big class="form-text text-muted">Not Mandatory.</big>
 						<hr>
 
-						<button id="mwatchh" class="btn btn-primary">Registeration start soon</button>
+						<button id="mwatch" class="btn btn-primary">Register</button>
 
 					</div>
 				</div>
@@ -1981,8 +2056,7 @@ $(document).ready(function(){
 						} 
                        
                       }
-		  });
-      console.log("Hi");		  
+		  });		  
 	});
 });
 //B-Quiz 

@@ -3,20 +3,25 @@ const route = express.Router();
 const nodemailer = require('nodemailer');
 var User = require('../server/modles/user');
 //const bcrypt = require('bcrypt');
-var Event = require('../server/modles/event');
+var {
+    Event
+} = require('../server/modles/event');
+var Participant = require('../server/modles/participant');
+
+
 
 route.get('/',(req, res) => {
+ 
     res.render('default/index',{
         x:req.session.userid,
         y:req.session.name,
-       // z:req.body.userid.event_id.eventName
     });
 });
 route.get('/login', async (req, res) => {
+
     res.render('default/login',{
         x:req.session.userid,
         y:req.session.full_name,
-        //z:req.body.userid.event_id.eventName
     });
 });
 route.get('/sponsors', async (req, res) => {
@@ -29,16 +34,17 @@ route.get('/register', (req, res) => {
     res.render('default/registration');
 });
 route.get('/checkLogin', (req, res) => {
-    res.render('default/index',{
-        x:req.session.userid,
-        y:req.session.name
-    });
-});
-route.get('/adduser', (req, res) => {
+
     res.render('default/index',{
         x:req.session.userid,
         y:req.session.name,
-       // z:req.body.userid.event_id.eventName
+    });
+});
+route.get('/adduser', (req, res) => {
+
+    res.render('default/index',{
+        x:req.session.userid,
+        y:req.session.name,
     });
 });
 route.post('/checkLogin', async (req, res) => {
@@ -51,10 +57,36 @@ route.post('/checkLogin', async (req, res) => {
             req.session.status = detail[0].status;
             req.session.userid = detail[0].unique_user_id;
             req.session.name = detail[0].full_name;
+            par = await Participant.find({
+                 $or: [{
+                         "head_id": req.session.userid
+                     }, {
+                         "team_id": {
+                             "$in": [req.session.userid]
+                         }
+        
+                   }]
+               });
+            var eventarr = [];
+            for(i = 0; i < par.length; i++) {
+                   eventarr.push(par[i].event_id);
+                   console.log(eventarr[i]);
+            }
+
+            eventid= await Event.find({
+                "_id":eventarr
+            });
+            //console.log(eventid[0].eventName);
+            var eventnames =[];
+            for(i=0;i<eventid.length;i++)
+                  eventnames.push(eventid[i].eventName);
+               // req.session.eventname = eventname;
+            
+           // console.log(req.session.eventname);
             res.render('default/index',{
                 x:req.session.userid,
                 y:req.session.name,
-               // z:req.body.userid.event_id.eventName
+                eventnames
             });
 
         }
@@ -122,8 +154,9 @@ route.post('/adduser',async (req, res) => {
         if (err) {
           console.log(err);
         } else {
-            res.render('default/index',{x:req.session.userid,y:req.body['name'],
-         //   z:req.body.userid.event_id.eventName
+            res.render('default/index',{
+              x:req.session.userid,
+              y:req.body['name'],
          });
         }
       });
