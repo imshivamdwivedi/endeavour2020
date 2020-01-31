@@ -70,7 +70,7 @@ route.post('/checkLogin', async (req, res) => {
             var eventarr = [];
             for(i = 0; i < par.length; i++) {
                    eventarr.push(par[i].event_id);
-                   console.log(eventarr[i]);
+                   //console.log(eventarr[i]);
             }
 
             eventid= await Event.find({
@@ -80,13 +80,14 @@ route.post('/checkLogin', async (req, res) => {
             var eventnames =[];
             for(i=0;i<eventid.length;i++)
                   eventnames.push(eventid[i].eventName);
-               // req.session.eventname = eventname;
+               
             
            // console.log(req.session.eventname);
             res.render('default/index',{
                 x:req.session.userid,
                 y:req.session.name,
-                eventnames
+                eventnames,
+                z:eventnames.length
             });
 
         }

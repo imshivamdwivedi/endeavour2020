@@ -1,4 +1,4 @@
-<%var eventnames;%>
+<%var eventnames,z;%>
 <html>
 
 	<head>
@@ -77,8 +77,18 @@
 																	  </button>
 																	</div>
 																	<div class="modal-body">
-																	  <p>Welcome! <%=y%></p>
-                                                                    </div>
+																	  <p color="red">Welcome! <%=y%></p>
+																	</div>
+																	<div>
+																		<table>
+																			<% for(var i=0; i < z; i++) { %>
+																			   <tr>
+																				 <td><%= eventnames[i]%></td></br>
+																			   </tr>
+																			<% } %>
+																			</table>
+																	   </div>
+																	</div>
 																	<div class="modal-footer">
 																<a class="btn btn-primary" href="/logout" role="button">Logout</a>
 																	  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -184,11 +194,13 @@
 															   </div>
 															   <div>
 																<table>
-																	<% for(var i=0; i < eventnames.length; i++) { %>
+																	<% for(var i=0; i < z; i++) { %>	
 																	   <tr>
-																		 <td><%= eventnames[i]%></td>
+																		 <td><%= eventnames[i]%></td></br>&nbsp;
+																		<td><button type="button" class="btn btn-danger">Pay</button></td>
 																	   </tr>
 																	<% } %>
+																	   
 																	</table>
 															   </div>
 			                                                  </div>
