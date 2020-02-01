@@ -250,7 +250,7 @@
             var data = JSON.parse(this.responseText)[0];
             if (data) {
               document.querySelector('#phoneno').value = data['phone_number'];
-             // document.querySelector('#passwordhash').value = data['password_hash'];
+             document.querySelector('#passwordhash').value = data['password_hash'];
               document.querySelector('#esummitid').value = data['unique_user_id'];
               document.querySelector('#email').value = data['email'];
               document.querySelector('#fullname').value = data['full_name'];

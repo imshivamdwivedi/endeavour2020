@@ -1,8 +1,9 @@
+<%var y;%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>The Conference</title>
+	<title>Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- main css-->
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap4/bootstrap.min.css">
@@ -15,7 +16,11 @@
 </head>
 
 <body>
-
+	<% if(y==0) {%>
+		<div class="alert alert-danger alert-dismissible">
+            <strong>Wrong Credentials</strong>.
+          </div>
+		<% } %>		
 	<div class="super_container">
 		<!-- Menu -->
 		<div class="menu trans_500">
@@ -136,7 +141,7 @@
 
 					<div class="wrap-input" style="margin:85px 0 35px 0; " data-validate="Enter username">
 						<input class="input" type="text" name="username">
-						<span class="focus-input" data-placeholder="Username"></span>
+						<span class="focus-input" data-placeholder="Email"></span>
 					</div>
 
 					<div class="wrap-input" style="margin-bottom:50px;" data-validate="Enter password">

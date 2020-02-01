@@ -92,7 +92,9 @@ route.post('/checkLogin', async (req, res) => {
 
         }
         else{
-            res.render('default/login');
+            res.render('default/login',{
+                y:0
+            });
         }
     } catch (e) {
         console.log('Error :- ', e);
