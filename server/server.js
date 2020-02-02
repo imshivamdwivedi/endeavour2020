@@ -22,8 +22,6 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const cookieParser = require('cookie-parser')
 //route in use
 const admin = require('../routes/admin');
-const quiz = require('../routes/quiz');
-const event = require('../routes/event');
 const main = require('../routes/default');
 const participant = require('../routes/participant');
 
@@ -64,8 +62,8 @@ app.use(function(req, res, next) {
   })
 app.use('/', main);
 app.use('/admin', admin);
-app.use('/admin', quiz);
-app.use('/admin', event);
+//app.use('/admin', quiz);
+//app.use('/admin', event);
 app.use('/participant', participant);
 
 const port = process.env.PORT ||3000;

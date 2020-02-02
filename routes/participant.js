@@ -8,7 +8,7 @@ var {
 } = require('../server/modles/event');
 // var Event = require('../server/modles/eventquiz');
 var Participant = require('../server/modles/participant');
-var EventQuiz = require('../server/modles/eventquiz');
+//var EventQuiz = require('../server/modles/eventquiz');
 var User = require('../server/modles/user');
 
 route.get('/', (req, res) => {
@@ -157,37 +157,37 @@ route.post('/addparticipant/marketwatch', async(req,res)=>{
        }
  });
 
-route.get('/quiz', auth, async (req, res) => {
-    var par = await Participant.find({
-        $or: [{
-            "head_id": req.session.userid
-            // "head_id": "ENDVR189452505120"
-        }, {
-            "team_id": {
-                "$in": [req.session.userid]
-                // "$in": ["ENDVR189452505120"]
-            }
-        }]
-    });
-    var eventarr = [];
-    for (i = 0; i < par.length; i++) {
-        eventarr.push(par[i].event_id);
-    }
-    var event = await EventQuiz.find({
-        event_id: {
-            "$in": eventarr
-        },
-        quiz_status: true,
-        taken_status: false
-    });
-    var eventdetail = await Event.find({
-        _id: {
-            "$in": eventarr
-        }
-    });
-    res.render("participant/quiz", {
-        event,
-        eventdetail
-    });
-});
+//route.get('/quiz', auth, async (req, res) => {
+  //  var par = await Participant.find({
+    //    $or: [{
+      //      "head_id": req.session.userid
+//            // "head_id": "ENDVR189452505120"
+  //      }, {
+    //        "team_id": {
+      //          "$in": [req.session.userid]
+        //        // "$in": ["ENDVR189452505120"]
+          //  }
+//        }]
+  //  });
+    //var eventarr = [];
+//    for (i = 0; i < par.length; i++) {
+  //      eventarr.push(par[i].event_id);
+   // }
+//    var event = await EventQuiz.find({
+//        event_id: {
+//            "$in": eventarr
+//        },
+//        quiz_status: true,
+//        taken_status: false
+//    });
+//    var eventdetail = await Event.find({
+//        _id: {
+//            "$in": eventarr
+//        }
+//    });
+//    res.render("participant/quiz", {
+//        event,
+   //     eventdetail
+ //   });
+//});
 module.exports = route;

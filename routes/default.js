@@ -170,6 +170,16 @@ route.post('/adduser',async (req, res) => {
 }
 });
 
+route.post('/payment', async(req,res)=>{
+
+      var params ={
+        "App_Key":"ENDEAVOUR_20QBZPJA",
+        "CUST_ID":req.body['head'],
+        "TXN_AMOUNT":req.body['amount'],
+        "CALLBACK_URL":"http://localhost:3000/paywithpaytmresponse"
+      }
+});
+
 
 route.get('/logout', (req, res) => {
     delete req.session.userid;
