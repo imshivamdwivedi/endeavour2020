@@ -17,6 +17,7 @@ const ejs = require('ejs');
 const path = require('path');
 var Event = require('./modles/event');
 var User = require('./modles/user');
+var Transaction = require('./modles/transaction');
 var session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const cookieParser = require('cookie-parser')

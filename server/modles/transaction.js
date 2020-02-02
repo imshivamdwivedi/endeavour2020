@@ -18,7 +18,7 @@ var transactionSchema = mongoose.Schema({
       },
       status:{
           type:Number,
-          require:true
+          default:00
       },
       Txn_amount:{
         type:Number,
@@ -37,11 +37,11 @@ var transactionSchema = mongoose.Schema({
 var Transaction = mongoose.model('Transaction',transactionSchema);
 
 Transaction.create({
-    order_id:'123',
-    head_id:'ENDVR199058933387',
-    event_id:'76274387472847987982',
-    status:'01',
-    Txn_amount:'400'
+    order_id:"1ABCD23",
+    head_id:"ENDVR199058933387",
+    event_id:"5e2dfdeef6a4be24209ce5fc",
+    status:01,
+    Txn_amount:400
 
 });
 
