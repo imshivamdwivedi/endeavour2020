@@ -3,46 +3,57 @@ const User = require('./user');
 const EVent = require('./event');
 
 var transactionSchema = mongoose.Schema({
-      order_id:{
+      ORDERID:{
           type:String,
           require:true
       },
-      head_id:{
+      TXNID:{
           type:String,
           require:true
       },
-      event_id:{
+      EVENT_ID:{
         type: mongoose.Schema.Types.ObjectId,
         require: true,
         ref: 'Event'
       },
-      status:{
-          type:Number,
-          default:00
+      STATUS:{
+          type:String,
+          require:true
+          
       },
-      Txn_amount:{
+      TXNAMOUNT:{
         type:Number,
         require:true
       },
-      created_at: {
-        type: Date,
-        default: Date.now()
+      RESPCODE:{
+        type:Number,
+        require:true,
+        min:1,
+        max:4
       },
-      updated_at: {
-        type: Date,
-        default: null
+      CUST_ID:{
+        type:String,
+        require:true
       }
 });
 
 var Transaction = mongoose.model('Transaction',transactionSchema);
 
-Transaction.create({
-    order_id:"1ABCD23",
-    head_id:"ENDVR199058933387",
-    event_id:"5e2dfdeef6a4be24209ce5fc",
-    status:01,
-    Txn_amount:400
-
-});
+//Transaction.create({
+ // ORDERID: 'ENDE201580823712',
+  //TXNID: '20200204111212800110168137611833090',
+  //TXNAMOUNT: '1.00',
+  //PAYMENTMODE: 'UPI',
+  //CURRENCY: 'INR',
+  //TXNDATE: '2020-02-04 19:11:54.0',
+  //STATUS: 'TXN_SUCCESS',
+  //RESPCODE: '01',
+  //RESPMSG: 'Txn Success',
+  //GATEWAYNAME: 'PPBLC',
+  //BANKTXNID: '003509187237',
+  //IS_CHECKSUM_VALID: 'Y',
+  //error: 'false',
+  //CUST_ID: 'ENDVR209058936387'
+//});
 
 module.exports = Transaction;

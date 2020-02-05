@@ -2,51 +2,13 @@ const express = require('express');
 const route = express.Router();
 const nodemailer = require('nodemailer');
 var User = require('../server/modles/user');
-//const bcrypt = require('bcrypt');
+const axios = require('axios');
 var {
     Event
 } = require('../server/modles/event');
 var Participant = require('../server/modles/participant');
+var Transaction = require('../server/modles/transaction');
 
-
-
-route.get('/',(req, res) => {
- 
-    res.render('default/index',{
-        x:req.session.userid,
-        y:req.session.name,
-    });
-});
-route.get('/login', async (req, res) => {
-
-    res.render('default/login',{
-        x:req.session.userid,
-        y:req.session.full_name,
-    });
-});
-route.get('/sponsors', async (req, res) => {
-    res.render('default/sponsors');
-});
-route.get('/team', async (req, res) => {
-    res.render('default/team');
-});
-route.get('/register', (req, res) => {
-    res.render('default/registration');
-});
-route.get('/checkLogin', (req, res) => {
-
-    res.render('default/index',{
-        x:req.session.userid,
-        y:req.session.name,
-    });
-});
-route.get('/adduser', (req, res) => {
-
-    res.render('default/index',{
-        x:req.session.userid,
-        y:req.session.name,
-    });
-});
 route.post('/checkLogin', async (req, res) => {
     try {
         detail = await User.find({
@@ -81,7 +43,8 @@ route.post('/checkLogin', async (req, res) => {
             for(i=0;i<eventid.length;i++)
                   eventnames.push(eventid[i].eventName);
                
-            
+            req.session.events = eventnames;
+            req.session.eventsl = eventnames.length;
            // console.log(req.session.eventname);
             res.render('default/index',{
                 x:req.session.userid,
@@ -89,7 +52,6 @@ route.post('/checkLogin', async (req, res) => {
                 eventnames,
                 z:eventnames.length
             });
-
         }
         else{
             res.render('default/login',{
@@ -100,6 +62,54 @@ route.post('/checkLogin', async (req, res) => {
         console.log('Error :- ', e);
     }
 });
+
+route.get('/',(req, res) => {
+ 
+    res.render('default/index',{
+        x:req.session.userid,
+        y:req.session.name,
+        eventnames:req.session.events,
+        z:req.session.eventsl
+    });
+});
+route.get('/login', async (req, res) => {
+
+    res.render('default/login',{
+        x:req.session.userid,
+        y:req.session.full_name,
+    });
+
+});
+route.get('/sponsors', async (req, res) => {
+    res.render('default/sponsors');
+});
+route.get('/team', async (req, res) => {
+    res.render('default/team');
+});
+route.get('/register', (req, res) => {
+    res.render('default/registration');
+});
+route.get('/checkLogin', (req, res) => {
+
+    res.render('default/index',{
+        x:req.session.userid,
+        y:req.session.name,
+        eventnames:req.session.events,
+        z:req.session.eventsl
+    });
+ 
+});
+route.get('/adduser', (req, res) => {
+
+    res.render('default/index',{
+        x:req.session.userid,
+        y:req.session.name,
+        eventnames:req.session.events,
+        z:req.session.eventsl
+    });
+
+});
+
 
 route.get('/speaker', (req, res) => {
     res.render('default/speaker');
@@ -160,6 +170,8 @@ route.post('/adduser',async (req, res) => {
             res.render('default/index',{
               x:req.session.userid,
               y:req.body['name'],
+              eventnames:req.session.events,
+              z:req.session.eventsl
          });
         }
       });
@@ -169,17 +181,58 @@ route.post('/adduser',async (req, res) => {
 
 }
 });
+//route.post('/paymentt',async(req,res)=>{
 
-route.post('/payment', async(req,res)=>{
-
-      var params ={
-        "App_Key":"ENDEAVOUR_20QBZPJA",
-        "CUST_ID":req.body['head'],
-        "TXN_AMOUNT":req.body['amount'],
-        "CALLBACK_URL":"http://localhost:3000/paywithpaytmresponse"
-      }
+ //   var al = req.session.userid;
+ //   var str = req.body['CUST_ID']+req.body['EVENT_ID']
+ //   var parts = str.split(al);
+ //   console.log(req.body['CUST_ID']+req.body['EVENT_ID']);
+ //   console.log(al);
+  //  console.log(parts[1]);
+//});
+route.post('/payment',async(req,res)=>{
+    try {
+        if(req.session.id){
+         var params ={};
+         params.APP_KEY = 'ENDEAVOUR_20_QBZPJA'
+         params.CUST_ID = req.body['CUST_ID']+req.body['EVENT_ID'],
+         params.TXN_AMOUNT= req.body['TXN_AMOUNT'],
+         res.redirect('https://tech.kiet.edu/erp-apis/index.php/payment/do_transaction?APP_KEY=ENDEAVOUR_20_QBZPJA&CUST_ID='+params.CUST_ID+'&TXN_AMOUNT='+params.TXN_AMOUNT+'&CALLBACK_URL=http://localhost:3000/response');
+        }
+    } catch (error) {
+        console.log('Error:-',error);
+    }
 });
 
+route.post('/response',async(req,res)=>{
+    try {
+        var al = req.session.userid;
+        var str = res.req.body.CUST_ID;
+        var parts = str.split(al);
+        res.req.body.EVENT_ID = parts[1];
+        res.req.body.CUST_ID = al;
+      //  console.log(res.req.body.CUST_ID );
+       // console.log(res.req.body.EVENT_ID );
+        var payment = await Transaction(res.req.body);
+        // console.log(payment);
+        await payment.save();
+   
+        res.render('default/index',{
+            x:req.session.userid,
+            y:req.session.name,
+            eventnames:req.session.events,
+            z:req.session.evensl
+        })
+        
+    } catch (error) {
+        console.log('Error:',error);
+    }
+    
+
+});
+route.get('/wow',(req,res)=>{
+ console.log(req.session.userid);
+});
 
 route.get('/logout', (req, res) => {
     delete req.session.userid;

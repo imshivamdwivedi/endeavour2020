@@ -606,7 +606,7 @@
 			<div class="mu-venue-address">
 				<h2>VENUE <i class="fa fa-chevron-right" aria-hidden="true"></i></h2>
 				<h3>KIET Group of Institutions</h3>
-				<!-- <h4>9800 International Dr, Orlando, FL 32819, USA</h4> -->
+				<h4>NH-58 Delhi-Meerut Road , Ghaziabad-201206</h4>
 				<!-- <p></p> -->
 			</div>
 		</div>
@@ -877,10 +877,14 @@
 						<input type="text" class="form-control" id="caid" value="">
 						<big class="form-text text-muted">Not Mandatory.</big>
 						<hr>
-						<button  class="btn btn-primary" id="bplan">Register</button id>
-						<!--
-						<a class="btn btn-primary">Payment</a>
-						-->
+						<button class="btn btn-primary" id="bplan">Register</button>
+						<form action="/payment" method="POST">
+							<input type="hidden" name="CUST_ID" value="<%=x%>">
+							<input type="hidden" name="TXN_AMOUNT" value="300">
+							<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce5fd">
+							<button class="btn btn-primary" id="bplan">Payment</button>
+						</form>
+						
 
 					</div>
 				</div>
@@ -1062,8 +1066,12 @@
 					<hr>
 
 					<button class="btn btn-primary" id="hackathon" >Register</button id>
-
-
+						<form action="/payment" method="POST">
+							<input type="hidden" name="CUST_ID" value="<%=x%>">
+							<input type="hidden" name="TXN_AMOUNT" value="400">
+							<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce5fc">
+							<button class="btn btn-primary" id="bplan">Payment</button>
+						</form>
 				</div>
 			</div>
 		</div>
@@ -1215,6 +1223,12 @@
 					<hr>
 
 					<button id="cochess" class="btn btn-primary">Register</button>
+					<form action="/payment" method="POST">
+						<input type="hidden" name="CUST_ID" value="<%=x%>">
+						<input type="hidden" name="TXN_AMOUNT" value="200">
+						<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce5ff">
+						<button class="btn btn-primary" id="bplan">Payment</button>
+					</form>
 
 			</div>
 		</div>
@@ -1372,7 +1386,12 @@
 								<hr>
 	
 								<button id="yourstory" class="btn btn-primary ">Register</button>
-							<!----	<button class="btn btn-primary cnfrm_event" event="9">Register(For Photo)</button>-->
+								<form action="/payment" method="POST">
+									<input type="hidden" name="CUST_ID" value="<%=x%>">
+									<input type="hidden" name="TXN_AMOUNT" value="150">
+									<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce602">
+									<button class="btn btn-primary" id="bplan">Payment</button>
+								</form>
 								</div>
 							</div>
 						</div>
@@ -1501,6 +1520,12 @@
 					<hr>
 
 					<button  class="btn btn-primary" id="bquiz">Register</button>
+					<form action="/payment" method="POST">
+						<input type="hidden" name="CUST_ID" value="<%=x%>">
+						<input type="hidden" name="TXN_AMOUNT" value="150">
+						<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce5fe">
+						<button class="btn btn-primary" id="bplan">Payment</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -1761,8 +1786,12 @@
 					<hr>
 
 					<button id="fpl" class="btn btn-primary">Register</button>
-
-					<a class="btn btn-primary " href="#">Register</a>
+					<form action="/payment" method="POST">
+						<input type="hidden" name="CUST_ID" value="<%=x%>">
+						<input type="hidden" name="TXN_AMOUNT" value="200">
+						<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce603">
+						<button class="btn btn-primary" id="bplan">Payment</button>
+					</form>		
 
 				</div>
 			</div>
@@ -1899,6 +1928,12 @@ This event is based on investing in the stock market using virtual money.<br>
 						<hr>
 
 						<button id="mwatch" class="btn btn-primary">Register</button>
+						<form action="/payment" method="POST">
+							<input type="hidden" name="CUST_ID" value="<%=x%>">
+							<input type="hidden" name="TXN_AMOUNT" value="150">
+							<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce600">
+							<button class="btn btn-primary" id="bplan">Payment</button>
+						</form>	
 
 					</div>
 				</div>
