@@ -29,7 +29,7 @@ const participant = require('../routes/participant');
 
 const store = new MongoDBStore({
   url: uri,
-  ttl: 3*60*1000,
+  ttl: 8*60*1000,
   collection: "session"
 });
 
