@@ -70,10 +70,11 @@ route.get('/participation', auth, async (req, res) => {
             }
             var user = await User.find({
                 "unique_user_id": {
-                    "$in": [head]
+                    "$in": [JSON.stringify(head)]
                 }
             }).sort(sortby);
             console.log(user);
+            //var s = partcipant.length;
             res.render('admin/participation', {
                 docs,
                 participant,
@@ -145,6 +146,7 @@ route.post('/getdata/:phoneno', auth, async (req, res) => {
         console.log("Error :- ", e);
     }
 });
+
 route.get('/logout', (req, res) => {
     req.session.destroy();
     res.redirect('/admin');

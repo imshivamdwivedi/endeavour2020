@@ -140,25 +140,25 @@
                       </thead>
 
                       <tbody role="alert" aria-live="polite" aria-relevant="all">
-                        <% for(i=0; i < participant.length; i++){%>
+                        <%for(var j=0; j<participant.length; j++){%>
                         <tr class="gradeA">
                           <td class="sorting_1">
-                            <%= user[i].full_name %>
+                            <%= user[j].full_name %>
                           </td>
                           <td class="center">
-                            <%= user[i].phone_number %>
+                            <%= user[j].phone_number %>
                           </td>
                           <td class="center">
-                            <%= participant[i].team_id %>
+                            <%= participant[j].team_id %>
                           </td>
                           <td class="center">
-                            <%= user[i].college %>
+                            <%= user[j].college %>
                           </td>
                           <td class="center">
-                            <%= user[i].username %>
+                            <%= user[j].username %>
                           </td>
                           <td class="center">
-                            <%= user[i].unique_user_id %>
+                            <%= user[j].unique_user_id %>
                           </td>
                         </tr>
                         <%}%>
