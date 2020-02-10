@@ -52,7 +52,7 @@ app.use(
      saveUninitialized: false,
      store: store,
      cookie: {
-        maxAge: 3*60*1000
+        maxAge: 8*60*1000
      }
    })
 );
