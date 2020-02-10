@@ -208,7 +208,7 @@ route.post('/adduser',async (req, res) => {
 //});
 route.post('/payment',async(req,res)=>{
     try {
-        if(req.body['CUST_ID'] && req,session.userid){
+        if(req.body['CUST_ID']){
          var params ={};
          params.APP_KEY = 'ENDEAVOUR_20_QBZPJA'
          params.CUST_ID = req.body['CUST_ID']+req.body['EVENT_ID'],
