@@ -19,8 +19,7 @@ var participantSchema = mongoose.Schema({
     pay_status: {
         type:Number,
         require:true,
-        min:1,
-        max:4
+        default:0
     },
     created_at: {
         type: Date,
@@ -34,8 +33,8 @@ var participantSchema = mongoose.Schema({
 
 var Participant = mongoose.model('Participant', participantSchema);
  //Participant.create({
- //    head_id:"ENDVR189452505120" ,
+  //   head_id:"ENDVR189452505120" ,
  //    team_id: ["ENDVR189149042971","ENDVR187983041035"],
- //    event_id:"5e2dec444955da1546954163"
-// });
+  //  event_id:"5e2dec444955da1546954163"
+//});
 module.exports = Participant;

@@ -82,15 +82,12 @@
 																			<table>
 																				<% for(var i=0; i < z; i++) { %>	
 																				   <tr>
-																					 <td><%= eventnames[i]%></td></br>&nbsp;
+																					 <th style="width:250"><%= eventnames[i]%></th></br>&nbsp;
 																					 <%if(K[i]=='1') {%>
-																						<div style="width:350px;" align="center">
 																						<th> <button class="btn btn-success">Paid</button></th>
-																					</div>
 																						<%} else {%>
-																							<div style="width:350px;" align="center">	
-																						  <th><button class="btn btn-danger">Not-Paid</button></th>
-																						  </div> 
+																							
+																						  <th><button class="btn btn-danger " >Not-Paid</button></th>
 																						<%}%>
 																				   </tr>
 																				<% } %>   
@@ -98,7 +95,7 @@
 
 																	</div>
 																	<div class="modal-footer">
-																<a class="btn btn-primary" href="/logout" role="button">Logout</a>
+																<a class="btn btn-success" href="/logout" role="button">Logout</a>
 																	  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 																	</div>
 																  </div>
@@ -198,19 +195,17 @@
 			                                                  <div class="modal-body">
 															        <p>Welcome! <b><%=y%></b></p>
 																      <b>Events:</b>
-																    <table>
+																    <table cellspacing="10">
 																	<% for(var i=0; i < z; i++) { %>	
 																	   <tr>
-																		 <td><%= eventnames[i]%></td></br>&nbsp;
+																		 <th style="width:400"><%= eventnames[i]%></th></br>&nbsp;
+																		 <th >
 																		 <%if(K[i]=='1') {%>
-																			<div style="width:350px;" align="center">
-																			<th> <button class="btn btn-success">Paid</button></th>
-																		    </div>	
+																			 <button class="btn btn-success">Paid</button>
 																			<%} else {%>
-																				<div style="width:350px;" align="center">
-																				<th><button class="btn btn-danger">Not-Paid</button></th>
-																				</div>
+																				<button class="btn btn-danger">Not-Paid</button>
 																			<%}%>
+																		   </th>	
 																	   </tr>
 																	<% } %>   
 																	</table>
@@ -478,7 +473,7 @@
 							More</a></div>
 
 				</div>
-			<!---	<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+				<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
 					<div class="product-img service">
 						<a href="#" class="card credentialing">
 							<div class="icon-holder">
@@ -495,7 +490,7 @@
 					<div class="button header_button" data-toggle="modal" data-target="#Yourstory" style="margin-left:0;"><a href="#">Learn
 							More</a></div>
 
-				</div>-->
+				</div>
 				<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
 					<div class="product-img service">
 						<a href="#" class="card credentialing">
@@ -889,11 +884,11 @@
 						<big class="form-text text-muted">Not Mandatory.</big>
 						<hr>
 						<button class="btn btn-primary" id="bplan">Register</button>
-						<form action="/payment" method="POST">
+						<form action="/payment" method="POST" style="margin-top:30;">
 							<input type="hidden" name="CUST_ID" value="<%=x%>">
 							<input type="hidden" name="TXN_AMOUNT" value="300">
 							<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce5fd">
-							<button class="btn btn-primary" id="bplan">Payment</button>
+							<button class="btn btn-primary float_left" id="bplan">Payment</button>
 						</form>
 						
 
@@ -1063,6 +1058,7 @@
 						<input type="text" class="form-control mbr" id="m4id" value="">
 						<p class="stats" style='color:red;font-weight: bold;'></p>
 					</div>
+					<big>
 						<label for="exampleInputEmail1">Fourth Member E-Summit Id:</label>
 					</big>
 					<div>
@@ -1077,11 +1073,11 @@
 					<hr>
 
 					<button class="btn btn-primary" id="hackathon" >Register</button id>
-				<form action="/payment" method="POST">
+				<form action="/payment" method="POST"style="margin-top:30;">
 							<input type="hidden" name="CUST_ID" value="<%=x%>">
 							<input type="hidden" name="TXN_AMOUNT" value="400">
 							<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce5fc">
-							<button class="btn btn-primary" id="bplan">Payment</button>
+							<button class="btn btn-primary float-left" id="bplan">Payment</button>
 						</form>
 				</div>
 			</div>
@@ -1233,13 +1229,13 @@
 					<big class="form-text text-muted">Not Mandatory.</big>
 					<hr>
 
-					<button id="cochesss" class="btn btn-primary">Registeration Start Soon</button>
-				<!--	<form action="/payment" method="POST">
+					<button id="cochess" class="btn btn-primary">Register</button>
+					<form action="/payment" method="POST" style="margin-top:30;">
 						<input type="hidden" name="CUST_ID" value="<%=x%>">
 						<input type="hidden" name="TXN_AMOUNT" value="200">
 						<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce5ff">
-						<button class="btn btn-primary" id="bplan">Payment</button>
-					</form>-->
+						<button class="btn btn-primary float-left">Payment</button>
+					</form>
 
 			</div>
 		</div>
@@ -1396,13 +1392,13 @@
 								<big class="form-text text-muted">Not Mandatory.</big>
 								<hr>
 	
-								<button id="yourstoryy" class="btn btn-primary ">Registeration Start Soon</button>
-								<!--<form action="/payment" method="POST">
+								<button id="yourstory" class="btn btn-primary ">Register</button>
+								<form action="/payment" method="POST"style="margin-top:30;">
 									<input type="hidden" name="CUST_ID" value="<%=x%>">
 									<input type="hidden" name="TXN_AMOUNT" value="150">
 									<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce602">
-									<button class="btn btn-primary" id="bplan">Payment</button>
-								</form>-->
+									<button class="btn btn-primary float-left">Payment</button>
+								</form>
 								</div>
 							</div>
 						</div>
@@ -1531,11 +1527,11 @@
 					<hr>
 
 					<button  class="btn btn-primary" id="bquiz">Register</button>
-					<form action="/payment" method="POST">
+					<form action="/payment" method="POST"style="margin-top:30;">
 						<input type="hidden" name="CUST_ID" value="<%=x%>">
 						<input type="hidden" name="TXN_AMOUNT" value="150">
 						<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce5fe">
-						<button class="btn btn-primary" id="bplan">Payment</button>
+						<button class="btn btn-primary float-left" >Payment</button>
 					</form>
 				</div>
 			</div>
@@ -1664,7 +1660,7 @@
 					<big class="form-text text-muted">Not Mandatory.</big>
 					<hr>
 
-					<button id="memee" class="btn btn-primary">Registeration Start Soon</button>
+					<button id="meme" class="btn btn-primary">Register/button>
 
 				</div>
 			</div>
@@ -1796,13 +1792,13 @@
 					<big class="form-text text-muted">Not Mandatory.</big>
 					<hr>
 
-					<button id="fpll" class="btn btn-primary">Registeration Start Soon</button>
-				<!---	<form action="/payment" method="POST">
+					<button id="fpl" class="btn btn-primary">Register</button>
+					<form action="/payment" method="POST" style="margin-top:30;">
 						<input type="hidden" name="CUST_ID" value="<%=x%>">
 						<input type="hidden" name="TXN_AMOUNT" value="200">
 						<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce603">
-						<button class="btn btn-primary" id="bplan">Payment</button>
-					</form>		-->
+						<button class="btn btn-primary float-left" >Payment</button>
+					</form>	
 
 				</div>
 			</div>
@@ -1938,13 +1934,13 @@ This event is based on investing in the stock market using virtual money.<br>
 						<big class="form-text text-muted">Not Mandatory.</big>
 						<hr>
 
-						<button id="mwatchh" class="btn btn-primary">Registeration Start Soon</button>
-				<!---	<form action="/payment" method="POST">
+						<button id="mwatch" class="btn btn-primary">Register</button>
+				<form action="/payment" method="POST" style="margin-top:30;">
 							<input type="hidden" name="CUST_ID" value="<%=x%>">
 							<input type="hidden" name="TXN_AMOUNT" value="150">
 							<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce600">
-							<button class="btn btn-primary" id="bplan">Payment</button>
-						</form>	-->
+							<button class="btn btn-primary float-left">Payment</button>
+						</form>	
 
 					</div>
 				</div>
