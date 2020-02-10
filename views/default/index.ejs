@@ -1,4 +1,4 @@
-<%var eventnames,z;%>
+<%var eventnames,z,K;%>
 <html>
 
 	<head>
@@ -77,17 +77,25 @@
 																	  </button>
 																	</div>
 																	<div class="modal-body">
-																	  <p color="red">Welcome! <%=y%></p>
-																	</div>
-																	<div>
-																		<table>
-																			<% for(var i=0; i < z; i++) { %>
-																			   <tr>
-																				 <td><%= eventnames[i]%></td></br>
-																			   </tr>
-																			<% } %>
-																			</table>
-																	   </div>
+																		<p>Welcome! <%=y%></p>
+																			<b>Events:</b>
+																			<table>
+																				<% for(var i=0; i < z; i++) { %>	
+																				   <tr>
+																					 <td><%= eventnames[i]%></td></br>&nbsp;
+																					 <%if(K[i]=='1') {%>
+																						<div style="width:350px;" align="center">
+																						<th> <button class="btn btn-success">Paid</button></th>
+																					</div>
+																						<%} else {%>
+																							<div style="width:350px;" align="center">	
+																						  <th><button class="btn btn-danger">Not-Paid</button></th>
+																						  </div> 
+																						<%}%>
+																				   </tr>
+																				<% } %>   
+																				</table>
+
 																	</div>
 																	<div class="modal-footer">
 																<a class="btn btn-primary" href="/logout" role="button">Logout</a>
@@ -188,21 +196,24 @@
 			                                                       </button>
 			                                                  </div>
 			                                                  <div class="modal-body">
-															  <p>Welcome! <%=y%></p>
-															   <div>
-																   <b>Events:</b>
-															   </div>
-															   <div>
-																<table>
+															        <p>Welcome! <b><%=y%></b></p>
+																      <b>Events:</b>
+																    <table>
 																	<% for(var i=0; i < z; i++) { %>	
 																	   <tr>
 																		 <td><%= eventnames[i]%></td></br>&nbsp;
-																		<td><button type="button" class="btn btn-danger">Pay</button></td>
+																		 <%if(K[i]=='1') {%>
+																			<div style="width:350px;" align="center">
+																			<th> <button class="btn btn-success">Paid</button></th>
+																		    </div>	
+																			<%} else {%>
+																				<div style="width:350px;" align="center">
+																				<th><button class="btn btn-danger">Not-Paid</button></th>
+																				</div>
+																			<%}%>
 																	   </tr>
-																	<% } %>
-																	   
+																	<% } %>   
 																	</table>
-															   </div>
 			                                                  </div>
 			                                               <div class="modal-footer">
 				                                           <a class="btn btn-success" href="/logout">Logout</a>
@@ -877,13 +888,13 @@
 						<input type="text" class="form-control" id="caid" value="">
 						<big class="form-text text-muted">Not Mandatory.</big>
 						<hr>
-						<button class="btn btn-primary" id="bplann">Registeration Start Soon</button>
-					<!--	<form action="/payment" method="POST">
+						<button class="btn btn-primary" id="bplan">Register</button>
+						<form action="/payment" method="POST">
 							<input type="hidden" name="CUST_ID" value="<%=x%>">
 							<input type="hidden" name="TXN_AMOUNT" value="300">
 							<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce5fd">
 							<button class="btn btn-primary" id="bplan">Payment</button>
-						</form>-->
+						</form>
 						
 
 					</div>
@@ -1065,13 +1076,13 @@
 					<big class="form-text text-muted">Not Mandatory.</big>
 					<hr>
 
-					<button class="btn btn-primary" id="hackathonn" >Registeration Start Soon</button id>
-					<!---	<form action="/payment" method="POST">
+					<button class="btn btn-primary" id="hackathon" >Register</button id>
+				<form action="/payment" method="POST">
 							<input type="hidden" name="CUST_ID" value="<%=x%>">
 							<input type="hidden" name="TXN_AMOUNT" value="400">
 							<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce5fc">
 							<button class="btn btn-primary" id="bplan">Payment</button>
-						</form>-->
+						</form>
 				</div>
 			</div>
 		</div>
@@ -1519,13 +1530,13 @@
 					<big class="form-text text-muted">Not Mandatory.</big>
 					<hr>
 
-					<button  class="btn btn-primary" id="bquizz">Registeration Start Soon</button>
-				<!---	<form action="/payment" method="POST">
+					<button  class="btn btn-primary" id="bquiz">Register</button>
+					<form action="/payment" method="POST">
 						<input type="hidden" name="CUST_ID" value="<%=x%>">
 						<input type="hidden" name="TXN_AMOUNT" value="150">
 						<input type="hidden" name="EVENT_ID" value="5e2dfdeef6a4be24209ce5fe">
 						<button class="btn btn-primary" id="bplan">Payment</button>
-					</form>-->
+					</form>
 				</div>
 			</div>
 		</div>

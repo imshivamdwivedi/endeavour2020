@@ -19,6 +19,8 @@ route.post('/checkLogin', async (req, res) => {
             req.session.status = detail[0].status;
             req.session.userid = detail[0].unique_user_id;
             req.session.name = detail[0].full_name;
+
+
             par = await Participant.find({
                  $or: [{
                          "head_id": req.session.userid
@@ -27,22 +29,30 @@ route.post('/checkLogin', async (req, res) => {
                              "$in": [req.session.userid]
                          }
         
-                   }]
+                   }],
                });
             var eventarr = [];
+            var payarr =[];
             for(i = 0; i < par.length; i++) {
                    eventarr.push(par[i].event_id);
-                   //console.log(eventarr[i]);
+                   payarr.push(parseInt(par[i].pay_status));
             }
-
-            eventid= await Event.find({
-                "_id":eventarr
+            var eventid=[];
+          for(i=0;i<eventarr.length;i++){
+            eventid[i]= await Event.findOne({
+                "_id":eventarr[i]
             });
+        } 
             //console.log(eventid[0].eventName);
             var eventnames =[];
             for(i=0;i<eventid.length;i++)
                   eventnames.push(eventid[i].eventName);
-               
+            
+console.log(eventnames[0] + " " +eventnames[1]+" "+eventnames[2]+" "+eventnames[3]);
+console.log(payarr[0]+" "+payarr[1]+" "+payarr[2]+" "+payarr[3]);
+
+            
+            req.session.pay = payarr;   
             req.session.events = eventnames;
             req.session.eventsl = eventnames.length;
            // console.log(req.session.eventname);
@@ -50,6 +60,7 @@ route.post('/checkLogin', async (req, res) => {
                 x:req.session.userid,
                 y:req.session.name,
                 eventnames,
+                K:payarr,
                 z:eventnames.length
             });
         }
@@ -69,6 +80,7 @@ route.get('/',(req, res) => {
         x:req.session.userid,
         y:req.session.name,
         eventnames:req.session.events,
+        K:req.session.pay,
         z:req.session.eventsl
     });
 });
@@ -95,6 +107,7 @@ route.get('/checkLogin', (req, res) => {
         x:req.session.userid,
         y:req.session.name,
         eventnames:req.session.events,
+        K:req.session.pay,
         z:req.session.eventsl
     });
  
@@ -105,6 +118,7 @@ route.get('/adduser', (req, res) => {
         x:req.session.userid,
         y:req.session.name,
         eventnames:req.session.events,
+        K:req.session.pay,
         z:req.session.eventsl
     });
 
@@ -171,7 +185,9 @@ route.post('/adduser',async (req, res) => {
               x:req.session.userid,
               y:req.body['name'],
               eventnames:req.session.events,
+              K:req.session.pay,
               z:req.session.eventsl
+              
          });
         }
       });
@@ -204,6 +220,16 @@ route.post('/payment',async(req,res)=>{
     }
 });
 
+route.get('/paystatus',async(req,res)=>{
+      try {
+       
+        console.log(paydetail[0].pay_status);
+        console.log(paydetail[0].team_id);
+      } catch (error) {
+          console.log('Error',error)
+      }
+});
+
 route.post('/response',async(req,res)=>{
     try {
         var al = req.session.userid;
@@ -211,23 +237,48 @@ route.post('/response',async(req,res)=>{
         var parts = str.split(al);
         res.req.body.EVENT_ID = parts[1];
         res.req.body.CUST_ID = al;
+
       //  console.log(res.req.body.CUST_ID );
        // console.log(res.req.body.EVENT_ID );
+      
+     
+
+       console.log(res.req.body);
         var payment = await Transaction(res.req.body);
         // console.log(payment);
         await payment.save();
+       // console.log(payment.RESPCODE);
+       paydetail = await Participant.find({'head_id':req.session.userid,'event_id':res.req.body.EVENT_ID});
+      // console.log(paydetail[0].pay_status);
+      // console.log(paydetail.length);
+         if(paydetail.length > 0){
+           await Participant.updateOne({
+                'head_id': res.req.body.CUST_ID,
+                'event_id':res.req.body.EVENT_ID
+            }, {
+                $set: {
+                    'pay_status': res.req.body.RESPCODE
+                }
+            }, function(err, results) {
+               // console.log(results.result);
+            });
+         // console.log(res.req.body.RESPCODE);
+         }  
+
+        // console.log(paydetail[0].pay_status);
+        
    
         res.render('default/index',{
             x:req.session.userid,
             y:req.session.name,
             eventnames:req.session.events,
+            K:req.session.pay,
             z:req.session.evensl
-        })
+        });
         
     } catch (error) {
         console.log('Error:',error);
-    }
-    
+    } 
 
 });
 route.get('/wow',(req,res)=>{

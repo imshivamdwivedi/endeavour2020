@@ -17,8 +17,10 @@ var participantSchema = mongoose.Schema({
         ref: 'Event'
     },
     pay_status: {
-        type: Number,
-        default: 0
+        type:Number,
+        require:true,
+        min:1,
+        max:4
     },
     created_at: {
         type: Date,
