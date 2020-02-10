@@ -1,4 +1,4 @@
-// required packages
+
 const express = require('express');
 const mongoose = require('mongoose');
 var config = require('./config');
