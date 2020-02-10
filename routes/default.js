@@ -216,7 +216,7 @@ route.post('/payment',async(req,res)=>{
          res.redirect('https://tech.kiet.edu/erp-apis/index.php/payment/do_transaction?APP_KEY=ENDEAVOUR_20_QBZPJA&CUST_ID='+params.CUST_ID+'&TXN_AMOUNT='+params.TXN_AMOUNT+'&CALLBACK_URL=http://endeavour-kiet.in/response');
         }
         else{
-               res.render('default/page');
+               res.render('default/login');
         }
     } catch (error) {
         console.log('Error:-',error);
