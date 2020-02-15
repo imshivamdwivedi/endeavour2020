@@ -1,3 +1,4 @@
+<%var participant,s,full_name,phone_number,team_id ,college,unique_user_id,username,user;%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,11 +87,11 @@
     </aside>
   <section id="main-content">
     <section class="wrapper site-min-height">
-      <h3><i class="fa fa-angle-right"></i> Prticipaents List</h3>
+      <h3><i class="fa fa-angle-right"></i> Prticipents List</h3>
       <div class="row mt">
         <div class="col-lg-12 col-md-6">
           <div class="form-panel">
-            <form class="form-inline style-form" method="get">
+            <form class="form-inline style-form" action="/admin/participation" method="get">
               <select class="form-control text-center" name="event">
                 <option>Event Name</option>
                 <%for(var i=0; i<docs.length; i++){%>
@@ -103,7 +104,7 @@
                 <option>Pay Status</option>
                 <option value="">ALL</option>
                 <option value="1">PAID</option>
-                <option value="">NOT PAID</option>
+                <option value="0">NOT PAID</option>
               </select>
               <select class="form-control" name="sortBY">
                 <option>Sort By</option>
@@ -120,49 +121,38 @@
                     </div>
                     <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered dataTable" id="hidden-table-info"
                       aria-describedby="hidden-table-info_info">
-                      <thead>
-                        <tr role="row">
-                          <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="hidden-table-info"
-                            rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending"
-                            style="width: 79px;">Name</th>
-                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info"
-                            rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 113px;">Contact</th>
-                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info"
-                            rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 113px;">Team</th>
-                          <th class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info"
-                            rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 102px;">Collage</th>
-                          <th class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info"
-                            rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending"
-                            style="width: 67px;">Email</th>
-                          <th class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info"
-                            rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 46px;">Esummit_Id</th>
-                        </tr>
-                      </thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Phone NO</th>
+                        <th>Team</th>
+                        <th>Collage</th>
+                        <th>Email</th>
+                        <th>E-summit_id</th>
+                      </tr>
 
-                      <tbody role="alert" aria-live="polite" aria-relevant="all">
-                        <%for(var j=0; j<participant.length; j++){%>
+
+                        <%for(var j=0; j<s; j++){%>
                         <tr class="gradeA">
-                          <td class="sorting_1">
+                          <td>
                             <%= user[j].full_name %>
                           </td>
-                          <td class="center">
+                          <td>
                             <%= user[j].phone_number %>
                           </td>
-                          <td class="center">
+                          <td>
                             <%= participant[j].team_id %>
                           </td>
-                          <td class="center">
+                          <td >
                             <%= user[j].college %>
                           </td>
-                          <td class="center">
+                          <td>
                             <%= user[j].username %>
                           </td>
-                          <td class="center">
+                          <td>
                             <%= user[j].unique_user_id %>
                           </td>
                         </tr>
                         <%}%>
-                      </tbody>
                     </table>
                     <div class="row-fluid">
                     </div>

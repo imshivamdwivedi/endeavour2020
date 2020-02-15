@@ -282,7 +282,7 @@
       $("#mmb4").val("");
       $(".stat_team").text("");
 
-      $.getJSON( + $("#esummitid").val() + '&event_id=' + event_id,
+      $.getJSON( "team?esummit_id="+ $("#esummitid").val() + '&event_id=' + event_id,
         function (data) {
           $.each(data, function (i, item) {
             if (item.value != null) {
@@ -297,19 +297,22 @@
     });
     $("#event_submit").click(function () {
       $(".stat_team").text("Wait");
-      var event_id = $("#team").val();
-      var head_id = $('#esummitid').val();
-      events = ['', 'hackathon', 'b_plan', 'b_noesis', 'maestro', 'bid_it', 'dropout', 'startup_challenge',
-        'your_story_video', 'your_story_photo', 'art_of_conquest'
+      var event_id = $("#event").val();
+      var head_id = $('#mmb1').val();
+      events = [ 'Hackathon', 'B-Plan', 'B-Quiz','Co-Chess','Market-Watch','Memethon','Your Story_Video','Fantasy Premier League'
       ];
-      $.getJSON('event_team_reg.php?event_id=' + event_id + '&mmb1=' + $("#mmb1").val() + '&mmb2=' + $("#mmb2").val() +
-        '&mmb3=' + $("#mmb3").val() + '&head_id=' + head_id,
+      $.getJSON('event_team_reg?event_id=' + event_id + '&mmb1=' + $("#mmb2").val() + '&mmb2=' + $("#mmb3").val() +
+        '&mmb3=' + $("#mmb4").val() + '&head_id=' + head_id,
         function (data) {
           console.log(data);
-          if (data.value == 'true') {
+          if (data.status == 200) {
             $(".stat_team").text("Team Reg Done");
-            $("#" + events[event_id]).attr("checked", "checked");
+            console.log("#"+ events["5e2dfdeef6a4be24209ce5fc"]);
+            console.log(events[0]);  
+            $("#" + events[0]).attr("checked", "checked");
 
+          }else if(data.status==95){
+            $(".stat_team").text("partcipant alreday register for this Event");
           } else {
             $(".stat_team").text("Failed, write it down");
           }
@@ -318,15 +321,14 @@
     $("#event_pay_team").click(function () {
       $(".stat_team").text("Wait");
       var event_id = $("#event").val();
-      var head_id = $('#unique_user_id').val();
-      events = ['', 'hackathon', 'b_plan', 'b_noesis', 'maestro', 'bid_it', 'dropout', 'startup_challenge',
-        'your_story_video', 'your_story_photo', 'art_of_conquest'
+      var head_id = $('#mmb1').val();
+      events = [ 'Hackathon', 'B-plan', 'B-Quiz','Co-Chess','Market-Watch','Memethon','Your Story_Video','Fantasy Premier League'
       ];
-      $.getJSON('team_pay.php?event_id=' + event_id + '&mmb1=' + $("#mmb1").val() + '&mmb2=' + $("#mmb2").val() +
-        '&mmb3=' + $("#mmb3").val() + '&head_id=' + head_id,
+      $.getJSON('team_pay?event_id=' + event_id + '&mmb1=' + $("#mmb2").val() + '&mmb2=' + $("#mmb3").val() +
+        '&mmb3=' + $("#mmb4").val() + '&head_id=' + head_id,
         function (data) {
           console.log(data);
-          if (data.value == 'true') {
+          if (data.status ==200) {
             $(".stat_team").text("Team Payment Done");
             $("#" + events[event_id]).attr("checked", "checked");
             $("#" + events[event_id] + "_pay").attr("checked", "checked");

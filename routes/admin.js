@@ -69,16 +69,17 @@ route.get('/participation', auth, async (req, res) => {
                 head.push(participant[i].head_id);
             }
             var user = await User.find({
-                "unique_user_id": {
-                    "$in": [JSON.stringify(head)]
-                }
+                "unique_user_id": head
             }).sort(sortby);
-            console.log(user);
-            //var s = partcipant.length;
+            console.log(user+"aaa");
+            //console.log(docs);
+           // console.log(participant);
+             s = participant.length;
             res.render('admin/participation', {
                 docs,
                 participant,
-                user
+                user,
+                s:participant.length
             });
         } else {
             var docs = await Event.FindAllEvent();
@@ -90,6 +91,7 @@ route.get('/participation', auth, async (req, res) => {
         console.log("Error :- ", e);
     }
 });
+
 
 route.get('/query', auth, async (req, res) => {
     try {
@@ -111,6 +113,91 @@ route.get('/task', auth, async (req, res) => {
     } catch (e) {
         console.log("Error :- ", e);
     }
+});
+
+route.get('/team', async(req,res) =>{
+    detail = await Participant.find({
+      'head_id' :req.query.esummit_id,
+      "event_id": req.query.event_id
+    });
+     return res.send(JSON.stringify(detail[0].team_id));
+});
+route.get('/event_team_reg',async(req,res)=>{
+    var team=[];
+        team[0] = req.query.mmb1;
+        team[1] = req.query.mmb2;
+        team[2] = req.query.mmb3;
+    
+   if(team.length>0){ 
+    if(await User.find({"unique_user_id":req.body.team_id})){
+       pdetail = await Participant.find({
+           "head_id":req.query.head_id, 
+           "event_id":req.query.event_id 
+        });
+        if(pdetail.length>0){
+            return res.send({success : "", status : 95});         
+        }else{
+        var participant_data = {
+            "head_id":req.query.head_id,
+            "team_id":team,
+            "event_id":req.query.event_id
+        }
+
+        var participant = await Participant(participant_data);
+        await participant.save();
+       
+         return res.send({success : "", status:200});
+    } 
+    }
+    else{
+        return res.send({success : "", value : false});
+    }
+   }else{
+    pdetail = await Participant.find({
+        "head_id":req.query.head_id, 
+        "event_id":req.query.event_id 
+     });
+     if(pdetail.length>0){
+         return res.send({success : "", status : 95});        
+    }else{
+    var participant_data = {
+        "head_id":req.query.head_id,
+        "team_id":team,
+        "event_id":req.query.event_id
+    }
+
+    var participant = await Participant(participant_data);
+    await participant.save();
+   
+     return res.send({success : "", status:200});
+    } 
+
+   } 
+});
+
+route.get('/team_pay',async(req,res)=>{
+
+      pdetail = await Participant.find({
+          "head_id":req.query.head_id,
+          "event_id":req.query.event_id
+      });
+      if(pdetail.length>0){
+        await Participant.updateOne({
+            'head_id': req.query.head_id,
+            'event_id':req.query.event_id
+        }, {
+            $set: {
+                'pay_status': 1
+            }
+        }, function(err, results) {
+           // console.log(results.result);
+        });
+
+        return res.send({success:"",status:200}); 
+
+      }else{
+        return res.send({success : "", value : false});
+      }   
 });
 route.get('/contact', auth, async (req, res) => {
     try {
