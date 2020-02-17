@@ -139,13 +139,14 @@ route.post('/addparticipant/mm', async(req,res)=>{
 });
  route.post('/addparticipant',async(req,res)=>{
   try { 
+    console.log(req.body.head_id+ " "+ req.body.event_id);
           if(req.body.head_id){ 
             
-            pdetail = await Participant.findOne({
+            pdetail = await Participant.find({
               'head_id':req.body.head_id,
               'event_id':req.body.event_id
             });
-                       if(pdetail){
+                       if(pdetail.length>0){
                                  return res.send({success : "Already registred", status : 95});
                        }else{
                         var participant_data ={
