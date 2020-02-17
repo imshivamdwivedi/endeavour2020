@@ -48,8 +48,6 @@ route.post('/checkLogin', async (req, res) => {
             for(i=0;i<eventid.length;i++)
                   eventnames.push(eventid[i].eventName);
             
-console.log(eventnames[0] + " " +eventnames[1]+" "+eventnames[2]+" "+eventnames[3]);
-console.log(payarr[0]+" "+payarr[1]+" "+payarr[2]+" "+payarr[3]);
 
             
             req.session.pay = payarr;   
@@ -209,11 +207,28 @@ route.post('/adduser',async (req, res) => {
 route.post('/payment',async(req,res)=>{
     try {
         if(req.body['CUST_ID']){
-         var params ={};
-         params.APP_KEY = 'ENDEAVOUR_20_QBZPJA'
-         params.CUST_ID = req.body['CUST_ID']+req.body['EVENT_ID'],
-         params.TXN_AMOUNT= req.body['TXN_AMOUNT'],
-         res.redirect('https://tech.kiet.edu/erp-apis/index.php/payment/do_transaction?APP_KEY=ENDEAVOUR_20_QBZPJA&CUST_ID='+params.CUST_ID+'&TXN_AMOUNT='+params.TXN_AMOUNT+'&CALLBACK_URL=http://endeavour-kiet.in/response');
+            pdetail = await Participant.find({
+                "head_id":req.body['CUST_ID'],
+                "event_id":req.body['EVENT_ID']
+            });
+            
+           if(pdetail.length>0){
+            var params ={};
+            params.APP_KEY = 'ENDEAVOUR_20_QBZPJA'
+            params.CUST_ID = req.body['CUST_ID']+req.body['EVENT_ID'],
+            params.TXN_AMOUNT= req.body['TXN_AMOUNT'],
+            res.redirect('https://tech.kiet.edu/erp-apis/index.php/payment/do_transaction?APP_KEY=ENDEAVOUR_20_QBZPJA&CUST_ID='+params.CUST_ID+'&TXN_AMOUNT='+params.TXN_AMOUNT+'&CALLBACK_URL=http://endeavour-kiet.in/response');
+             
+            }else{
+                res.render('default/index',{
+                    x:req.session.userid,
+                    y:req.session.name,
+                    eventnames:req.session.events,
+                    K:req.session.pay,
+                    z:req.session.eventsl
+                });
+            } 
+         
         }
         else{
                res.render('default/login');

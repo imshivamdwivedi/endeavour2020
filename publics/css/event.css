@@ -129,3 +129,8 @@
   transition: transform 0.3s ease-out;
   top:30px;
 }
+
+.tab-pane ul li{
+  list-style: circle;
+  margin-left: 10px;
+}

@@ -24,6 +24,8 @@
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800">
 		
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+		<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 		<style>
 
 			html{
@@ -34,6 +36,27 @@
 		</style>
 	</head>
 	<body>
+		<section id="tshirt-popup" class="hide-the-shit">
+			<!-- partial:index.partial.html -->
+			<div id="page">
+			  <div class="card__container">
+				<!--div class="card_bg_image-hero transition--loading loading"></div-->
+				<div class="card1 loading transition--loading transition">
+				  <div class="card__bg">
+					<div class="close-offer-btn" id="close-offer"><i onClick="hideit();" class="material-icons">close</i></div>
+					<div class="card_content_center container">
+					  <img src="images/1.png" class="t-shirt-img" alt="t-shirt_img">
+					</div>
+				  </div>
+				  <div class="card__content--bottom">
+					<p class="t-shirt-price"> <strong>Price:  </strong><span class="cutted-price">Rs.315</span><span class="orig-price">299</span></p>
+					<p class="t-shirt-desc">Offer Valid Only for <strong>First 25 </strong>T-shirts! HURRY UP</p>
+					<a href="payment-page/index.html" onclick="window.open('https://forms.gle/mKWfCe2EzvLZVRCS8');" class="click-btn-hai middle transition push--bottom">Buy Now</a>       
+				  </div>
+				</div>
+			  </div>
+			</div>
+			</section>
 		<div class="super_container">
 	
 			<!-- Menu -->
@@ -61,6 +84,7 @@
 						<li class="menu_item"><a href="#">Speakers</a></li>
 						<li class="menu_item"><a href="/sponsors">Sponsors</a></li>
 						<li class="menu_item"><a href="/Team">Team</a></li>
+					<!---	<li class="menu-item"><a href="#" onclick="showit();">T-Shirt</a></li>-->
 						<% if(x) {%>
 	
 							<button data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user-circle fa-2x"></i></button>
@@ -78,11 +102,11 @@
 																	</div>
 																	<div class="modal-body">
 																		<p>Welcome! <%=y%></p>
-																			<b>Events:</b>
+																			<b>Events:</b></br>
 																			<table>
 																				<% for(var i=0; i < z; i++) { %>	
 																				   <tr>
-																					 <th style="width:250"><%= eventnames[i]%></th></br>&nbsp;
+																					 <th style="width:250"><%= eventnames[i]%></th>
 																					 <%if(K[i]=='1') {%>
 																						<th> <button class="btn btn-success">Paid</button></th>
 																						<%} else {%>
@@ -174,7 +198,8 @@
 															<li><a href="#">Speakers</a></li>
 															<li><a href="/sponsors">Sponsors</a></li>
 															<li><a href="/Team">Team</a></li>
-														</ul>
+															<li><a href="#" onclick="showit();">T-Shirt</a></li>
+																													</ul>
 													</nav>
 													<div class="header_extra ml-auto"></div>
 														<!-- <div class="header_search"><i class="fa fa-search" aria-hidden="true"></i></div> -->
@@ -194,11 +219,11 @@
 			                                                  </div>
 			                                                  <div class="modal-body">
 															        <p>Welcome! <b><%=y%></b></p>
-																      <b>Events:</b>
+																      <b>Events:</b></br>
 																    <table cellspacing="10">
 																	<% for(var i=0; i < z; i++) { %>	
 																	   <tr>
-																		 <th style="width:400"><%= eventnames[i]%></th></br>&nbsp;
+																		 <th style="width:400"><%= eventnames[i]%></th>
 																		 <th >
 																		 <%if(K[i]=='1') {%>
 																			 <button class="btn btn-success">Paid</button>
@@ -258,6 +283,28 @@
 	
 		</div>
 		<main role="main">
+			<!--About Section Start-->
+	<!---		<section id="mu-speakers">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="mu-speakers-area">
+								<div class="mu-title-area">
+									<h2 class="mu-title">About Us</h2>
+								</div>
+								<h4>Endeavour is an annual Techno_Entrepreneurial Summit of KIET, Ghaziabad</h4>
+								<p>Our annual Techno-Entrepreneurial Summit, recorgnized as Endeavour, was initiated in 2015 and the rich legacy has been
+									carried out from the past 5 years. It is embedded by technical, corporate and fun events as well as graced by guest lectures
+									from eminent entrepreneur and speakers. The ambition is to bring the entrepreneurial culture and introduction of the student as well as 
+									participant to the corporate world. The event is organised at inter-college level, due to which there is enormous competitin between the participant,
+									and wins the prizes worth thousands.
+								</p>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>-->
 			<!-- Start Speakers -->
 			<section id="mu-speakers">
 				<div class="container">
@@ -571,7 +618,7 @@
 
 				</div>
 					
-			<!--	<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
+				<div class="col-12 col-sm-6 col-md-4 single_gallery_item" style="text-align: center;">
 					<div class="product-img service">
 						<a href="#" class="card credentialing">
 							<div class="icon-holder">
@@ -588,7 +635,7 @@
 					<div class="button header_button" data-toggle="modal" data-target="#Meme" style="margin-left:0;"><a href="#">Learn
 							More</a></div>
 
-				</div>-->
+				</div>
 
 
 
@@ -802,14 +849,14 @@
 					</ul>
 					<strong>1. Round One:- Abstract Submission</strong>
 					<ul style="list-style-type:circle">
-						<li>Participants will be given the portal on the website of Endeavour where they will have to fill up
-							the questionnaire round which will consist of several subjective questions based on the different
+						<li>Participants will be given the form through the mail which they will have to fill up
+						  which will consist of several subjective questions based on the different
 							aspects of the Startup.
 							
 						</li>
 					</ul>
 					
-						<strong>3. Round Two:- Presentation</strong>
+						<strong>2. Round Two:- Presentation</strong>
 						<p>This is the final round. Participants will pitch their idea that they have presented before. There
 							will be 5 minutes allotted for presentation and a 2 minute questionnaire round.
 							
@@ -955,23 +1002,19 @@
 					So gear up buddies it’s time to brush up your coding skills and let your mind work faster than
 					your thoughts!
 				</p>
-			
+			    <!--
 				<strong>BENEFITS:</strong>
 				<ul style="list-style-type:circle;">
 					<li>We will call investors for the development of the idea.</li>
 				</ul>
-			
+			-->
 				<strong>STRUCTURE:</strong>
 				<ul style="list-style-type:circle;">
 					<li>Team size: Maximum 4 participants per team. Minimum 2 Participants</li>
-					<li>Duration: 25hours (From 12:00hrs. on day 1 to 13:00 hrs. on day 2)</li>
-					<li>Team size: Maximum 4 participants per team. Minimum 2 Participants</li>
-					<li>Duration: 25hours (From 12:00hrs. on day 1 to 13:00 hrs. on day 2)</li>
-					<li>Presentation Duration: 5-7 minutes</li>
-					<li>Q&A duration: - 3-5 minutes</li>
+					<li>Duration: 25hours</li>
 					<li>01:00hrs of the workshop will be created for the participants during the hackathon</li>
 				</ul>
-				
+				<!--
 				<strong>ROUND ONE-ONLINE SUBMISSION- PRELIMINARY ROUND:</strong>
 				<ul style="list-style-type:circle">
 					<li>Participants will have to submit the abstract in the form of pdf.</li>
@@ -997,6 +1040,7 @@
 						<ul style="list-style-type:circle">
 						<li>In this round, participants will come with their idea that they have presented before. There will be 5-10 minutes presentation and 2-5 minutes questionnaire round.</li>
 							</ul> 
+						-->
 				<strong>RULES :</strong>
 				<ul style="list-style-type:circle">
 				<li>Participants should maintain civil decorum throughout the event.</li>
@@ -1007,7 +1051,7 @@
 				<li>At the end of the event, you must present/submit a working prototype/model.</li>
 				<li>In case of any dispute, the decision given by the judges will be final.</li>
 				</ul>
-				
+				<!--
 				<strong>FAQ'S :</strong>
 				<ul style="list-style-type:circle">
 					<li>
@@ -1036,7 +1080,7 @@
 							present the idea but more than 3 members are not allowed.</p>
 					</li>
 				</ul>
-			
+			-->
 			</div>
 			<div role="tabpanel" class="tab-pane" id="Register_hackathon">
 
@@ -1135,7 +1179,7 @@
 				</ul>
 				<strong>STRUCTURE:</strong>
 				<ul style="list-style-type:circle;">
-					<li>Team size – 2 members</li>
+					<li>Team size : 1-3 members</li> 
 					<li>The event consists of three rounds </li>
 				</ul>
 				<strong>1. Round One – Case Study</strong>
@@ -1144,39 +1188,20 @@
 					the unique point which is related to entrepreneurship. They have to solve the problem statement
 					given to them in a given amount of time.
 					</p>
-				<strong>2. Round Two:- Co-Chess game</strong>
+				<strong>2. Round Two:- Board Game</strong>
 				<ul style="list-style-type:circle;">
 				  <li>4 teams who will qualify round 1 will participate in the second round.</li>
 				  <li>Now two teams will play this game at a time.</li>
-				  <li>1st team will play with the 4th team and 2nd team will play with the 3rd team.</li>l
-				  <li>This game is just like chess but it consists of following rules:-</li>
-				</ul>                                  <p>
-					❖ This game has 5X5 square block having a total of 25 small blocks.<br>
-					❖ There will be no king, queen, rook, bishop, knight. (Only Pawn)<br>
-					❖ Initially 5 pawns from both team stand opposite to each other as in chess.<br>
-					❖ Now the remaining 15 blocks are each assigned to the corporate products which they have to
-					buy.<br>
-					❖ Virtual money will be provided to perform the moves.<br>
-					❖ Every product will have its particular strength depending on its need in office.<br>
-					❖ The strength will be told to the participants at the end of the event only. The players have to
-					decide what to buy based on their intellect and experience.<br>
-					❖ Some cash will be given to both the teams as virtual money.<br>
-					❖ Players will have to pay some money to perform a move.<br>
-					❖ From the first team, if pawn moves then the second move will have to be performed by the
-					second team as in chess.<br>
-					❖ As in chess, pawn moves one square forward then it may be possible that the opposite team
-					pawn would diagonally present which have some products then the pawn has a chance to buy the
-					all products of the opposite by replacing the opponent diagonally as in chess.<br>
-					❖ In this move one condition is there that player will move if and only if he/she pays an extra
-					amount of money.<br>
-					❖ At last, the team which have more valuable products will win the game.<br>
-					❖ If once player moves then it will not allow moving backwards.<br>
-					❖ The first move will be decided by the rank of 1st round.<br></p>
+				  <li>The participants have to move their pawns the same way they are moved in chess.</li>
+				  <li>The participants have to collect the products on the remaining blocks of the chess board.</li>
+                  <li>Each team will be provided with five pawns.</li>
+				  
+				</ul>              
 				<strong>3. Round Three:- Auction Round</strong>
 				<ul style="list-style-type: circle;">
 					<li>2 teams who will qualify round 2 will participate in the third round.</li>
 					<li>All the 15 products in the second round will be auctioned in the auction round.</li>
-					<li> •	Virtual money will be given to both the teams for theauction.</li>
+					<li>Virtual money will be given to both the teams for theauction.</li>
 				 </ul>
 				<strong>JUDGING CRITERIA</strong>
 			<p>Teams which have more valuable products will win the game.</p>
@@ -1184,29 +1209,22 @@
 				<strong>FAQ'S :</strong>
 				<ul style="list-style-type:circle;">
 					<li>
-						<p>Are intercollege members allowed to form a single team?</p>
-						<p>Yes, intercollege members are allowed to form a single team.</p>
+						<p>Q- Case study will be based on what theme?</p>
+						<p>A- Simple Business related cases.</p>
 					</li>
 					<li>
-						<p>Is there any criteria regarding team size?</p>
-						<p>The maximum size of the team is 2 members, even one member can also participate
-							but more than 2 members are not allowed. </p>
+						<p>Q- Mode of payment?</p>
+						<p>A- Online and offline both.</p>
 					</li>
 					<li>
-						<p>Can we participate in the online round from anywhere using internet connection?</p>
-						<p>No, the online round will be conducted at the venue. Login id and password
-							will be provided at the venue only.</p>
+						<p>Q- Can teams contain members of all years?</p>
+						<p>A- Yes</p>
 					</li>
 					<li>
-						<p>Is use of internet allowed?</p>
-						<p>Use of the Internet is allowed only in the second round.</p>
+						<p>Q- Are the no. of moves limited?</p>
+						<p>A- Yes</p>
 					</li>
-					<li>
-						<p>How we will be informed about our results?</p>
-						<p>The result of rounds will be informed via mail or phone call to the team
-							leader.
-						</p>
-					</li>
+				
 				</ul>
 			
 			</div>
@@ -1296,37 +1314,26 @@
 								<li>There are two independent rounds in this event.
 								</li>
 							</ul>
-							<strong>Round-1 :</strong>
+						
+							<strong>Round :</strong>
 							<ul style="list-style-type:circle;">
-								<li>Team will have to observe the area near venues and has to click the photographs.
-								</li>
+								<li>If you are good in videography then submit a short video of minimum 1.5 minutes.</li>
+									<li>The last
+									date for submitting is one week after the event.</li>
 								<li>Team will have to give an article of 200-300 words regarding our e-summit
-									including photographs.
-								</li>
-								<li>· It will be an offline submit with articles and photographs on a paper.
-								</li>
-							</ul>
-							<strong>Round-2 :</strong>
-							<ul style="list-style-type:circle;">
-								<li>If you are good in videography then submit a short video of minimum 1.5 minutes.
-									The last
-									date for submitting is one week after the event.
+										including photographs.
+									
 								</li>
 							</ul>
 							<strong>RULES</strong>
 							<ul style="list-style-type:circle;">
+								<li>The participants must choose only one of the above categories.</li>
 								<li>Only the area where the E Summit events are taking place should be covered.</li>
 								<li>All the other college region is restricted.</li>
 								<li>Anyone found roaming or breaking the rules will be then and there disqualified.</li>
-								<li>Pictures and videos can be taken from both mobile and camera.
-								</li>
-								<li>The article should be within the defined word limit.
-								</li>
-								<li>Any other person roaming or helping them may cause disqualification of the
-									team.
-								</li>
-								<li>Objectionable content will not be entertained.
-								</li>
+								
+								
+							
 						</ul>
 							<strong>FAQ'S</strong>
 							<ul style="list-style-type:circle;">
@@ -1367,11 +1374,7 @@
 									</p>
 								</li>
 							</ul>
-							<ul>
-								<li>Registration Fee: 150 Rupees</li>
-								<li>Expected Participant:</li>
-								<li>Total Inflow:</li>
-							</ul>
+							
 						</div>
 						<div role="tabpanel" class="tab-pane" id="Register_yourstory">
 	
@@ -1471,7 +1474,7 @@
 					<li>The participant should answer in the given timelimit</li>
 					<li>No withdrawn after registration.</li>
 				</ul>
-				
+				<!--
 				<strong>FAQ'S :</strong>
 				<ul style="list-style-type:circle;">
 					<li>
@@ -1499,7 +1502,7 @@
 						</p>
 					</li>
 				</ul>
-			
+			-->
 			<strong>JUDGEMENT CRITERIA</strong>
 			<ul style="list-style-type: circle;">
 				<li>Teams who gets maximum points will qualify from round1</li>
@@ -1581,38 +1584,53 @@
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane active" id="Rules_meme">
 				<strong>DESCRIPTION</strong>
-				<p>
-					Which company's mobile phones are marketed with the slogan- Big Inside, Small Outside? Battle it out with the
-					sharpest minds
-					in the form of mind-boggling questions and answers.</p>
+				<p> The time has come to think outside the box. The event is based to depict the creative and advertising skills of the individual by promoting various brands through memes.
+				</p>
 				<strong>BENEFITS:</strong>
 				<ul style="list-style-type:circle;">
-					<li>To enhance the knowledge of the participants in various business/corporate domains.</li>
+					<li>To enhance creativity skills of the participants.</li>
+					
+					<li>To enhance the advertising skills of the participants.</li>
 				</ul>
 				<strong>STRUCTURE:</strong>
 				<ul style="list-style-type:circle;">
-					<li>Team size – maximum 2 members</li>
-					<li>The event consists of two rounds</li>
+					<li>Team size: 1 Member</li>
+					<li>Rounds: 1 Round</li>
 				</ul>
-				<strong>ROUND ONE- ONLINE QUIZ (DURATION-30 MINUTES)</strong>
+				<strong>ROUND ONE- MEME BATTLE</strong>
 				<ul style="list-style-type:circle;">
-					<li>An online quiz will be conducted.</li>
-					<li>There will be 30 question in this round.</li>
-					<li>Hints will be provided for some questions.</li>
-					<li>Username and password will be provided on the day of the quiz.</li>
+					<li>The teams have to make the meme on the brand given to them and submit it before the deadline given to them.
+						</li>
+					<li> 
+						At a time two memes will be posted on the E-cell page as story and meme battle will take place among them for a specific period of time.
+					</li>
+					<li> 
+						The memes will also be posted to Endeavour Android Application for a specific period of time and the voting process will take place between them.
+					</li>
 				</ul>
-				<strong>ROUND TWO- GOOGLE QUIZ (DURATION-60 MINUTES)</strong>
-				<ul style="list-style-type:circle;">
-					<li>In this round participants will be allowed to use Google search.</li>
-					<li>There will be 60 minutes for 20 questions.</li>
-				</ul>
+			
 				<strong>RULES :</strong>
 				<ul style="list-style-type:circle;">
-					<li>Participant with the highest score will win the game.</li>
-					<li>In case of any tie, there will be a tie breaker question.</li>
-					<li>If participants use hints then marks will be reduced accordingly.</li>
-					<li>Every team will be provided with a P.C.</li>
+					<li>Only one entry per team is allowed.
+						
+					</li>
+					<li>    
+				    Each team would be given templates and they have to design their promotional meme accordingly.
+						
+					</li>
+					<li>   
+						Plagiarism is strictly prohibited.
+					
+					</li>
+					<li>   
+					Memes should be free from any kind of vulgar or offensive content otherwise it will lead to disqualification of the team.
+						
+					</li>
+					<li>   
+					  Memes should be free from names of team member and team’s name or any person.
+					</li>
 				</ul>
+				<!--
 				<strong>FAQ'S :</strong>
 				<ul style="list-style-type:circle;">
 					<li>
@@ -1640,6 +1658,13 @@
 						</p>
 					</li>
 				</ul>
+			-->
+			<strong>JUDGING CRITERIA</strong>
+			<ul style="list-style-type:circle;">
+				<li>
+					Judging criteria will be as follows:
+					60% of voting through Instagram Story + 40% of voting through Android App 
+				</li>
 			</div>
 			<div role="tabpanel" class="tab-pane" id="Register_meme">
 				<div clas="form-group">
@@ -1660,7 +1685,7 @@
 					<big class="form-text text-muted">Not Mandatory.</big>
 					<hr>
 
-					<button id="meme" class="btn btn-primary">Register/button>
+					<button id="meme" class="btn btn-primary">Register</button>
 
 				</div>
 			</div>
@@ -2114,19 +2139,20 @@ $(document).ready(function(){
 	});
 });
 //B-Quiz 
-$(document).ready(function(){	 
-                $('#bquiz').click(function(){
-                       var param = {};
-                       param.head_id=document.getElementById('mydiv').dataset.test;
-                       param.team_id = [ m1id=document.querySelector('#m9id').value];
-                       param.event_id = "5e2dfdeef6a4be24209ce5fe";
-                    $.ajax({
-                       type: 'POST',
-                       url: '/participant/addparticipant',
-                       contentType: 'application/json',
-                       data:JSON.stringify(param),
-                        success: function(data) {
-						if(data.status == 200){
+
+$(document).ready(function(){
+    $('#bquiz').click(function(){
+          var param = {};
+          param.head_id=document.getElementById('mydiv').dataset.test;
+          param.team_id = [ m1id=document.querySelector('#m9id').value];
+          param.event_id = "5e2dfdeef6a4be24209ce5fe";
+          $.ajax({
+                type: 'POST',
+                url: '/participant/addparticipant',
+                contentType: 'application/json',
+                data:JSON.stringify(param),
+                    success: function(data) {
+                        if(data.status == 200){
 							alert("Congratulations!,You sucessfully registerd in B-Quiz!");
 						  }
 						if(data.status==95){
@@ -2139,9 +2165,9 @@ $(document).ready(function(){
 							alert("Please login first");
 						} 
                       }
-                    });
-                });
-            });
+          });
+	});
+});
 
 //Football Fantasy
 $(document).ready(function(){
@@ -2214,6 +2240,7 @@ $(document).ready(function(){
 								<script type="text/javascript" src="./js/app.js"></script>
 								<script type="text/javascript" src="./js/speaker.js"></script>
 								<script type="text/javascript" src="./js/custom.js"></script>
+								<script type="text/javascript" src="./js/popup.js"></script>
 	</body>
 
 	</html>
