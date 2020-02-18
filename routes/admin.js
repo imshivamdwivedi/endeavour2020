@@ -71,10 +71,11 @@ route.get('/participation', auth, async (req, res) => {
             var user = await User.find({
                 "unique_user_id": head
             }).sort(sortby);
-            console.log(user+"aaa");
+            
             //console.log(docs);
            // console.log(participant);
              s = participant.length;
+             console.log(s);
             res.render('admin/participation', {
                 docs,
                 participant,
@@ -132,7 +133,8 @@ route.get('/event_team_reg',async(req,res)=>{
     if(await User.find({"unique_user_id":req.body.team_id})){
        pdetail = await Participant.find({
            "head_id":req.query.head_id, 
-           "event_id":req.query.event_id 
+           "event_id":req.query.event_id,
+           "team_id":req.query.team_id 
         });
         if(pdetail.length>0){
             return res.send({success : "", status : 95});         

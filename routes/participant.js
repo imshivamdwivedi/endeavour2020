@@ -142,9 +142,7 @@ route.post('/addparticipant/mm', async(req,res)=>{
     console.log(req.body.head_id+ " "+ req.body.event_id);
           if(req.body.head_id){ 
             
-            if((await Participant.findOne({'head_id':req.body.head_id}) || await Participant.findOne({'team_id':req.body.team_id})) && (await Participant.findOne({'event_id':req.body.event_id}))){
-              return res.send({success : "Already registred", status : 95});
-    }else{
+          
       var participant_data ={
         'head_id': req.body.head_id,
         'team_id':req.body.team_id,
@@ -156,7 +154,7 @@ route.post('/addparticipant/mm', async(req,res)=>{
 
         return res.send({success : "", status : 200});
     }
-                }else{
+                else{
                   return res.send({success:"First login",status:405});
                 } 
        }catch(e){
