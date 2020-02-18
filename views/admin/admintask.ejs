@@ -176,8 +176,8 @@
                 <td>
                   <%=docs[i].eventName%>
                 </td>
-                <td><input type="checkbox" disabled name="hackathon" id="hackathon" value="<%=docs[i]._id%>"></input></td>
-                <td><input type="checkbox" disabled name="hackathon_pay" id="hackathon_pay" value="<%=docs[i]._id%>"></input></td>
+                <td><input type="checkbox" disabled name=" <%=docs[i].eventName%>" id=" <%=docs[i].eventName%>" value="<%=docs[i]._id%>"></input></td>
+                <td><input type="checkbox" disabled name=" <%=docs[i].eventName%>"+"_pay" id=" <%=docs[i].eventName%>+"_pay" value="<%=docs[i]._id%>"></input></td>
                 <td><input type="button" data-toggle="modal" class="team btn btn-theme04" data-target="#team" event_id="<%=docs[i]._id%>"
                     value="<%=docs[i].category%>"></input></td>
               </tr>
@@ -282,7 +282,7 @@
       $("#mmb4").val("");
       $(".stat_team").text("");
 
-      $.getJSON( "team?esummit_id="+ $("#esummitid").val() + '&event_id=' + event_id,
+      $.postJSON( "team?esummit_id="+ $("#esummitid").val() + '&event_id=' + event_id,
         function (data) {
           $.each(data, function (i, item) {
             if (item.value != null) {
@@ -301,7 +301,7 @@
       var head_id = $('#mmb1').val();
       events = [ 'Hackathon', 'B-Plan', 'B-Quiz','Co-Chess','Market-Watch','Memethon','Your Story_Video','Fantasy Premier League'
       ];
-      $.getJSON('event_team_reg?event_id=' + event_id + '&mmb1=' + $("#mmb2").val() + '&mmb2=' + $("#mmb3").val() +
+      $.postJSON('event_team_reg?event_id=' + event_id + '&mmb1=' + $("#mmb2").val() + '&mmb2=' + $("#mmb3").val() +
         '&mmb3=' + $("#mmb4").val() + '&head_id=' + head_id,
         function (data) {
           console.log(data);
@@ -324,7 +324,7 @@
       var head_id = $('#mmb1').val();
       events = [ 'Hackathon', 'B-plan', 'B-Quiz','Co-Chess','Market-Watch','Memethon','Your Story_Video','Fantasy Premier League'
       ];
-      $.getJSON('team_pay?event_id=' + event_id + '&mmb1=' + $("#mmb2").val() + '&mmb2=' + $("#mmb3").val() +
+      $.postJSON('team_pay?event_id=' + event_id + '&mmb1=' + $("#mmb2").val() + '&mmb2=' + $("#mmb3").val() +
         '&mmb3=' + $("#mmb4").val() + '&head_id=' + head_id,
         function (data) {
           console.log(data);

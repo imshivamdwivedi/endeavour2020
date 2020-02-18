@@ -74,18 +74,19 @@ route.get('/participation', auth, async (req, res) => {
             
             //console.log(docs);
            // console.log(participant);
-             s = participant.length;
-             console.log(s);
             res.render('admin/participation', {
-                docs,
                 participant,
+                docs,
                 user,
-                s:participant.length
             });
         } else {
             var docs = await Event.FindAllEvent();
+            var participant = {};
+            var user = {};
             res.render('admin/participation', {
-                docs
+                docs,
+                participant,
+                user
             });
         }
     } catch (e) {
@@ -123,7 +124,7 @@ route.get('/team', async(req,res) =>{
     });
      return res.send(JSON.stringify(detail[0].team_id));
 });
-route.get('/event_team_reg',async(req,res)=>{
+route.post('/event_team_reg',async(req,res)=>{
     var team=[];
         team[0] = req.query.mmb1;
         team[1] = req.query.mmb2;
@@ -177,7 +178,7 @@ route.get('/event_team_reg',async(req,res)=>{
    } 
 });
 
-route.get('/team_pay',async(req,res)=>{
+route.post('/team_pay',async(req,res)=>{
 
       pdetail = await Participant.find({
           "head_id":req.query.head_id,

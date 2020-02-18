@@ -1,4 +1,4 @@
-<%var participant,s;%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -130,8 +130,8 @@
                         <th>E-summit_id</th>
                       </tr>
 
-                      <%if(s!== 0){%>
-                        <%for(var j=0; j<s; j++){%>
+                      <%if(participant.length!== 0){%>
+                        <%for(var j=0; j<participant.length; j++){%>
                         <tr>
                           <td>
                             <%= user[j].full_name %>
