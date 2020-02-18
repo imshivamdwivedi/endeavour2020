@@ -81,8 +81,8 @@ route.get('/participation', auth, async (req, res) => {
             });
         } else {
             var docs = await Event.FindAllEvent();
-            var participant = {};
-            var user = {};
+            var participant = await Participant.find({});
+            var user = await User.find({});
             res.render('admin/participation', {
                 docs,
                 participant,

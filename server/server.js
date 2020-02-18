@@ -67,7 +67,7 @@ app.use('/admin', admin);
 //app.use('/admin', event);
 app.use('/participant', participant);
 
-const port = process.env.PORT ||80;
+const port = process.env.PORT ||3000;
 app.listen(port, () => {
     console.log('Server connected with port : ' + port);
 });
