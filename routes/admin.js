@@ -118,13 +118,17 @@ route.get('/task', auth, async (req, res) => {
 });
 
 route.get('/team', async(req,res) =>{
-    detail = await Participant.find({
-      'head_id' :req.query.esummit_id,
-      "event_id": req.query.event_id
-    });
-     return res.send(JSON.stringify(detail[0].team_id));
+    try {
+        var participant = await User.find({
+            'head_id':req.query.head_id
+        });
+        var newPartcipant = JSON.stringify(participant);
+        res.send(newPartcipant);
+    } catch (e) {
+        console.log("Error :- ", e);
+    }
 });
-route.post('/event_team_reg',async(req,res)=>{
+route.get('/event_team_reg',async(req,res)=>{
     var team=[];
         team[0] = req.query.mmb1;
         team[1] = req.query.mmb2;
@@ -178,7 +182,7 @@ route.post('/event_team_reg',async(req,res)=>{
    } 
 });
 
-route.post('/team_pay',async(req,res)=>{
+route.get('/team_pay',async(req,res)=>{
 
       pdetail = await Participant.find({
           "head_id":req.query.head_id,

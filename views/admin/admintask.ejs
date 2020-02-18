@@ -282,7 +282,7 @@
       $("#mmb4").val("");
       $(".stat_team").text("");
 
-      $.postJSON( "team?esummit_id="+ $("#esummitid").val() + '&event_id=' + event_id,
+      $.getJSON( "team?esummit_id="+ $("#esummitid").val() + '&event_id=' + event_id,
         function (data) {
           $.each(data, function (i, item) {
             if (item.value != null) {
@@ -301,7 +301,7 @@
       var head_id = $('#mmb1').val();
       events = [ 'Hackathon', 'B-Plan', 'B-Quiz','Co-Chess','Market-Watch','Memethon','Your Story_Video','Fantasy Premier League'
       ];
-      $.postJSON('event_team_reg?event_id=' + event_id + '&mmb1=' + $("#mmb2").val() + '&mmb2=' + $("#mmb3").val() +
+      $.getJSON('event_team_reg?event_id=' + event_id + '&mmb1=' + $("#mmb2").val() + '&mmb2=' + $("#mmb3").val() +
         '&mmb3=' + $("#mmb4").val() + '&head_id=' + head_id,
         function (data) {
           console.log(data);
@@ -324,7 +324,7 @@
       var head_id = $('#mmb1').val();
       events = [ 'Hackathon', 'B-plan', 'B-Quiz','Co-Chess','Market-Watch','Memethon','Your Story_Video','Fantasy Premier League'
       ];
-      $.postJSON('team_pay?event_id=' + event_id + '&mmb1=' + $("#mmb2").val() + '&mmb2=' + $("#mmb3").val() +
+      $.getJSON('team_pay?event_id=' + event_id + '&mmb1=' + $("#mmb2").val() + '&mmb2=' + $("#mmb3").val() +
         '&mmb3=' + $("#mmb4").val() + '&head_id=' + head_id,
         function (data) {
           console.log(data);
