@@ -130,26 +130,25 @@
                       </tr>
 
                       <%if(s!== 0){%>
-                        <%for(var j=0; j<participants.length; j++){%>
+                        <%for(var i=0; i<s; i++){%>
                         <tr>
-                          <td><%=j+1%></td>
                           <td>
-                            <%= users[j].full_name %>
+                            <%= user[i].full_name %>
                           </td>
                           <td>
-                            <%=participants[i].team_id %>
+                            <%= user[i].phone_number %>
                           </td>
                           <td>
-                            <%= users[j].phone_number %>
+                            <%= participant[i].team_id %>
                           </td>
                           <td >
-                            <%= users[j].college %>
+                            <%= user[i].college %>
                           </td>
                           <td>
-                            <%= users[j].username %>
+                            <%= user[i].username %>
                           </td>
                           <td>
-                            <%= users[j].unique_user_id %>
+                            <%= user[i].unique_user_id %>
                           </td>
                         </tr>
                         <%}%>

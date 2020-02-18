@@ -53,7 +53,7 @@ route.get('/participation', auth, async (req, res) => {
         const sortby = req.query['sortBY'];
         console.log(`${event} , ${paystatus} , ${sortby}`);
         if (event !== undefined && paystatus !== undefined && sortby !== undefined) {
-            var doc = await Event.FindAllEvent();
+            var docs = await Event.FindAllEvent();
             if (paystatus === "") {
                 var participant = await Participant.find({
                     'event_id': event,
@@ -73,20 +73,22 @@ route.get('/participation', auth, async (req, res) => {
             }).sort(sortby);
             
             //console.log(docs);
-           // console.log(participant);
+           console.log(participant);
             res.render('admin/participation', {
-                participants:participant,
-                docs:doc,
-                users:user,
+                participant,
+                docs,
+                user,
+                s:participant.length
             });
         } else {
             var docs = await Event.FindAllEvent();
             var participant = await Participant.find({});
             var user = await User.find({});
             res.render('admin/participation', {
-                participants:participant,
-                docs:doc,
-                users:user,
+                participant,
+                docs,
+                user,
+                s:participant.length
             });
         }
     } catch (e) {
