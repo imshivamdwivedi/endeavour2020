@@ -173,7 +173,6 @@ route.post('/adduser',async (req, res) => {
         to: req.body['email'],
         subject: 'Registration',
         html: '<b>Greetings for the day! '+ req.body['name'] +'</b><p>Congratulations for successfully registering with the Endeavour-20 and now you are requested to pen down the generated Endeavour id -<b>' +'ENDVR20'+req.body['mobilenumber']+'</b> as it will act as your identity number on the day of the event. We have brought to you with a variety of events and you may choose according to your interests.<br><br>As you know we team e-Cell is preparing for the most-awaited and astonishing annual fest Endeavour-20 which is to be organised on 29th and 1st March 2020 and we wish you to kindly coordinate with the registration process and for any query contact :<br><br>Harsh Mishra(8601613337)<br>Shivam Dwivedi(9058933387)<br><br>Regards,<br>Team e-Cell </p>'
-
        };
       transporter.sendMail(emailOptions, (err, info) => {
         if (err) {
@@ -195,21 +194,55 @@ route.post('/adduser',async (req, res) => {
 
 }
 });
-//route.post('/paymentt',async(req,res)=>{
+route.get('/forget',async(req,res)=>{
+      res.render('default/page');
+});
+route.post('/forgetemail',async(req,res)=>{
+    Details = await User.find({
+        "univ_roll": req.body['universityno'],
+        'phone_number':req.body['mobilenumber']  
+    })
+    console.log(Details[0].username);
+    console.log(Details[0].email);
+    if(Details){
+       try {
+        var transport = nodemailer.createTransport({
+            service: 'Gmail',
+            auth: {
+              user: 'ecell@kiet.edu',
+              pass: 'wecando_it'
+            }
+          });
 
- //   var al = req.session.userid;
- //   var str = req.body['CUST_ID']+req.body['EVENT_ID']
- //   var parts = str.split(al);
- //   console.log(req.body['CUST_ID']+req.body['EVENT_ID']);
- //   console.log(al);
-  //  console.log(parts[1]);
-//});
+          var emailOption = {
+            from: 'Endeavour-20 <ecell@kiet.edu>',
+            to: Details[0].username,
+            subject: 'Username and Password',
+            html: '<p>Thanks , for Reaching out this is your Email '+'<b>'+ Details[0].email +'</b>'+ ' and Password ' +'<b>'+Details[0].password_hash+'</b>'+ ' for any query contact :<br><br>Harsh Mishra(8601613337)<br>Shivam Dwivedi(9058933387)<br><br>Regards,<br>Team e-Cell </p>'
+           };
+
+           transport.sendMail(emailOption, (err, info) => {
+            if (err) {
+              console.log(err);
+            } else {
+                res.render('default/login');
+            }
+          }); 
+           
+       } catch (error) {
+          console.log('error',error);  
+       } 
+    }else{
+          res.render('default/page');
+    }
+
+});
 route.post('/payment',async(req,res)=>{
     try {
         if(req.body['CUST_ID']){
-           var detail = (await Participant.findOne({"head_id":req.body['CUST_ID'],"event_id":req.body['EVENt_ID']}));
+           var detailss = (await Participant.findOne({"head_id":req.body['CUST_ID'],"event_id":req.body['EVENt_ID']}));
            console.log(detail);    
-           if(detail){
+           if(detailss){
             var params ={};
             params.APP_KEY = 'ENDEAVOUR_20_QBZPJA'
             params.CUST_ID = req.body['CUST_ID']+req.body['EVENT_ID'],
