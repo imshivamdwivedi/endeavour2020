@@ -207,12 +207,12 @@ route.post('/adduser',async (req, res) => {
 route.post('/payment',async(req,res)=>{
     try {
         if(req.body['CUST_ID']){
-            pdetail = await Participant.find({
+           var detail = await Participant.findOne({
                 "head_id":req.body['CUST_ID'],
                 "event_id":req.body['EVENT_ID']
             });
             
-           if(pdetail.length>0){
+           if(detail){
             var params ={};
             params.APP_KEY = 'ENDEAVOUR_20_QBZPJA'
             params.CUST_ID = req.body['CUST_ID']+req.body['EVENT_ID'],
