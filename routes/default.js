@@ -208,7 +208,7 @@ route.post('/payment',async(req,res)=>{
     try {
         if(req.body['CUST_ID']){
            var detail = (await Participant.findOne({"head_id":req.body['CUST_ID'],"event_id":req.body['EVENt_ID']}));
-    
+           console.log(detail);    
            if(detail){
             var params ={};
             params.APP_KEY = 'ENDEAVOUR_20_QBZPJA'
@@ -217,15 +217,8 @@ route.post('/payment',async(req,res)=>{
             res.redirect('https://tech.kiet.edu/erp-apis/index.php/payment/do_transaction?APP_KEY=ENDEAVOUR_20_QBZPJA&CUST_ID='+params.CUST_ID+'&TXN_AMOUNT='+params.TXN_AMOUNT+'&CALLBACK_URL=http://endeavour-kiet.in/response');
              
             }else{
-                res.render('default/index',{
-                    x:req.session.userid,
-                    y:req.session.name,
-                    eventnames:req.session.events,
-                    K:req.session.pay,
-                    z:req.session.eventsl
-                });
-            } 
-         
+                res.render('default/page');
+            }
         }
         else{
                res.render('default/login');
