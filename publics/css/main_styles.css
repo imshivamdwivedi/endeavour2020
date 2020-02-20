@@ -1314,3 +1314,12 @@ section
 	color: #bbbbbb;
 	margin-top: 7px;
 }
+
+.about-us-content {
+	margin-top: 1%;
+}
+
+.about-us-content p{
+	font-size: 17px;
+	text-align: justify;
+}
