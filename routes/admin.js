@@ -138,12 +138,11 @@ route.get('/event_team_reg',async(req,res)=>{
     
    if(team.length>0){ 
     if(await User.find({"unique_user_id":req.body.team_id})){
-       pdetail = await Participant.find({
+       pdetaill = await Participant.find({
            "head_id":req.query.head_id, 
-           "event_id":req.query.event_id,
-           "team_id":req.query.team_id 
+           "event_id":req.query.event_id
         });
-        if(pdetail.length>0){
+        if(pdetaill.length>0){
             return res.send({success : "", status : 95});         
         }else{
         var participant_data = {
@@ -186,11 +185,11 @@ route.get('/event_team_reg',async(req,res)=>{
 
 route.get('/team_pay',async(req,res)=>{
 
-      pdetail = await Participant.find({
+      pdetails = await Participant.find({
           "head_id":req.query.head_id,
           "event_id":req.query.event_id
       });
-      if(pdetail.length>0){
+      if(pdetails.length>0){
         await Participant.updateOne({
             'head_id': req.query.head_id,
             'event_id':req.query.event_id
