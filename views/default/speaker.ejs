@@ -12,6 +12,9 @@
 	<link rel="stylesheet" type="text/css" href="./css/responsive.css">
 	<!-- font-awesome -->
 	<link rel="stylesheet" type="text/css" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+	<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 	<!-- speaker css -->
 	<link rel="stylesheet" type="text/css" href="./css/speaker.css">
 	<style>
@@ -30,7 +33,27 @@ margin-left:-20px;
 </head>
 
 <body>
-
+	<section id="tshirt-popup" class="hide-the-shit">
+		<!-- partial:index.partial.html -->
+		<div id="page">
+		  <div class="card__container">
+			<!--div class="card_bg_image-hero transition--loading loading"></div-->
+			<div class="card1 loading transition--loading transition">
+			  <div class="card__bg">
+				<div class="close-offer-btn" id="close-offer"><i onClick="hideit();" class="material-icons">close</i></div>
+				<div class="card_content_center container">
+				  <img src="images/1.png" class="t-shirt-img" alt="t-shirt_img">
+				</div>
+			  </div>
+			  <div class="card__content--bottom">
+				<p class="t-shirt-price"> <strong>Price:  </strong><span class="cutted-price">Rs.315</span><span class="orig-price">299</span></p>
+				<p class="t-shirt-desc">Offer Valid Only for <strong>First 25 </strong>T-shirts! HURRY UP</p>
+				<a href="payment-page/index.html" onclick="window.open('https://forms.gle/mKWfCe2EzvLZVRCS8');" class="click-btn-hai middle transition push--bottom">Buy Now</a>       
+			  </div>
+			</div>
+		  </div>
+		</div>
+		</section>
 	<div class="super_container">
 		<!-- Menu -->
 		<div class="menu trans_500">
@@ -55,7 +78,8 @@ margin-left:-20px;
 					<li class="menu_item"><a href="/">Home</a></li>
 					<li class="menu_item"><a href="/speaker">Speakers</a></li>
 					<li class="menu_item"><a href="/sponsors">Sponsors</a></li>
-					<li class="menu_item"><a href="/team">Team</a></li>			
+					<li class="menu_item"><a href="/team">Team</a></li>	
+					<li><a href="#" onclick="showit();">T-Shirt</a></li>		
 				</ul>
 			</div>
 			<div class="menu_social">
@@ -122,6 +146,7 @@ margin-left:-20px;
 														<li class="active"><a href="/speaker">Speakers</a></li>
 														<li><a href="/sponsors">Sponsors</a></li>
 														<li><a href="/Team">Team</a></li>
+														<li><a href="#" onclick="showit();">T-Shirt</a></li>
 													</ul>
 												</nav>
 											</div>
@@ -358,12 +383,18 @@ margin-left:-20px;
 			</div>
 		</div>
 	</div>
+	<footer class="copyright-block">
+		<div class="copyright-box">
+			<h6 class="copyright-written">Copyright &copy; e-Cell Technical Team 2020</h6>
+		</div>
+	</footer>
 	<!-- /speaker modal -->
 	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="./css/bootstrap4/popper.js"></script>
 	<script type="text/javascript" src="./css/bootstrap4/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/parallax.min.js"></script>
 	<script type="text/javascript" src="./js/custom.js"></script>
+	<script type="text/javascript" src="./js/popup.js"></script>
 </body>
 
 </html>
