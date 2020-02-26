@@ -645,7 +645,7 @@
 									<img src="images/icons/meme.jpg" style="z-index:100;width:50px" class="iconwwh">
 								</div>
 							</div>
-							<h4 class="heading sifonn light-blue" style="text-align: center;">Memethon</h4>
+							<h4 class="heading sifonn light-blue" style="text-align: center;">Comedy Eve</h4>
 							<p class="description light-blue" style="text-align: justify;">There is no such thing as too many memes</p>
 
 						</a>
@@ -1788,7 +1788,7 @@
 <!-- Modal content-->
 <div class="modal-content">
 <div class="modal-header">
-	<h4 class="modal-title">Memethon</h4>
+	<h4 class="modal-title">Comedey Eve</h4>
 	<button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
 <div class="modal-body" style="text-align: left; color:black;">
@@ -1807,51 +1807,13 @@
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane active" id="Rules_meme">
 				<strong>DESCRIPTION</strong>
-				<p> The time has come to think outside the box. The event is based to depict the creative and advertising skills of the individual by promoting various brands through memes.
-				</p>
-				<strong>BENEFITS:</strong>
-				<ul style="list-style-type:circle;">
-					<li>To enhance creativity skills of the participants.</li>
-					
-					<li>To enhance the advertising skills of the participants.</li>
-				</ul>
+				<p>One stage, one comedian, infinite memories e-Cell KIET brings to you comedy kingpin Kishore Dayani with his freshest jokes.An evening full of fun from around the corner coupled with amazing memories is just a click away!</p><br>
+
+				
 				<strong>STRUCTURE:</strong>
 				<ul style="list-style-type:circle;">
-					<li>Team size: 1 Member</li>
-					<li>Rounds: 1 Round</li>
-				</ul>
-				<strong>ROUND ONE- MEME BATTLE</strong>
-				<ul style="list-style-type:circle;">
-					<li>The teams have to make the meme on the brand given to them and submit it before the deadline given to them.
-						</li>
-					<li> 
-						At a time two memes will be posted on the E-cell page as story and meme battle will take place among them for a specific period of time.
-					</li>
-					<li> 
-						The memes will also be posted to Endeavour Android Application for a specific period of time and the voting process will take place between them.
-					</li>
-				</ul>
-			
-				<strong>RULES :</strong>
-				<ul style="list-style-type:circle;">
-					<li>Only one entry per team is allowed.
-						
-					</li>
-					<li>    
-				    Each team would be given templates and they have to design their promotional meme accordingly.
-						
-					</li>
-					<li>   
-						Plagiarism is strictly prohibited.
+					<li>Team size: 1-4 Member</li>
 					
-					</li>
-					<li>   
-					Memes should be free from any kind of vulgar or offensive content otherwise it will lead to disqualification of the team.
-						
-					</li>
-					<li>   
-					  Memes should be free from names of team member and team’s name or any person.
-					</li>
 				</ul>
 				<!--
 				<strong>FAQ'S :</strong>
@@ -1882,12 +1844,7 @@
 					</li>
 				</ul>
 			-->
-			<strong>JUDGING CRITERIA</strong>
-			<ul style="list-style-type:circle;">
-				<li>
-					Judging criteria will be as follows:
-					60% of voting through Instagram Story + 40% of voting through Android App 
-				</li>
+
 			</div>
 			<div role="tabpanel" class="tab-pane" id="Register_meme">
 				<div clas="form-group">
@@ -1899,6 +1856,22 @@
 
 					<div>
 						<input type="text" class="form-control mbr" id="m11id" value="">
+						<p class="stats" style='color:red;font-weight: bold;'></p>
+					</div>
+					<big>
+						<label for="exampleInputEmail1">Third Member E-Summit Id:</label>
+					</big>
+
+					<div>
+						<input type="text" class="form-control mbr" id="m12id" value="">
+						<p class="stats" style='color:red;font-weight: bold;'></p>
+					</div>
+					<big>
+						<label for="exampleInputEmail1">Fourth Member E-Summit Id:</label>
+					</big>
+
+					<div>
+						<input type="text" class="form-control mbr" id="m13id" value="">
 						<p class="stats" style='color:red;font-weight: bold;'></p>
 					</div>
 					<big>
@@ -2418,21 +2391,22 @@ $(document).ready(function(){
 	});
 });
 
-//memethon
+//memethon 
+
 $(document).ready(function(){
     $('#meme').click(function(){
           var param = {};
           param.head_id=document.getElementById('mydiv').dataset.test;
-          param.team_id = [ m1id=document.querySelector('#m11id').value];
+		  param.team_id = [m1id=document.querySelector('#m13id').value,m2id=document.querySelector('#m12id').value,m3id=document.querySelector('#m11id').value];
           param.event_id = "5e2dfdeef6a4be24209ce601";
           $.ajax({
                 type: 'POST',
-                url: '/participant/addparticipant',
+                url: '/participant/addparticipant/comedyeve',
                 contentType: 'application/json',
                 data:JSON.stringify(param),
                     success: function(data) {
 						if(data.status == 200){
-							alert("Congratulations!,You sucessfully registerd in Memethon!");
+							alert("Congratulations!,You sucessfully registerd in Comedy Eve!");
 						  }
 						if(data.status==95){
 							alert("Already Registered");
@@ -2445,8 +2419,13 @@ $(document).ready(function(){
 						} 
                       }
           });
+		  console.log(document.querySelector('#m4id').value);
+	console.log(document.querySelector('#m5id').value);
+	console.log(document.querySelector('#m6id').value);
 	});
+	
 });
+
 </script>
 								<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 								<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
