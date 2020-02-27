@@ -240,8 +240,13 @@ route.post('/forgetemail',async(req,res)=>{
 route.post('/payment',async(req,res)=>{
     try {
         if(req.body['CUST_ID']){
-           var detailss = (await Participant.findOne({"head_id":req.body['CUST_ID'],"event_id":req.body['EVENt_ID']}));
-           console.log(detail);    
+           var detailss = await Participant.findOne({
+               "head_id":req.body['CUST_ID'],
+               "event_id":req.body['EVENT_ID']
+            });
+            console.log(req.body['CUST_ID']);   
+            console.log(req.body['EVENT_ID']);  
+           console.log(detailss);    
            if(detailss){
             var params ={};
             params.APP_KEY = 'ENDEAVOUR_20_QBZPJA'
