@@ -110,11 +110,6 @@ route.get('/', (req, res) => {
  route.post('/addparticipant/comedyeve', async(req,res)=>{
   try {
     if(req.body.head_id){
-      var data =  ((await User.findOne({"unique_user_id":req.body.team_id})));
-      if(data){
-          if((await Participant.findOne({'head_id':req.body.head_id}) || await Participant.findOne({'team_id':req.body.team_id})) && (await Participant.findOne({'event_id':req.body.event_id}))){
-                    return res.send({success : "Already registred", status : 95});
-          }else{
             var participant_data ={
               'head_id': req.body.head_id,
               'team_id':req.body.team_id,
@@ -125,10 +120,7 @@ route.get('/', (req, res) => {
 
 
               return res.send({success : "", status : 200});
-          }
-      }else{
-        return res.send({success : "Participant not found", status : 96});
-      }
+          
     }else{
       return res.send({success:"First login",status:405});
     }
